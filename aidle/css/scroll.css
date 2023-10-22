@@ -1,0 +1,16 @@
+/* styles.css */
+
+/* 초기 스타일 설정 */
+.navbar {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-dark {
+    background-color: #000; /* 검정 배경일 때 */
+    color: #fff; /* 흰색 폰트색 */
+}
+
+.navbar-light {
+    background-color: #fff; /* 흰색 배경일 때 */
+    color: #000; /* 검정 폰트색 */
+}
