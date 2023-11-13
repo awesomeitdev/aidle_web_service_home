@@ -56,6 +56,24 @@ window.addEventListener('wheel', (event) => {
                 //scrollCount 2일때 text 애니메이션
                 section3_move_text2.style.animation = 'slide-up 1s forwards';
                 section3_move_text2.style.opacity = 1;
+            } 
+        } else if (currentSection == 5 && scrollCount < 2) { //5번째 섹션
+            // 조건이 맞으면 헤더 텍스트와 로고 변경
+            headerText.forEach(text => {
+                text.classList.remove('background_white');
+            });
+            logo.src = './public/logo_white.svg'
+            // overlay 효과주기
+            overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            // scrollCount2 증가 시키고 다음 코드
+            scrollCount++;
+            if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
+                section5_move_text1.style.animation = 'slide-up 1s forwards';
+                section5_move_text1.style.opacity = 1;
+            } else if (scrollCount == 2) {
+                //scrollCount 2일때 text 애니메이션
+                section5_move_text2.style.animation = 'slide-up 1s forwards';
+                section5_move_text2.style.opacity = 1;
             }
         } else if (currentSection == 8 && scrollCount < 2) { //8번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
@@ -100,24 +118,6 @@ window.addEventListener('wheel', (event) => {
             // scrollCount 초기화
             scrollCount = 0;
             scrollToSection(currentSection);
-        }else if (currentSection == 5 && scrollCount < 2) { //5번째 섹션
-            // 조건이 맞으면 헤더 텍스트와 로고 변경
-            headerText.forEach(text => {
-                text.classList.remove('background_white');
-            });
-            logo.src = './public/logo_white.svg'
-            // overlay 효과주기
-            overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-            // scrollCount2 증가 시키고 다음 코드
-            scrollCount++;
-            if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
-                section5_move_text1.style.animation = 'slide-up 1s forwards';
-                section5_move_text1.style.opacity = 1;
-            } else if (scrollCount == 2) {
-                //scrollCount 2일때 text 애니메이션
-                section5_move_text2.style.animation = 'slide-up 1s forwards';
-                section5_move_text2.style.opacity = 1;
-            }
         }
     } else if (event.deltaY < 0) { //휠 위로
         if (isImageChanged && currentSection == 1) {
@@ -134,6 +134,7 @@ window.addEventListener('wheel', (event) => {
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+            overlay11.style.backgroundColor = 'raba(0, 0, 0, 0)';
 
             section3_move_text1.style.animation = '';
             section3_move_text1.style.opacity = 0;
