@@ -142,7 +142,7 @@ body {
 }
 
 #section1 {
-  background: url("../../../public/images/main_background1.png") no-repeat;
+  background: url("../../public/images/main_background1.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -207,7 +207,7 @@ body {
 }
 
 #section3 {
-  background: url("../../../public/images/section3_background.png") no-repeat;
+  background: url("../../public/images/section3_background.png") no-repeat;
   background-size: cover;
   width: 100%;
   opacity: 1;
