@@ -142,72 +142,82 @@ body {
 }
 
 #section1 {
-  background: url("../../../public/images/main_background1.png") no-repeat;
+  background: url("../../public/images/main_background1.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 #section2 .container,
-#section4 .container {
+#section4 .container,
+#section6 .container {
   display: flex;
   align-items: center;
 }
 #section2 .container > .left_content,
-#section4 .container > .left_content {
+#section4 .container > .left_content,
+#section6 .container > .left_content {
   width: 50%;
   margin-bottom: 300px;
 }
 #section2 .container > .left_content #text1,
-#section4 .container > .left_content #text1 {
+#section4 .container > .left_content #text1,
+#section6 .container > .left_content #text1 {
   font-size: 1vw;
   text-align: left;
   font-weight: bold;
   color: #7070FF;
 }
 #section2 .container > .left_content #text2,
-#section4 .container > .left_content #text2 {
+#section4 .container > .left_content #text2,
+#section6 .container > .left_content #text2 {
   font-size: 2.5vw;
   font-weight: bold;
   text-align: left;
 }
 #section2 .container > .left_content #text3,
-#section4 .container > .left_content #text3 {
+#section4 .container > .left_content #text3,
+#section6 .container > .left_content #text3 {
   font-size: 2.5vw;
   font-weight: bold;
   text-align: left;
   padding-bottom: 5%;
 }
 #section2 .container > .left_content #text4,
-#section4 .container > .left_content #text4 {
+#section4 .container > .left_content #text4,
+#section6 .container > .left_content #text4 {
   font-size: 1.2vw;
   text-align: left;
   font-weight: bold;
   color: #434E56;
 }
 #section2 .container > .left_content #text4,
-#section4 .container > .left_content #text4 {
+#section4 .container > .left_content #text4,
+#section6 .container > .left_content #text4 {
   font-size: 1.2vw;
   text-align: left;
   font-weight: bold;
   color: #434E56;
 }
 #section2 .container > .left_content #text4 .text-background,
-#section4 .container > .left_content #text4 .text-background {
+#section4 .container > .left_content #text4 .text-background,
+#section6 .container > .left_content #text4 .text-background {
   background-color: #B6EDE5;
   color: #434E56;
 }
 #section2 .container > .right_content,
-#section4 .container > .right_content {
+#section4 .container > .right_content,
+#section6 .container > .right_content {
   width: 50%;
   margin-left: 150px;
 }
 #section2 .container > .right_content img,
-#section4 .container > .right_content img {
+#section4 .container > .right_content img,
+#section6 .container > .right_content img {
   height: 720px;
 }
 
 #section3 {
-  background: url("../../../public/images/section3_background.png") no-repeat;
+  background: url("../../public/images/section3_background.png") no-repeat;
   background-size: cover;
   width: 100%;
   opacity: 1;
@@ -241,19 +251,87 @@ body {
 }
 
 #section5 {
-  background-color: forestgreen;
+  background: url("../../public/images/section5_background.png") no-repeat;
+  background-size: cover;
+  width: 100%;
+  opacity: 1;
+  display: block;
+  overflow: hidden;
+}
+#section5 .overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  transition: background-color 0.5s ease;
+}
+#section5 .container .text_box {
+  width: 100%;
+  position: relative;
+  top: 30%;
+  left: 35%;
+  z-index: 3;
+}
+#section5 .container .text_box #section5_move_text1,
+#section5 .container .text_box #section5_move_text2 {
+  position: relative;
+  color: #fff;
+  font-size: 56px;
+  text-align: center;
+  font-weight: 700;
+  transform: translateY(100%);
+  opacity: 0;
 }
 
-#section6 {
-  background-color: red;
-}
 
-#section7 {
-  background-color: black;
+#section7 .container {
+  display: flex;
+  align-items: center;
+}
+#section7 .container > .left_content {
+  width: 50%;
+  margin-bottom: 300px;
+}
+#section7 .container > .left_content img {
+  height: 720px;
+}
+#section7 .container > .right_content #text1 {
+  font-size: 1vw;
+  text-align: left;
+  font-weight: bold;
+  color: #7070FF;
+}
+#section7 .container > .right_content #text2 {
+  font-size: 2.5vw;
+  font-weight: bold;
+  text-align: left;
+}
+#section7 .container > .right_content #text3 {
+  font-size: 2.5vw;
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 5%;
+}
+#section7 .container > .right_content #text4 {
+  font-size: 1.2vw;
+  text-align: left;
+  font-weight: bold;
+  color: #434E56;
+}
+#section7 .container > .right_content #text4 {
+  font-size: 1.2vw;
+  text-align: left;
+  font-weight: bold;
+  color: #434E56;
+}
+#section7 .container > .right_content #text4 .text-background {
+  background-color: #B6EDE5;
+  color: #434E56;
 }
 
 #section8 {
-  background: url("../../../public/images/section8_background.png") no-repeat;
+  background: url("../../public/images/section8_background.png") no-repeat;
   background-size: cover;
   width: 100%;
   opacity: 1;
