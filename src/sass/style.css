@@ -452,7 +452,7 @@ body {
 }
 
 #section11 {
-  background: url("../../../public/images/section11_background.png") no-repeat;
+  background: url("../../public/images/section11_background.png") no-repeat;
   background-size: cover;
   width: 100%;
   opacity: 1;
