@@ -26,7 +26,7 @@ window.addEventListener('wheel', (event) => {
     if (event.deltaY > 0) { //휠 아래로
         if (currentSection == 1 && !isImageChanged) { //첫번째 섹션
             // 조건이 맞으면 backgroundImage변경
-            document.getElementById('section1').style.backgroundImage = "url('public/images/main_background2.png')";
+            document.getElementById('section1').style.backgroundImage = "url('/public/images/main_background2.png')";
             isImageChanged = true;
 
             // 헤더 텍스트와 로고 변경
@@ -101,7 +101,7 @@ window.addEventListener('wheel', (event) => {
     } else if (event.deltaY < 0) { //휠 위로
         if (isImageChanged && currentSection == 1) {
             // 조건에 맞으면 배경이미지 변경
-            document.getElementById('section1').style.backgroundImage = "url('public/images/main_background1.png')";
+            document.getElementById('section1').style.backgroundImage = "url('/public/images/main_background1.png')";
             isImageChanged = false;
             // 헤더와 로고 변경
             headerText.forEach(text => {
