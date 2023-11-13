@@ -352,29 +352,30 @@ window.addEventListener('scroll', function () {
         ani_text10_img.style.animation = '';
         ani_text10_img.style.opacity = 0;
         ani_text10_img.style.transform = 'translateY(10%)';
-         if (section13Position == 0) {
-        // 조건에 맞으면 애니메이션 효과와 헤더 변경
-        ani_text13.forEach((text) => {
+       
+        if (section12Position == 0) {
+        // 조건에 맞으면 애니메이션
+        ani_text12.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-        ani_text13_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        ani_text12_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
         logo.src = './public/logo.svg'
-    }else if (section12Position !== 0) {
+    } else if (section12Position !== 0) {
         // 페이지 벗어나면 초기화
         ani_text12.forEach((text) => {
             text.style.animation = ''; // 애니메이션 속성을 초기화
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
-        })
+        });
         ani_text12_img.style.animation = '';
         ani_text12_img.style.opacity = 0;
         ani_text12_img.style.transform = 'translateY(10%)';
-    }
-    if (section13Position == 0) {
-        // 조건에 맞으면 애니메이션 효과와 헤더 변경
+            
+     if (section13Position == 0) {
+        // 조건에 맞으면 애니메이션
         ani_text13.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -389,12 +390,11 @@ window.addEventListener('scroll', function () {
             text.style.animation = ''; // 애니메이션 속성을 초기화
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
-        })
+        });
         ani_text13_img.style.animation = '';
         ani_text13_img.style.opacity = 0;
         ani_text13_img.style.transform = 'translateY(10%)';
-    }
-
+         
     // 다른방법
     /*    if (scrollPosition >= section2Position) {
            ani_texts.forEach((text) => {
