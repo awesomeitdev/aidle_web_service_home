@@ -18,6 +18,9 @@ window.addEventListener('wheel', (event) => {
     const overlay8 = document.querySelector('#section8 .overlay');
     const section8_move_text1 = document.getElementById('section8_move_text1');
     const section8_move_text2 = document.getElementById('section8_move_text2');
+    const overlay11 = document.querySelector('#section11 .overlay');
+    const section11_move_text1 = document.getElementById('section11_move_text1');
+    const section11_move_text2 = document.getElementById('section11_move_text2');
 
 
     if (event.deltaY > 0) { //휠 아래로
@@ -70,7 +73,25 @@ window.addEventListener('wheel', (event) => {
                 section8_move_text2.style.animation = 'slide-up 1s forwards';
                 section8_move_text2.style.opacity = 1;
             }
-        } else if (currentSection < 14) {
+        }else if (currentSection == 11 && scrollCount < 2) { //11번째 섹션
+            // 조건이 맞으면 헤더 텍스트와 로고 변경
+            headerText.forEach(text => {
+                text.classList.remove('background_white');
+            });
+            logo.src = './public/logo_white.svg'
+            // overlay 효과주기
+            overlay11.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            // scrollCount2 증가 시키고 다음 코드
+            scrollCount++;
+            if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
+                section11_move_text1.style.animation = 'slide-up 1s forwards';
+                section11_move_text1.style.opacity = 1;
+            } else if (scrollCount == 2) {
+                //scrollCount 2일때 text 애니메이션
+                section11_move_text2.style.animation = 'slide-up 1s forwards';
+                section11_move_text2.style.opacity = 1;
+            }
+        }else if (currentSection < 14) {
             // 조건이 맞으면 다음페이지
             currentSection++;
             // scrollCount 초기화
@@ -91,7 +112,6 @@ window.addEventListener('wheel', (event) => {
             // 페이지 벗어날시 초기값 세팅
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-            overlay11.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             // overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0)';
 
             section3_move_text1.style.animation = '';
@@ -103,6 +123,11 @@ window.addEventListener('wheel', (event) => {
             section8_move_text1.style.opacity = 0;
             section8_move_text2.style.animation = '';
             section8_move_text2.style.opacity = 0;
+
+            section11_move_text1.style.animation = '';
+            section11_move_text1.style.opacity = 0;
+            section11_move_text2.style.animation = '';
+            section11_move_text2.style.opacity = 0;
             
             currentSection--;
             scrollToSection(currentSection);
@@ -128,6 +153,8 @@ window.addEventListener('scroll', function () {
     const section4 = document.getElementById('section4');
     const section9 = document.getElementById('section9');
     const section10 = document.getElementById('section10');
+    const section12 = document.getElementById('section12');
+    const section13 = document.getElementById('section13');
     const ani_text2 = document.querySelectorAll('.ani_text_2');
     const ani_text2_img = document.querySelector('.ani_text_2_img');
     const ani_text4 = document.querySelectorAll('.ani_text_4');
@@ -136,6 +163,11 @@ window.addEventListener('scroll', function () {
     const ani_text9_img = document.querySelector('.ani_text_9_img');
     const ani_text10 = document.querySelectorAll('.ani_text_10');
     const ani_text10_img = document.querySelector('.ani_text_10_img');
+    const ani_text12 = document.querySelectorAll('.ani_text_12');
+    const ani_text12_img = document.querySelector('.ani_text_12_img');
+    const ani_text13 = document.querySelectorAll('.ani_text_13');
+    const ani_text13_img = document.querySelector('.ani_text_13_img');
+
 
 
     const headerText = document.querySelectorAll(".header-nav-item-link-text");
@@ -149,6 +181,9 @@ window.addEventListener('scroll', function () {
     const section4Position = section4.getBoundingClientRect().top;
     const section9Position = section9.getBoundingClientRect().top;
     const section10Position = section10.getBoundingClientRect().top;
+    const section12Position = section12.getBoundingClientRect().top;
+    const section13Position = section13.getBoundingClientRect().top;
+
     // const section2Position = section2.offsetTop;
     // const section4Position = section4.offsetTop;
 
@@ -238,6 +273,37 @@ window.addEventListener('scroll', function () {
         ani_text10_img.style.animation = '';
         ani_text10_img.style.opacity = 0;
         ani_text10_img.style.transform = 'translateY(10%)';
+    }else if (section12Position !== 0) {
+        // 페이지 벗어나면 초기화
+        ani_text12.forEach((text) => {
+            text.style.animation = ''; // 애니메이션 속성을 초기화
+            text.style.opacity = 0; // 텍스트가 보이지 않게 설정
+            text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
+        })
+        ani_text12_img.style.animation = '';
+        ani_text12_img.style.opacity = 0;
+        ani_text12_img.style.transform = 'translateY(10%)';
+    }
+    if (section13Position == 0) {
+        // 조건에 맞으면 애니메이션 효과와 헤더 변경
+        ani_text13.forEach((text) => {
+            text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+        });
+        ani_text13_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        headerText.forEach(text => {
+            text.classList.add('background_white');
+        });
+        logo.src = './public/logo.svg'
+    } else if (section12Position !== 0) {
+        // 페이지 벗어나면 초기화
+        ani_text13.forEach((text) => {
+            text.style.animation = ''; // 애니메이션 속성을 초기화
+            text.style.opacity = 0; // 텍스트가 보이지 않게 설정
+            text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
+        })
+        ani_text13_img.style.animation = '';
+        ani_text13_img.style.opacity = 0;
+        ani_text13_img.style.transform = 'translateY(10%)';
     }
 
     // 다른방법

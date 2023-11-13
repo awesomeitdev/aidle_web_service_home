@@ -471,15 +471,158 @@ body {
 }
 
 #section11 {
-    background-color: red;
+    background: url('../../../public/images/section11_background.png') no-repeat;
+    background-size: cover;
+    width: 100%;
+    opacity: 1;
+    display: block;
+    overflow: hidden;
+
+    & .overlay {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0);
+        z-index: 1;
+        transition: background-color 0.5s ease;
+    }
+
+    & .container {
+        & .text_box {
+            width: 100%;
+            position: relative;
+            top: 30%;
+            left: 35%;
+            z-index: 3;
+            
+            & #section11_move_text1,
+            #section11_move_text2 {
+                position: relative;
+                color: #fff;
+                font-size: 56px;
+                text-align: center;
+                font-weight: 700;
+                transform: translateY(100%);
+                opacity: 0;
+            }
+        }
+    }
 }
 
-#section12 {
-    background-color: black;
+#section12 .container {
+    display: flex;
+    align-items: center;
+
+    &>.left_content {
+        width: 50%; // text 길이에 따라 변화
+        margin-bottom: 300px;
+
+        & #text1 {
+            font-size: 1vw;
+            text-align: left;
+            font-weight: bold;
+            color: #7070FF;
+        }
+
+        & #text2 {
+            font-size: 2.5vw;
+            font-weight: bold;
+            text-align: left;
+            padding-bottom: 5%;
+        }
+
+        & #text3 {
+            font-size: 1.2vw;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        & #text4 {
+            font-size: 1.2vw;
+            text-align: left;
+            font-weight: bold;
+            color: #434E56;
+
+            & .text-background {
+                background-color: #B6EDE5;
+                color: #434E56;
+            }
+        }
+
+    }
+
+    &>.right_content {
+        width: 50%;
+        margin-left: 150px;
+        
+
+        
+        & img {
+            height: 720px;
+        }
+    }
+
 }
 
-#section13 {
-    background-color: blue;
+#section13 .container{ //.container 추가
+    display: flex;
+    align-items: center;
+    
+    &>.right_content {
+        width: 50%; // text 길이에 따라 변화
+        margin-bottom: 300px;
+
+        & #text1 {
+            font-size: 1vw;
+            text-align: left;
+            font-weight: bold;
+            color: #7070FF;
+        }
+
+        & #text2 {
+            font-size: 2.5vw;
+            font-weight: bold;
+            text-align: left;
+            padding-bottom: 5%;
+        }
+
+        & #text3 {
+            font-size: 1.2vw;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        & #text4 { // 한 줄 더 있으니까 해당 css 추가
+            font-size: 1.2vw;
+            text-align: left;
+            font-weight: bold;
+            color: #434E56;
+        }
+
+        & #text4 {
+            font-size: 1.2vw;
+            text-align: left;
+            font-weight: bold;
+            color: #434E56;
+
+            & .text-background {
+                background-color: #B6EDE5;
+                color: #434E56;
+            }
+        }
+
+    }
+
+    &>.left_content {
+        width: 50%;
+        margin-right: 150px;
+        
+        & img {
+            height: 720px;
+        }
+    }
+
+
 }
 
 #section14 {
