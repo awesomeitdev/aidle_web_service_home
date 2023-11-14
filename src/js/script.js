@@ -353,7 +353,7 @@ window.addEventListener('scroll', function () {
         ani_text10_img.style.opacity = 0;
         ani_text10_img.style.transform = 'translateY(10%)';
        
-        if (section12Position == 0) {
+    if (section12Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text12.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
