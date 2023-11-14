@@ -352,7 +352,8 @@ window.addEventListener('scroll', function () {
         ani_text10_img.style.animation = '';
         ani_text10_img.style.opacity = 0;
         ani_text10_img.style.transform = 'translateY(10%)';
-       
+    }
+
     if (section12Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text12.forEach((text) => {
@@ -373,9 +374,10 @@ window.addEventListener('scroll', function () {
         ani_text12_img.style.animation = '';
         ani_text12_img.style.opacity = 0;
         ani_text12_img.style.transform = 'translateY(10%)';
-            
+    }
+
      if (section13Position == 0) {
-        // 조건에 맞으면 애니메이션
+        // 조건에 맞으면 애니메이션s
         ani_text13.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -394,7 +396,7 @@ window.addEventListener('scroll', function () {
         ani_text13_img.style.animation = '';
         ani_text13_img.style.opacity = 0;
         ani_text13_img.style.transform = 'translateY(10%)';
-         
+    }     
     // 다른방법
     /*    if (scrollPosition >= section2Position) {
            ani_texts.forEach((text) => {
