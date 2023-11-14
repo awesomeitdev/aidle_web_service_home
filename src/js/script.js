@@ -134,7 +134,7 @@ window.addEventListener('wheel', (event) => {
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-            overlay11.style.backgroundColor = 'raba(0, 0, 0, 0)';
+           
             
 
             section3_move_text1.style.animation = '';
