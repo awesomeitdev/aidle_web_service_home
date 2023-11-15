@@ -229,7 +229,7 @@ window.addEventListener('scroll', function () {
         ani_text2.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-        ani_text2_img.style.animation = 'slide-up 4s forwards, fade-in 1s forwards';
+        ani_text2_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -251,7 +251,7 @@ window.addEventListener('scroll', function () {
         ani_text4.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-        ani_text4_img.style.animation = 'slide-up 4s forwards, fade-in 1s forwards';
+        ani_text4_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -273,7 +273,7 @@ window.addEventListener('scroll', function () {
         ani_text6.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-        ani_text6_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        ani_text6_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
