@@ -272,7 +272,7 @@ if (section4Position == 0) {
         ani_text4_img.style.animation = '';
         ani_text4_img.style.opacity = 0;
         ani_text4_img.style.transform = 'translateY(10%)';
-    }, 1000); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
+    }, 500); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
 }
     if (section6Position == 0) {
         // 조건에 맞으면 애니메이션
