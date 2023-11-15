@@ -282,7 +282,7 @@ if (section4Position == 0) {
        
      setTimeout(() => {   
         ani_text6_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-      }, 1000); 
+      }, 300); 
          headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -299,7 +299,7 @@ if (section4Position == 0) {
         ani_text6_img.style.animation = '';
         ani_text6_img.style.opacity = 0;
         ani_text6_img.style.transform = 'translateY(10%)';
-    }, 1000); 
+    }, 300); 
 }
 
     if (section7Position == 0) {
@@ -307,7 +307,10 @@ if (section4Position == 0) {
         ani_text7.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
+
+     setTimeout(() => {  
         ani_text7_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+       }, 300); 
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -319,17 +322,23 @@ if (section4Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
+
+     setTimeout(() => {
         ani_text7_img.style.animation = '';
         ani_text7_img.style.opacity = 0;
         ani_text7_img.style.transform = 'translateY(10%)';
-    }
+    }, 300); 
+}
 
     if (section9Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text9.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
+       
+     setTimeout(() => {     
         ani_text9_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+         }, 300); 
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -341,17 +350,23 @@ if (section4Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
+        
+     setTimeout(() => {    
         ani_text9_img.style.animation = '';
         ani_text9_img.style.opacity = 0;
         ani_text9_img.style.transform = 'translateY(10%)';
-    }
+    }, 300); 
+}
 
     if (section10Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text10.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
+       
+      setTimeout(() => {    
         ani_text10_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        }, 300); 
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -363,17 +378,23 @@ if (section4Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
+       
+     setTimeout(() => {    
         ani_text10_img.style.animation = '';
         ani_text10_img.style.opacity = 0;
         ani_text10_img.style.transform = 'translateY(10%)';
-    }
+    }, 300); 
+}
 
     if (section12Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text12.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
+     
+    setTimeout(() => {      
         ani_text12_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        }, 300); 
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -385,18 +406,24 @@ if (section4Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
+      
+     setTimeout(() => {    
         ani_text12_img.style.animation = '';
         ani_text12_img.style.opacity = 0;
         ani_text12_img.style.transform = 'translateY(10%)';
-    }
+    }, 300); 
+}
 
      if (section13Position == 0) {
         // 조건에 맞으면 애니메이션s
         ani_text13.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-        ani_text13_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
-        headerText.forEach(text => {
+       
+     setTimeout(() => {      
+         ani_text13_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+         }, 300); 
+         headerText.forEach(text => {
             text.classList.add('background_white');
         });
         logo.src = './public/logo.svg'
@@ -407,10 +434,13 @@ if (section4Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
+      
+      setTimeout(() => {    
         ani_text13_img.style.animation = '';
         ani_text13_img.style.opacity = 0;
         ani_text13_img.style.transform = 'translateY(10%)';
-    }     
+    }, 300); 
+}    
     // 다른방법
     /*    if (scrollPosition >= section2Position) {
            ani_texts.forEach((text) => {
