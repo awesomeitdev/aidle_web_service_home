@@ -253,7 +253,7 @@ if (section4Position == 0) {
 
     setTimeout(() => {
         ani_text4_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-    }, 2000); // 500밀리초(0.5초) 후에 이미지 애니메이션 시작
+    }, 1000); // 500밀리초(0.5초) 후에 이미지 애니메이션 시작
 
     headerText.forEach(text => {
         text.classList.add('background_white');
@@ -272,15 +272,18 @@ if (section4Position == 0) {
         ani_text4_img.style.animation = '';
         ani_text4_img.style.opacity = 0;
         ani_text4_img.style.transform = 'translateY(10%)';
-    }, 500); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
+    }, 1000); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
 }
     if (section6Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text6.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
+       
+     setTimeout(() => {   
         ani_text6_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-        headerText.forEach(text => {
+      }, 1000); 
+         headerText.forEach(text => {
             text.classList.add('background_white');
         });
         logo.src = './public/logo.svg'
@@ -291,10 +294,13 @@ if (section4Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
+
+    setTimeout(() => {
         ani_text6_img.style.animation = '';
         ani_text6_img.style.opacity = 0;
         ani_text6_img.style.transform = 'translateY(10%)';
-    }
+    }, 1000); 
+}
 
     if (section7Position == 0) {
         // 조건에 맞으면 애니메이션
