@@ -251,7 +251,7 @@ window.addEventListener('scroll', function () {
         ani_text4.forEach((text) => {
             text.style.animation = 'slide-up 4s forwards, fade-in 2s forwards';
         });
-        ani_text4_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        ani_text4_img.style.animation = 'slide-up 4s forwards, fade-in 2s forwards';
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
