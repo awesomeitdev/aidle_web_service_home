@@ -253,7 +253,7 @@ if (section4Position == 0) {
 
     setTimeout(() => {
         ani_text4_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-    }, 1000); // 500밀리초(0.5초) 후에 이미지 애니메이션 시작
+    }, 500); // 500밀리초(0.5초) 후에 이미지 애니메이션 시작
 
     headerText.forEach(text => {
         text.classList.add('background_white');
