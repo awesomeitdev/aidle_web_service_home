@@ -253,7 +253,7 @@ if (section4Position == 0) {
 
     setTimeout(() => {
         ani_text4_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-    }, 500); // 500밀리초(0.5초) 후에 이미지 애니메이션 시작
+    }, 200); // 500밀리초(0.5초) 후에 이미지 애니메이션 시작
 
     headerText.forEach(text => {
         text.classList.add('background_white');
@@ -272,7 +272,7 @@ if (section4Position == 0) {
         ani_text4_img.style.animation = '';
         ani_text4_img.style.opacity = 0;
         ani_text4_img.style.transform = 'translateY(10%)';
-    }, 500); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
+    }, 200); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
 }
     if (section6Position == 0) {
         // 조건에 맞으면 애니메이션
