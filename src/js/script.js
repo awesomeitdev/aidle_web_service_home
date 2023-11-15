@@ -227,9 +227,9 @@ window.addEventListener('scroll', function () {
     if (section2Position == 0) {
         // 조건에 맞으면 애니메이션 효과와 헤더 변경
         ani_text2.forEach((text) => {
-            text.style.animation = 'slide-up 1s forwards, fade-in 1s forwards';
+            text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-        ani_text2_img.style.animation = 'slide-up 1s forwards, fade-in 1s forwards';
+        ani_text2_img.style.animation = 'slide-up 4s forwards, fade-in 1s forwards';
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -249,9 +249,9 @@ window.addEventListener('scroll', function () {
     if (section4Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text4.forEach((text) => {
-            text.style.animation = 'slide-up 1s forwards, fade-in 1s forwards';
+            text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-        ani_text4_img.style.animation = 'slide-up 1s forwards, fade-in 1s forwards';
+        ani_text4_img.style.animation = 'slide-up 4s forwards, fade-in 1s forwards';
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
