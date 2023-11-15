@@ -297,13 +297,13 @@ li{
 footer {
   background: var(--sys-color-neutral-95, #F3F5F7);
   display: flex;
-  width: 1500px;
+  width: 1515px;
   height: 320px;
   padding-bottom: 80px;
   flex-direction: column;
   align-items: center;
   gap: 48px;
-  margin-left: -42%;
+  margin-left: -38.25%;
 
 }
 
@@ -553,13 +553,11 @@ ul {
 
 #custom_div > p{
   color: var(--sys-color-neutral-100, #FFF);
-  font-feature-settings: 'clig' off, 'liga' off;
   font-family: NanumSquareRound;
   font-size: 22.5px;
   font-style: normal;
   font-weight: 800;
-  line-height: 150%; /* 36px */
-  margin-left: 200px;
+  margin-left: 225px;
 }
 
 #content1{
