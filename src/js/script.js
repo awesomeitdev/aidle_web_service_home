@@ -62,7 +62,8 @@ window.addEventListener('wheel', (event) => {
                 section3_move_text2.style.animation = 'slide-up 1s forwards';
                 section3_move_text2.style.opacity = 1;
                 scrollCount = 0; // 스크롤 카운트 초기화
-            } 
+             }
+            }
         } else if (currentSection == 5 && scrollCount < 8) { //5번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
@@ -83,7 +84,8 @@ window.addEventListener('wheel', (event) => {
                 section5_move_text2.style.animation = 'slide-up 1s forwards';
                 section5_move_text2.style.opacity = 1;                
                 scrollCount = 0; // 스크롤 카운트 초기화                
-            }
+             }
+           }
         } else if (currentSection == 8 && scrollCount < 8) { //8번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
                 if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
@@ -104,8 +106,9 @@ window.addEventListener('wheel', (event) => {
                 section8_move_text2.style.animation = 'slide-up 1s forwards';
                 section8_move_text2.style.opacity = 1;
                 scrollCount = 0; // 스크롤 카운트 초기화                
+             }
             }
-        }else if (currentSection == 11 && scrollCount < 8) { //11번째 섹션
+        } else if (currentSection == 11 && scrollCount < 8) { //11번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
                 headerText.forEach(text => {
@@ -145,6 +148,7 @@ window.addEventListener('wheel', (event) => {
             });
             logo.src = './public/logo_white.svg'
             scrollCount = 0; // 스크롤 카운트 초기화
+             }
             }
         } else if (currentSection > 1) {
             if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
