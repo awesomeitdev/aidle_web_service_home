@@ -180,7 +180,7 @@ window.addEventListener('wheel', (event) => {
             }    
         }
     }
-}
+})
 
 // 스크롤 효과
 function scrollToSection(section) {
