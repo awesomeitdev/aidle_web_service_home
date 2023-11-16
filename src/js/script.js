@@ -196,7 +196,7 @@ function scrollToSection(section) {
 }
 
 // 스크롤 이벤트시 발동
-window.addEventListener('scroll', () => 
+window.addEventListener('scroll', () => {
     const section2 = document.getElementById('section2');
     const section4 = document.getElementById('section4');
     const section6 = document.getElementById('section6');
@@ -476,31 +476,7 @@ if (section4Position == 0 && currentSection != 4) {
         ani_text13_img.style.transform = 'translateY(10%)';
     }, 300); 
 }    
-    // 다른방법
-    /*    if (scrollPosition >= section2Position) {
-           ani_texts.forEach((text) => {
-               text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-           });
-       } else if (scrollPosition < section2Position) {
-           ani_texts.forEach((text) => {
-               text.style.animation = ''; // 애니메이션 속성을 초기화
-               text.style.opacity = 0; // 텍스트가 보이지 않게 설정
-               text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
-           })
-       }
    
-       if (scrollPosition >= section4Position) {
-           ani_texts.forEach((text) => {
-               text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-           });
-       } else if (scrollPosition < section4Position) {
-           ani_texts.forEach((text) => {
-               text.style.animation = ''; // 애니메이션 속성을 초기화
-               text.style.opacity = 0; // 텍스트가 보이지 않게 설정
-               text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
-           })
-       } */
-
 });
 
 // 헤더버튼 효과
