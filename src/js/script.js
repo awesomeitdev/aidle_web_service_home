@@ -127,12 +127,21 @@ window.addEventListener('wheel', (event) => {
                 scrollCount = 0; // 스크롤 카운트 초기화       
             }
             }
-        }else if (currentSection < 14) {
-            // 조건이 맞으면 다음페이지
-            currentSection++;
-            // scrollCount 초기화
-            scrollCount = 0;
-            scrollToSection(currentSection);
+        }else if (currentSection <= 14) { // 모든 섹션
+            if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
+                const moveText1 = document.getElementById(`section${currentSection}_move_text1`);
+                const moveText2 = document.getElementById(`section${currentSection}_move_text2`);
+
+                if (scrollCount == 4) { // scrollCount 4일때 text 애니메이션
+                    moveText1.style.animation = 'slide-up 1s forwards';
+                    moveText1.style.opacity = 1;
+                } else if (scrollCount == 8) {
+                    // scrollCount 8일때 text 애니메이션
+                    moveText2.style.animation = 'slide-up 1s forwards';
+                    moveText2.style.opacity = 1;
+                    scrollCount = 0; // 스크롤 카운트 초기화
+                }
+            }
         }
     } else if (event.deltaY < 0) { //휠 위로
        if (currentSection == 1 && isImageChanged) {
