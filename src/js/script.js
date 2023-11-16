@@ -196,7 +196,7 @@ function scrollToSection(section) {
 }
 
 // 스크롤 이벤트시 발동
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', () => 
     const section2 = document.getElementById('section2');
     const section4 = document.getElementById('section4');
     const section6 = document.getElementById('section6');
@@ -243,8 +243,9 @@ window.addEventListener('scroll', function () {
     // const section2Position = section2.offsetTop;
     // const section4Position = section4.offsetTop;
 
-    if (section2Position == 0) {
+    if (section2Position == 0 && currentSection != 2) { // 섹션2로 이동할 때
         // 조건에 맞으면 애니메이션 효과와 헤더 변경
+        currentSection = 2;
         ani_text2.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -271,8 +272,9 @@ window.addEventListener('scroll', function () {
         ani_text2_img.style.transform = 'translateY(10%)';
         }, 300);
     }
-if (section4Position == 0) {
-    // 조건에 맞으면 애니메이션
+if (section4Position == 0 && currentSection != 4) {  
+        // 조건에 맞으면 애니메이션 효과와 헤더 변경
+        currentSection = 4;
     ani_text4.forEach((text) => {
         text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
     });
@@ -300,8 +302,9 @@ if (section4Position == 0) {
         ani_text4_img.style.transform = 'translateY(10%)';
     }, 300); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
 }
-    if (section6Position == 0) {
-        // 조건에 맞으면 애니메이션
+    if (section6Position == 0 && currentSection != 6) {  
+        // 조건에 맞으면 애니메이션 효과와 헤더 변경
+        currentSection = 6;
         ani_text6.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -328,7 +331,9 @@ if (section4Position == 0) {
     }, 300); 
 }
 
-    if (section7Position == 0) {
+    if (section7Position == 0 && currentSection != 7) {  
+        // 조건에 맞으면 애니메이션 효과와 헤더 변경
+        currentSection = 7;
         // 조건에 맞으면 애니메이션
         ani_text7.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
@@ -356,8 +361,9 @@ if (section4Position == 0) {
     }, 300); 
 }
 
-    if (section9Position == 0) {
-        // 조건에 맞으면 애니메이션
+    if (section9Position 0 == currentSection != 9) {  
+        // 조건에 맞으면 애니메이션 효과와 헤더 변경
+        currentSection = 9;
         ani_text9.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -384,8 +390,9 @@ if (section4Position == 0) {
     }, 300); 
 }
 
-    if (section10Position == 0) {
-        // 조건에 맞으면 애니메이션
+    if (section10Position == 0 && currentSection != 10) { 
+        // 조건에 맞으면 애니메이션 효과와 헤더 변경
+        currentSection = 10;
         ani_text10.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -412,8 +419,9 @@ if (section4Position == 0) {
     }, 300); 
 }
 
-    if (section12Position == 0) {
-        // 조건에 맞으면 애니메이션
+    if (section12Position == 0 && currentSection != 12) {  
+        // 조건에 맞으면 애니메이션 효과와 헤더 변경
+        currentSection = 12;
         ani_text12.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -440,8 +448,9 @@ if (section4Position == 0) {
     }, 300); 
 }
 
-     if (section13Position == 0) {
-        // 조건에 맞으면 애니메이션s
+     if (section13Position == 0 && currentSection != 13) {  
+        // 조건에 맞으면 애니메이션 효과와 헤더 변경
+        currentSection = 13;
         ani_text13.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
