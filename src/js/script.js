@@ -51,7 +51,8 @@ window.addEventListener('wheel', (event) => {
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-
+            // scrollCount 증가 시키고 다음 코드
+            scrollCount++;
             if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
                 section3_move_text1.style.animation = 'slide-up 1s forwards';
                 section3_move_text1.style.opacity = 1;
@@ -71,7 +72,8 @@ window.addEventListener('wheel', (event) => {
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-                
+            // scrollCount 증가 시키고 다음 코드
+            scrollCount++; 
             if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
                 section5_move_text1.style.animation = 'slide-up 1s forwards';
                 section5_move_text1.style.opacity = 1;
@@ -91,7 +93,8 @@ window.addEventListener('wheel', (event) => {
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-
+            // scrollCount 증가 시키고 다음 코드
+            scrollCount++;
              if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
                 section8_move_text1.style.animation = 'slide-up 1s forwards';
                 section8_move_text1.style.opacity = 1;
@@ -111,7 +114,8 @@ window.addEventListener('wheel', (event) => {
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay11.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-                
+            // scrollCount 증가 시키고 다음 코드
+            scrollCount++;  
             if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
                 section11_move_text1.style.animation = 'slide-up 1s forwards';
                 section11_move_text1.style.opacity = 1;
