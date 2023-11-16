@@ -127,7 +127,7 @@ window.addEventListener('wheel', (event) => {
                 scrollCount = 0; // 스크롤 카운트 초기화       
             }
             }
-        }else if (currentSection <= 14) { // 모든 섹션
+        }else if (currentSection == 2,4,6,7,9,10,12,13,14 && scrollCount < 8) { 
             if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
                 const moveText1 = document.getElementById(`section${currentSection}_move_text1`);
                 const moveText2 = document.getElementById(`section${currentSection}_move_text2`);
