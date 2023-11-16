@@ -27,8 +27,12 @@ window.addEventListener('wheel', (event) => {
     const section5_move_text2 = document.getElementById('section5_move_text2');
 
 
-    if (event.deltaY > 0) { //휠 아래로
-        if (currentSection == 1 && !isImageChanged) { //첫번째 섹션
+     if (deltaY > 0) { // 휠 아래로
+        if (++scrollCount == 4) { // 휠 이벤트가 4번 발생했을 때
+            currentSection++;
+            scrollToSection(currentSection);
+            scrollCount = 0; // 스크롤 카운트 초기화
+        } else if  (currentSection == 1 && !isImageChanged) { //첫번째 섹션
             // 조건이 맞으면 backgroundImage변경
             if (++scrollCount == 4) { // 휠 이벤트가 4번 발생했을 때
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
@@ -38,8 +42,7 @@ window.addEventListener('wheel', (event) => {
             headerText.forEach(text => {
                 text.classList.add('background_white');
             });
-            logo.src = './public/logo.svg'
-            scrollToSection(currentSection);     
+            logo.src = './public/logo.svg'    
             scrollCount = 0; // 스크롤 카운트 초기화
           }
         
@@ -127,14 +130,12 @@ window.addEventListener('wheel', (event) => {
                 scrollCount = 0; // 스크롤 카운트 초기화       
             }
             }
-        }else if (currentSection < 14) {
-            // 조건이 맞으면 다음페이지
+        }else if (++scrollCount == 4) { // 휠 이벤트가 4번 발생했을 때
             currentSection++;
-            // scrollCount 초기화
-            scrollCount = 0;
             scrollToSection(currentSection);
+            scrollCount = 0; // 스크롤 카운트 초기화
         }
-    } else if (event.deltaY < 0) { //휠 위로
+    } else if (deltaY < 0) { //휠 위로
        if (currentSection == 1 && isImageChanged) {
             if (++scrollCount == -4) { //휠 이벤트가 4번 반대 방향으로 발생했을 때
                 // 조건에 맞으면 배경이미지 변경
@@ -154,9 +155,7 @@ window.addEventListener('wheel', (event) => {
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay11.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-           
-            
-
+          
             section3_move_text1.style.animation = '';
             section3_move_text1.style.opacity = 0;
             section3_move_text2.style.animation = '';
@@ -176,14 +175,13 @@ window.addEventListener('wheel', (event) => {
             section11_move_text1.style.opacity = 0;
             section11_move_text2.style.animation = '';
             section11_move_text2.style.opacity = 0;
-            
+                        
+            } 
+        } else if  (--scrollCount == -4) { // 휠 이벤트가 4번 반대 방향으로 발생했을 때
             currentSection--;
             scrollToSection(currentSection);
-            if (scrollCount == 8) {
             scrollCount = 0; // 스크롤 카운트 초기화
-                 }     
-            }    
-        }
+        }   
     }
 }) 
 
