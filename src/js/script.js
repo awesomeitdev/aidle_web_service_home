@@ -10,6 +10,7 @@ window.addEventListener("wheel", function (e) {
 
 // 휠이벤트시 동작
 window.addEventListener('wheel', (event) => {
+    const deltaY = event.deltaY;
     const headerText = document.querySelectorAll(".header-nav-item-link-text");
     const logo = document.querySelector('.header-title img');
     const overlay = document.querySelector('#section3 .overlay');
@@ -42,9 +43,10 @@ window.addEventListener('wheel', (event) => {
             scrollCount = 0; // 스크롤 카운트 초기화
           }
         
-        } else if (currentSection == 3 && scrollCount < 8) { //3번째 섹션
-            // 조건이 맞으면 헤더 텍스트와 로고 변경
+        } else if (currentSection <= 14) { // 모든 섹션
             if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
+                const moveText1 = document.getElementById(`section${currentSection}_move_text1`);
+                const moveText2 = document.getElementById(`section${currentSection}_move_text2`);
                 headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
@@ -53,85 +55,16 @@ window.addEventListener('wheel', (event) => {
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
             // scrollCount 증가 시키고 다음 코드
             scrollCount++; 
-            if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
-                section3_move_text1.style.animation = 'slide-up 1s forwards';
-                section3_move_text1.style.opacity = 1;
-            } else if (scrollCount == 8) {
-                //scrollCount 8일때 text 애니메이션
-                section3_move_text2.style.animation = 'slide-up 1s forwards';
-                section3_move_text2.style.opacity = 1;
-                scrollCount = 0; // 스크롤 카운트 초기화
+            if (scrollCount == 4) { // scrollCount 4일때 text 애니메이션
+                    moveText1.style.animation = 'slide-up 1s forwards';
+                    moveText1.style.opacity = 1;
+                } else if (scrollCount == 8) {
+                    // scrollCount 8일때 text 애니메이션
+                    moveText2.style.animation = 'slide-up 1s forwards';
+                    moveText2.style.opacity = 1;
+                    scrollCount = 0; // 스크롤 카운트 초기화
              }
             }
-        } else if (currentSection == 5 && scrollCount < 8) { //5번째 섹션
-            // 조건이 맞으면 헤더 텍스트와 로고 변경
-            if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
-                headerText.forEach(text => {
-                text.classList.remove('background_white');
-            });
-            logo.src = './public/logo_white.svg'
-            // overlay 효과주기
-            overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-            // scrollCount 증가 시키고 다음 코드
-            scrollCount++; 
-            if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
-                section5_move_text1.style.animation = 'slide-up 1s forwards';
-                section5_move_text1.style.opacity = 1;
-            } else if (scrollCount == 8) {
-                //scrollCount 8일때 text 애니메이션
-                section5_move_text2.style.animation = 'slide-up 1s forwards';
-                section5_move_text2.style.opacity = 1;                
-                scrollCount = 0; // 스크롤 카운트 초기화                
-             }
-           }
-        } else if (currentSection == 8 && scrollCount < 8) { //8번째 섹션
-            // 조건이 맞으면 헤더 텍스트와 로고 변경
-                if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
-                headerText.forEach(text => {
-                text.classList.remove('background_white');
-            });
-            logo.src = './public/logo_white.svg'
-            // overlay 효과주기
-            overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-            // scrollCount 증가 시키고 다음 코드
-            scrollCount++; 
-             if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
-                section8_move_text1.style.animation = 'slide-up 1s forwards';
-                section8_move_text1.style.opacity = 1;
-            } else if (scrollCount == 8) {
-                //scrollCount 8일때 text 애니메이션
-                section8_move_text2.style.animation = 'slide-up 1s forwards';
-                section8_move_text2.style.opacity = 1;
-                scrollCount = 0; // 스크롤 카운트 초기화                
-             }
-            }
-        } else if (currentSection == 11 && scrollCount < 8) { //11번째 섹션
-            // 조건이 맞으면 헤더 텍스트와 로고 변경
-            if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
-                headerText.forEach(text => {
-                text.classList.remove('background_white');
-            });
-            logo.src = './public/logo_white.svg'
-            // overlay 효과주기
-            overlay11.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-            // scrollCount 증가 시키고 다음 코드
-            scrollCount++; 
-            if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
-                section11_move_text1.style.animation = 'slide-up 1s forwards';
-                section11_move_text1.style.opacity = 1;
-            } else if (scrollCount == 8) {
-                //scrollCount 8일때 text 애니메이션
-                section11_move_text2.style.animation = 'slide-up 1s forwards';
-                section11_move_text2.style.opacity = 1;
-                scrollCount = 0; // 스크롤 카운트 초기화       
-            }
-            }
-        }else if (currentSection < 14) {
-            // 조건이 맞으면 다음페이지
-            currentSection++;
-            // scrollCount 초기화
-            scrollCount = 0;
-            scrollToSection(currentSection);
         }
     } else if (event.deltaY < 0) { //휠 위로
        if (currentSection == 1 && isImageChanged) {
@@ -147,7 +80,7 @@ window.addEventListener('wheel', (event) => {
             scrollCount = 0; // 스크롤 카운트 초기화
              }
         } else if (currentSection > 1) {
-             if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
+             if (++scrollCount == -4 || scrollCount == -8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
             // 페이지 벗어날시 초기값 세팅
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0)';
@@ -176,10 +109,11 @@ window.addEventListener('wheel', (event) => {
             section11_move_text2.style.animation = '';
             section11_move_text2.style.opacity = 0;
             
-            currentSection--;
-            scrollToSection(currentSection);
-            if (scrollCount == 8) {
-            scrollCount = 0; // 스크롤 카운트 초기화
+           
+            if (scrollCount == -8) {
+                    currentSection--;
+                    scrollToSection(currentSection);
+                    scrollCount = 0; // 스크롤 카운트 초기화
                  }
             }    
         }
