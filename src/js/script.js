@@ -51,7 +51,7 @@ window.addEventListener('wheel', (event) => {
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-           
+             
             if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
                 section3_move_text1.style.animation = 'slide-up 1s forwards';
                 section3_move_text1.style.opacity = 1;
@@ -61,7 +61,7 @@ window.addEventListener('wheel', (event) => {
                 section3_move_text2.style.opacity = 1;
                 scrollCount = 0; // 스크롤 카운트 초기화
                 currentSection++; // 다음 섹션으로 전환
-             }
+            }
             }
         } else if (currentSection == 5 && scrollCount < 8) { //5번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
@@ -72,6 +72,7 @@ window.addEventListener('wheel', (event) => {
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+             
             if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
                 section5_move_text1.style.animation = 'slide-up 1s forwards';
                 section5_move_text1.style.opacity = 1;
@@ -79,9 +80,9 @@ window.addEventListener('wheel', (event) => {
                 //scrollCount 8일때 text 애니메이션
                 section5_move_text2.style.animation = 'slide-up 1s forwards';
                 section5_move_text2.style.opacity = 1;                
-                scrollCount = 0; // 스크롤 카운트 초기화  
+                scrollCount = 0; // 스크롤 카운트 초기화                
                 currentSection++; // 다음 섹션으로 전환
-             }
+            }
            }
         } else if (currentSection == 8 && scrollCount < 8) { //8번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
@@ -92,6 +93,7 @@ window.addEventListener('wheel', (event) => {
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+             
              if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
                 section8_move_text1.style.animation = 'slide-up 1s forwards';
                 section8_move_text1.style.opacity = 1;
@@ -99,9 +101,9 @@ window.addEventListener('wheel', (event) => {
                 //scrollCount 8일때 text 애니메이션
                 section8_move_text2.style.animation = 'slide-up 1s forwards';
                 section8_move_text2.style.opacity = 1;
-                scrollCount = 0; // 스크롤 카운트 초기화    
+                scrollCount = 0; // 스크롤 카운트 초기화                
                 currentSection++; // 다음 섹션으로 전환
-             }
+            }
             }
         } else if (currentSection == 11 && scrollCount < 8) { //11번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
@@ -112,6 +114,7 @@ window.addEventListener('wheel', (event) => {
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay11.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+             
             if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
                 section11_move_text1.style.animation = 'slide-up 1s forwards';
                 section11_move_text1.style.opacity = 1;
@@ -119,15 +122,16 @@ window.addEventListener('wheel', (event) => {
                 //scrollCount 8일때 text 애니메이션
                 section11_move_text2.style.animation = 'slide-up 1s forwards';
                 section11_move_text2.style.opacity = 1;
-                scrollCount = 0; // 스크롤 카운트 초기화
+                scrollCount = 0; // 스크롤 카운트 초기화       
                 currentSection++; // 다음 섹션으로 전환
             }
             }
-        }else if (currentSection <= 14) {
-            if (++scrollCount == 4) { // 휠 이벤트가 4번 발생했을 때
+        }else if (currentSection < 14) {
+            // 조건이 맞으면 다음페이지
             currentSection++;
+            // scrollCount 초기화
+            scrollCount = 0;
             scrollToSection(currentSection);
-            scrollCount = 0; // 스크롤 카운트 초기화
         }
     } else if (event.deltaY < 0) { //휠 위로
        if (currentSection == 1 && isImageChanged) {
@@ -174,7 +178,7 @@ window.addEventListener('wheel', (event) => {
             
             currentSection--;
             scrollToSection(currentSection);
-            if (scrollCount == 8) { // 휠 이벤트가 4번 반대 방향으로 발생했을 때 
+            if (scrollCount == 8) {
             scrollCount = 0; // 스크롤 카운트 초기화
                  }
             }    
@@ -195,7 +199,7 @@ function scrollToSection(section) {
 }
 
 // 스크롤 이벤트시 발동
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function () {
     const section2 = document.getElementById('section2');
     const section4 = document.getElementById('section4');
     const section6 = document.getElementById('section6');
@@ -242,9 +246,8 @@ window.addEventListener('scroll', () => {
     // const section2Position = section2.offsetTop;
     // const section4Position = section4.offsetTop;
 
-    if (section2Position == 0 && currentSection != 2) { // 섹션2로 이동할 때
+    if (section2Position == 0) {
         // 조건에 맞으면 애니메이션 효과와 헤더 변경
-        currentSection = 2;
         ani_text2.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -271,9 +274,8 @@ window.addEventListener('scroll', () => {
         ani_text2_img.style.transform = 'translateY(10%)';
         }, 300);
     }
-if (section4Position == 0 && currentSection != 4) {  
-        // 조건에 맞으면 애니메이션 효과와 헤더 변경
-        currentSection = 4;
+if (section4Position == 0) {
+    // 조건에 맞으면 애니메이션
     ani_text4.forEach((text) => {
         text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
     });
@@ -301,9 +303,8 @@ if (section4Position == 0 && currentSection != 4) {
         ani_text4_img.style.transform = 'translateY(10%)';
     }, 300); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
 }
-    if (section6Position == 0 && currentSection != 6) {  
-        // 조건에 맞으면 애니메이션 효과와 헤더 변경
-        currentSection = 6;
+    if (section6Position == 0) {
+        // 조건에 맞으면 애니메이션
         ani_text6.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -330,9 +331,7 @@ if (section4Position == 0 && currentSection != 4) {
     }, 300); 
 }
 
-    if (section7Position == 0 && currentSection != 7) {  
-        // 조건에 맞으면 애니메이션 효과와 헤더 변경
-        currentSection = 7;
+    if (section7Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text7.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
@@ -360,9 +359,8 @@ if (section4Position == 0 && currentSection != 4) {
     }, 300); 
 }
 
-    if (section9Position == 0 && currentSection != 9) {  
-        // 조건에 맞으면 애니메이션 효과와 헤더 변경
-        currentSection = 9;
+    if (section9Position == 0) {
+        // 조건에 맞으면 애니메이션
         ani_text9.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -389,9 +387,8 @@ if (section4Position == 0 && currentSection != 4) {
     }, 300); 
 }
 
-    if (section10Position == 0 && currentSection != 10) { 
-        // 조건에 맞으면 애니메이션 효과와 헤더 변경
-        currentSection = 10;
+    if (section10Position == 0) {
+        // 조건에 맞으면 애니메이션
         ani_text10.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -418,9 +415,8 @@ if (section4Position == 0 && currentSection != 4) {
     }, 300); 
 }
 
-    if (section12Position == 0 && currentSection != 12) {  
-        // 조건에 맞으면 애니메이션 효과와 헤더 변경
-        currentSection = 12;
+    if (section12Position == 0) {
+        // 조건에 맞으면 애니메이션
         ani_text12.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -447,9 +443,8 @@ if (section4Position == 0 && currentSection != 4) {
     }, 300); 
 }
 
-     if (section13Position == 0 && currentSection != 13) {  
-        // 조건에 맞으면 애니메이션 효과와 헤더 변경
-        currentSection = 13;
+     if (section13Position == 0) {
+        // 조건에 맞으면 애니메이션s
         ani_text13.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
@@ -475,7 +470,31 @@ if (section4Position == 0 && currentSection != 4) {
         ani_text13_img.style.transform = 'translateY(10%)';
     }, 300); 
 }    
+    // 다른방법
+    /*    if (scrollPosition >= section2Position) {
+           ani_texts.forEach((text) => {
+               text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+           });
+       } else if (scrollPosition < section2Position) {
+           ani_texts.forEach((text) => {
+               text.style.animation = ''; // 애니메이션 속성을 초기화
+               text.style.opacity = 0; // 텍스트가 보이지 않게 설정
+               text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
+           })
+       }
    
+       if (scrollPosition >= section4Position) {
+           ani_texts.forEach((text) => {
+               text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+           });
+       } else if (scrollPosition < section4Position) {
+           ani_texts.forEach((text) => {
+               text.style.animation = ''; // 애니메이션 속성을 초기화
+               text.style.opacity = 0; // 텍스트가 보이지 않게 설정
+               text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
+           })
+       } */
+
 });
 
 // 헤더버튼 효과
