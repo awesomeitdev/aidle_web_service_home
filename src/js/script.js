@@ -147,7 +147,7 @@ window.addEventListener('wheel', (event) => {
             scrollCount = 0; // 스크롤 카운트 초기화
              }
         } else if (currentSection > 1) {
-             if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
+             if (++scrollCount == -4 || scrollCount == -8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
             // 페이지 벗어날시 초기값 세팅
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0)';
@@ -178,9 +178,6 @@ window.addEventListener('wheel', (event) => {
             
             currentSection--;
             scrollToSection(currentSection);
-            if (scrollCount == 8) {
-            scrollCount = 0; // 스크롤 카운트 초기화
-                 }
             }    
         }
     }
