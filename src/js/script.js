@@ -361,7 +361,7 @@ if (section4Position == 0 && currentSection != 4) {
     }, 300); 
 }
 
-    if (section9Position 0 == currentSection != 9) {  
+    if (section9Position == 0 && currentSection != 9) {  
         // 조건에 맞으면 애니메이션 효과와 헤더 변경
         currentSection = 9;
         ani_text9.forEach((text) => {
