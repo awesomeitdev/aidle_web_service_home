@@ -229,8 +229,12 @@ window.addEventListener('scroll', function () {
         ani_text2.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-        ani_text2_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-        headerText.forEach(text => {
+
+        setTimeout(() => {
+        ani_text2_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';        
+       }, 300); 
+        
+            headerText.forEach(text => {
             text.classList.add('background_white');
         });
         logo.src = './public/logo.svg'
@@ -241,10 +245,12 @@ window.addEventListener('scroll', function () {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         })
+
+     setTimeout(() => {
         ani_text2_img.style.animation = '';
         ani_text2_img.style.opacity = 0;
         ani_text2_img.style.transform = 'translateY(10%)';
-    }
+    }, 300);
 if (section4Position == 0) {
     // 조건에 맞으면 애니메이션
     ani_text4.forEach((text) => {
@@ -309,7 +315,7 @@ if (section4Position == 0) {
         });
 
      setTimeout(() => {  
-        ani_text7_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        ani_text7_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
        }, 300); 
         headerText.forEach(text => {
             text.classList.add('background_white');
@@ -337,7 +343,7 @@ if (section4Position == 0) {
         });
        
      setTimeout(() => {     
-        ani_text9_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        ani_text9_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
          }, 300); 
         headerText.forEach(text => {
             text.classList.add('background_white');
@@ -365,7 +371,7 @@ if (section4Position == 0) {
         });
        
       setTimeout(() => {    
-        ani_text10_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        ani_text10_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         }, 300); 
         headerText.forEach(text => {
             text.classList.add('background_white');
@@ -393,7 +399,7 @@ if (section4Position == 0) {
         });
      
     setTimeout(() => {      
-        ani_text12_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+        ani_text12_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         }, 300); 
         headerText.forEach(text => {
             text.classList.add('background_white');
@@ -421,7 +427,7 @@ if (section4Position == 0) {
         });
        
      setTimeout(() => {      
-         ani_text13_img.style.animation = 'slide-up 4s forwards, fade-in 5s forwards';
+         ani_text13_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
          }, 300); 
          headerText.forEach(text => {
             text.classList.add('background_white');
