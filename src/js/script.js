@@ -132,7 +132,7 @@ window.addEventListener('wheel', (event) => {
         }
     } else if (event.deltaY < 0) { //휠 위로
        if (currentSection == 1 && isImageChanged) {
-            if (++scrollCount == 4) { // 휠 이벤트가 4번 발생했을 때
+            if (++scrollCount == -4) { //휠 이벤트가 4번 반대 방향으로 발생했을 때
                 // 조건에 맞으면 배경이미지 변경
             document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
             isImageChanged = false;
