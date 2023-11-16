@@ -123,12 +123,11 @@ window.addEventListener('wheel', (event) => {
                 currentSection++; // 다음 섹션으로 전환
             }
             }
-        }else if (currentSection < 14) {
-            // 조건이 맞으면 다음페이지
+        }else if (currentSection <= 14) {
+            if (++scrollCount == 4) { // 휠 이벤트가 4번 발생했을 때
             currentSection++;
-            // scrollCount 초기화
-            scrollCount = 0;
             scrollToSection(currentSection);
+            scrollCount = 0; // 스크롤 카운트 초기화
         }
     } else if (event.deltaY < 0) { //휠 위로
        if (currentSection == 1 && isImageChanged) {
@@ -175,7 +174,9 @@ window.addEventListener('wheel', (event) => {
             
             currentSection--;
             scrollToSection(currentSection);
-            if (scrollCount == 8) {
+            if (--scrollCount == -4) { // 휠 이벤트가 4번 반대 방향으로 발생했을 때
+            currentSection--;
+            scrollToSection(currentSection);
             scrollCount = 0; // 스크롤 카운트 초기화
                  }
             }    
