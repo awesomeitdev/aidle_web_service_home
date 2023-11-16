@@ -111,8 +111,7 @@ window.addEventListener('wheel', (event) => {
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay11.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-            // scrollCount 증가 시키고 다음 코드
-            scrollCount++;  
+            // scrollCount 증가 시키고 다음 코드 
             if (scrollCount == 4) { //scrollCount 4일때 text 애니메이션
                 section11_move_text1.style.animation = 'slide-up 1s forwards';
                 section11_move_text1.style.opacity = 1;
