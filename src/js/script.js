@@ -145,6 +145,7 @@ window.addEventListener('wheel', (event) => {
             });
             logo.src = './public/logo_white.svg'
             scrollCount = 0; // 스크롤 카운트 초기화
+            currentSection++; // 다음 섹션으로 전환
              }
         } else if (currentSection > 1) {
              if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
