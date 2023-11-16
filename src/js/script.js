@@ -250,7 +250,8 @@ window.addEventListener('scroll', function () {
         ani_text2_img.style.animation = '';
         ani_text2_img.style.opacity = 0;
         ani_text2_img.style.transform = 'translateY(10%)';
-    }, 300);
+        }, 300);
+    }
 if (section4Position == 0) {
     // 조건에 맞으면 애니메이션
     ani_text4.forEach((text) => {
