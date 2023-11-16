@@ -178,6 +178,9 @@ window.addEventListener('wheel', (event) => {
             
             currentSection--;
             scrollToSection(currentSection);
+            if (scrollCount == 8) {
+            scrollCount = 0; // 스크롤 카운트 초기화
+                 }     
             }    
         }
     }
