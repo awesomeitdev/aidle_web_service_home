@@ -121,6 +121,7 @@ window.addEventListener('wheel', (event) => {
                 section11_move_text2.style.opacity = 1;
                 scrollCount = 0; // 스크롤 카운트 초기화       
             }
+            }
         }else if (currentSection < 14) {
             // 조건이 맞으면 다음페이지
             currentSection++;
@@ -177,10 +178,8 @@ window.addEventListener('wheel', (event) => {
             if (scrollCount == 8) {
             scrollCount = 0; // 스크롤 카운트 초기화
                  }
-            }
-        }
-    }
-})
+            }    
+}
 
 // 스크롤 효과
 function scrollToSection(section) {
