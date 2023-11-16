@@ -41,7 +41,7 @@ window.addEventListener('wheel', (event) => {
                  
             scrollCount = 0; // 스크롤 카운트 초기화
           }
-
+        }
         } else if (currentSection == 3 && scrollCount < 8) { //3번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             if (++scrollCount == 4 || scrollCount == 8) { // 휠 이벤트가 4번 또는 8번 발생했을 때
