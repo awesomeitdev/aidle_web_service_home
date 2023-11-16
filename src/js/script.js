@@ -39,7 +39,8 @@ window.addEventListener('wheel', (event) => {
                 text.classList.add('background_white');
             });
             logo.src = './public/logo.svg'
-                 
+            currentSection++;
+            scrollToSection(currentSection);      
             scrollCount = 0; // 스크롤 카운트 초기화
           }
         
