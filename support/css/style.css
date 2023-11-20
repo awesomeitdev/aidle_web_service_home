@@ -148,10 +148,8 @@ body {
     position: relative;
     width: 80%;
     height: auto;
-    min-height: 100%;
     margin-left: 10%;
     padding-top: 243px;
-    padding-bottom: 359px;
 }
 
 #sidebar {
@@ -164,6 +162,11 @@ body {
 }
 
 #sidebar ul li {
+    color: var(--sys-color-neutral-20, #2D3439); 
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
     padding: 10px;
     cursor: pointer;
 }
