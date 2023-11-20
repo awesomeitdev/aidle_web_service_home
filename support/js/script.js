@@ -23,9 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
             document.querySelector(`#${target}`).style.display = 'block';
         }
     }
-});
 
-document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('#sidebar ul li').forEach(item => {
         item.addEventListener('click', event => {
             document.querySelectorAll('#sidebar ul li').forEach(item => {
@@ -49,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector(".button");
