@@ -58,4 +58,3 @@ window.addEventListener('scroll', function() {
         searchArea.classList.remove('hidden');
     }
 });
-
