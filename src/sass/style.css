@@ -93,6 +93,7 @@ body {
   transition: max-height 0.3s ease-in-out;
   background-color: #fff;
   border-radius: 16px;
+  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.10);
   z-index: 1;
 }
 .header .header-inner .header-menu .header-nav-list .button_list .button_list_text {
