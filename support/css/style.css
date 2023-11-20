@@ -361,39 +361,28 @@ span {
 }
 
 .openchat {
+  width:60%;
   display: flex;
-
   align-items: center;
-
   padding: 48px;
-
   background-color: #EBEBFF;
-
   border: 1px solid #EBEBFF;
   border-radius: 12px;
-
-  margin-top: 120px;
   margin-left: 25%;
-  margin-right: 25%;
-  margin-bottom: 120px;
+  justify-content:space-between;
 }
 
 .openchat #openchat_question {
-  color: #7070FF;
-  text-align: center;
+  color: #7070FF; 
   font-family: NanumSquareRound;
   font-size: 24px;
   font-style: normal;
   font-weight: 800;
-
-  margin-left: 48px;
 }
 
 .openchat #openchat_img {
-  width: 26.263px;
-  height: 27.775px;
-
-  margin-left: 300px;
+  display:flex;
+  align-items:center; 
 }
 
 .openchat #openchat_link {
@@ -402,9 +391,7 @@ span {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-
   margin-left: 30px;
-
 }
 
 
