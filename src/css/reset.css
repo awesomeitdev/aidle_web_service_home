@@ -26,7 +26,7 @@ em, address{
 
 dl, ul, li, ol, menu{list-style: none;}
 
-h1,h2,h3,h4,h5,h6{
+h2,h3,h4,h5,h6{
     font-size: 1.3rem; 
     color: #222; 
     font-weight: normal;
@@ -36,6 +36,10 @@ img, fieldset{border: 0 none;}
 
 button{border: 0;}
 
+.line { 
+    border-top: 1px solid var(--sys-color-neutral-90, #E6EBEF);
+    background: #FFF;
+}
 .fl{float: left;}
 .fr{float: right;}
 
