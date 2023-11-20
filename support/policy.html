@@ -2,7 +2,10 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="../../src/css/reset.css">
+    <link rel="stylesheet" href="../../src/sass/style.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../src/js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700,900&display=swap" rel="stylesheet">
 </head>
 
@@ -11,8 +14,8 @@
         <div class="header-inner" id="header_inner">
             <div class="header-title" id="header_title">
                 <a href="#">
-                    <img src="images/logo_white.svg" alt="" class="header-logo-white">
-                    <!-- <img src="./public/logo.svg" alt="" class="header-logo-black"> -->
+                    <img src="../../public/images/logo_white.svg" alt="" class="header-logo-white">
+                    <!-- <img src="../../public/logo.svg" alt="" class="header-logo-black"> -->
                 </a>
             </div>
             <div class="header-menu" id="header_menu">
@@ -634,55 +637,47 @@
             </div>
         </div>
     </div>
-    <footer class="footer" id="footer">
+    <footer id="section15">
         <div class="wrapper">
             <ul id="company">
-                <li><a href="#">회사 소개</a></li>
-                <li><a href="#">개인정보 처리방침</a></li>
-                <li><a href="#">서비스 이용약관</a></li>
-                <li><a href="#">위치기반 서비스 이용약관</a></li>
-                <li><a href="#">B2B 제휴 문의</a></li>
+                <li><a href="https://awesomeit.co.kr">회사 소개</a></li>
+                <li><a href="./support/policy.html?id=policy">개인정보 처리방침</a></li>
+                <li><a href="./support/policy.html?id=services">서비스 이용약관</a></li>
+                <li><a href="./support/policy.html?id=local">위치기반 서비스 이용약관</a></li>
+                <li><a href="mailto:sales-support@awesomeit.co.kr">B2B 제휴 문의</a></li>
             </ul>
-            <a href="#" id="icon">
-                <img id="ft" src="images/image_kakaochanel.png">
-                <img id="ft" src="images/image_naverblog.png">
-                <img id="ft" src="images/image_facebook.png">
-                <img id="ft" src="images/image_instagram.png">
-            </a>
+                <a href="#" id="icon">
+                    <img id="ft" src="./public/images/image_kakaochanel.png">
+                    <img id="ft" src="./public/images/image_naverblog.png">
+                    <img id="ft" src="./public/images/image_facebook.png">
+                    <img id="ft" src="./public/images/image_instagram.png">
+                </a>
         </div>
-        <div class="container2">
-            <table class="tb1">
-                <tr>
-                    <img id="awesomeit" src="images/logo_awesomeit.png">
-                </tr>
-                <tr>
-                    <p id="txtawesomeit2-1"><span id="txtawesomeit">(주)어썸잇</span> 사업자등록번호:120-12-12345 대표:유병규
-                    </p>
-                </tr>
-                <tr>
-                    <p id="txtawesomeit2-2">서울특별시 금천구 가산디지털1로 225, 1015호(가산동, 에이스가산포휴)</p>
-                </tr>
-                <tr>
-                    <p id="txtawesomeit3">© AWESOMEIT. ALL RIGHTS RESERVED.</p>
-                </tr>
-            </table>
-            <table class="tb2">
-                <tr colspan="3">
-                    <p><span id="aidleapp">aidle 앱 다운로드</span></p>
-                </tr>
-                <tr id="guardian">
-                    <td id="guardian_txt">보호자용</td>
-                    <td><img src="images/google_play.png"></td>
-                    <td><img src="images/app_store.png"></td>
-                </tr>
-                <tr id="children">
-                    <td id="children_txt">자녀용</td>
-                    <td colspan="2"><img src="images/google_play.png"></td>
-                </tr>
-            </table>
+        <div class="layout">    
+        <div class="left_box">
+            <ul>
+              <li class="logo"><img src="./public/images/logo_awesomeit.png"></li>
+              <li class="text_box">
+                <p><span style="font-weight:bold;">(주)어썸잇</span> 사업자등록번호:120-12-12345 대표:유병규</p>
+                <p>서울특별시 금천구 가산디지털1로 225, 1015호(가산동, 에이스가산포휴)</p>
+              </li>
+              <li class="text_copy">
+                <p>© AWESOMEIT. ALL RIGHTS RESERVED.</p>
+              </li>
+            </ul>
+        </div>
+        <div class="right_box">
+            <p class="title">아이들 앱 다운로드</p>  
+            <ul class="button_box">
+                <li class="pr_box">
+                    <p class="text_name">보호자용 <img src="./public/images/google_play.png"><img src="./public/images/app_store.png"></p>                    
+                </li>
+                <li class="ch_box">
+                    <p class="text_name">자녀용 <img src="./public/images/google_play.png"></p>                    
+                </li>           
+            </ul>              
         </div>
     </footer>
-    <script src="scripts.js"></script>
 </body>
 
 </html>
