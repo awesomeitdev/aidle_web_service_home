@@ -151,7 +151,6 @@ body {
     height: auto;
     margin-left: 10%;
     padding-top: 243px;
-    padding-buttom:100px;
 }
 
 #sidebar {
@@ -177,7 +176,8 @@ body {
     width: 70%;
     padding: 20px;
     color:#2D3439;
-    font-size: 10pt;
+    font-size: 10pt;    
+    padding-buttom:100px;
 }
  
 #content p strong {
