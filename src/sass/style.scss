@@ -188,7 +188,7 @@ body {
 
     &>.left_content {
         width: 50%;
-        margin-bottom: 300px;
+        margin-bottom: 30%;
 
         & #text1 {
             font-size: 1vw;
@@ -718,13 +718,43 @@ body {
 
 }
 
-#section14 {
-    background-color: white;
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
-#section15 {
-    background-color: forestgreen;
+#section14 { 
+    background: linear-gradient(180deg, #FFF 0%, #EBEBFF 51.56%), 
+     
+    
 }
+
+.vector {
+    background-image: url('../../public/images/vector.png') no-repeat;
+    width: 100%; 
+    position: absolute;
+    animation: float 2s infinite ease-in-out;
+}
+
+
+#section14 .radius {
+    width: 5396px;
+    height: 5396px;
+    flex-shrink: 0;
+    border-radius: 5396px;
+    background: #C2C2FF;
+}
+
+.aidle_family {
+    width: 1920px;
+    height: 439px;
+    flex-shrink: 0;
+}
+ 
 
 @keyframes slide-up {
     from {
@@ -740,4 +770,152 @@ body {
 
 .section .container .text_box {
     animation: slide-up 1s forwards;
+}
+
+footer {
+    background: #F3F5F7;
+    display: flex;
+    width: 100%;
+    height: 359px;
+    padding-bottom: 80px;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+footer .layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 287px;
+}
+
+footer .layout .left_box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 56px;
+}
+
+footer .layout .right_box {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+}
+
+footer .layout .left_box .logo {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin-bottom: 40px;
+}
+
+footer .layout .left_box .text_box {
+color: var(--sys-color-neutral-60, #879BAB);
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 21px */
+margin-bottom: 56px;
+
+}
+
+footer .layout .left_box .text_copy {
+color: var(--sys-color-neutral-60, #879BAB);
+font-family: Pretendard;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 18px */
+}
+
+footer .layout .right_box .title {
+color: var(--sys-color-neutral-20, #2D3439);
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Pretendard;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 27px */ 
+}
+
+footer .layout .right_box .button_box {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+}
+
+.button_box .pr_box{ontainer
+display: flex;
+align-items: center; 
+ 
+}
+
+.button_box .ch_box {
+    display: flex;
+    align-items: center; 
+     
+}
+
+.button_box .text_name {
+display: flex;
+color: var(--sys-color-neutral-40, #5A6872);
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%;   
+align-items: center; 
+}
+
+.button_box img {
+display: inline-block;
+width: 160px;
+height: 48px; 
+margin: 0px 12px;
+flex-direction: column;
+justify-content: center;
+align-items: center; 
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 56px;
+    padding: 12px 0px;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-end;
+    background-color: #fff;
+
+}
+
+#company {
+    /* 소개글 css */
+    color: var(--sys-color-neutral-30, #434E56);
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 24px */
+    width: 721px;
+    display: flex;
+    gap: 48px;
+    letter-spacing: -2px;
+    margin-top: 38px;
+}
+
+#icon {
+    /* images icon css*/
+    display: flex;
+    gap: 16px;
+    fill: var(--sys-color-neutral-80, #C3CDD5); 
+    width: 176px;
+    height: 32px;
+    margin-top: 10px;
+    
 }
