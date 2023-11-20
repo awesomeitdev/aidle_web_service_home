@@ -203,45 +203,126 @@ body {
 }
 
 
+
 footer {
-    background: var(--sys-color-neutral-95, #F3F5F7);
+    background: #F3F5F7;
+    display: flex;
+    width: 100%;
+    height: 359px;
+    padding-bottom: 80px;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+footer .layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 287px;
+}
+
+footer .layout .left_box {
     display: flex;
     flex-direction: column;
-    gap: 48px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    position: relative;
-    transform: translateY(-100%);
+    align-items: flex-start;
+    gap: 56px;
 }
 
-
-
-
-
-
-/*  글에 밑줄 안보이게css*/
-a {
-    text-decoration: none;
+footer .layout .right_box {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
 }
 
-/*  글에 점 안보이게*/
-ul {
-    list-style: none;
-    /*  company icon 상자 css*/
+footer .layout .left_box .logo {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin-bottom: 40px;
+}
+
+footer .layout .left_box .text_box {
+color: var(--sys-color-neutral-60, #879BAB);
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 21px */
+margin-bottom: 56px;
+
+}
+
+footer .layout .left_box .text_copy {
+color: var(--sys-color-neutral-60, #879BAB);
+font-family: Pretendard;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 18px */
+}
+
+footer .layout .right_box .title {
+color: var(--sys-color-neutral-20, #2D3439);
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Pretendard;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 27px */ 
+}
+
+footer .layout .right_box .button_box {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+}
+
+.button_box .pr_box{ontainer
+display: flex;
+align-items: center; 
+ 
+}
+
+.button_box .ch_box {
+    display: flex;
+    align-items: center; 
+     
+}
+
+.button_box .text_name {
+display: flex;
+color: var(--sys-color-neutral-40, #5A6872);
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%;   
+align-items: center; 
+}
+
+.button_box img {
+display: inline-block;
+width: 160px;
+height: 48px; 
+margin: 0px 12px;
+flex-direction: column;
+justify-content: center;
+align-items: center; 
 }
 
 .wrapper {
     display: flex;
     width: 100%;
     height: 56px;
-    background-color: #fff;
-    justify-content: space-between;
+    padding: 12px 0px;
+    justify-content: center;
     align-items: center;
     align-items: flex-end;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: #fff;
+
 }
 
 #company {
@@ -257,118 +338,20 @@ ul {
     display: flex;
     gap: 48px;
     letter-spacing: -2px;
-    margin-top: 48px;
-    margin-left: 13.7%;
+    margin-top: 38px;
 }
 
 #icon {
     /* images icon css*/
     display: flex;
     gap: 16px;
-    fill: var(--sys-color-neutral-80, #C3CDD5);
-    top: 12px;
-    bottom: 12px;
+    fill: var(--sys-color-neutral-80, #C3CDD5); 
     width: 176px;
     height: 32px;
-    margin-bottom: 10px;
-    margin-right: 12%;
-}
-
-
-.tb1 {
-    /* 왼쪽 상자 css*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 397px;
-    height: 175px;
-}
-
-/* 로고 css*/
-#awesomeit {
-    width: 143.714px;
-    height: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: -0%;
-    margin-left: 3%;
-}
-
-/* (주) 어썸잇 css*/
-#txtawesomeit {
-    color: var(--sys-color-neutral-60, #879BAB);
-    font-family: Pretendard;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    /* 21px */
-    gap: 12px;
-}
-
-/* 사업자 등록 번호부터css*/
-#txtawesomeit2-1 {
-    color: var(--sys-color-neutral-60, #879BAB);
-    font-family: Pretendard;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 21px */
-    display: flex;
-    align-items: baseline;
-    gap: 24px;
-    letter-spacing: 3px; /* 원하는 값으로 조절하세요 */
-    white-space: nowrap; 
-    margin-top: 5%;
-    margin-left: -14%;
+    margin-top: 10px;
     
 }
-#txtawesomeit2-2 {
-  color: var(--sys-color-neutral-60, #879BAB);
-  font-family: Pretendard;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  /* 21px */
-  display: flex;
-  align-items: baseline;
-  gap: 24px;
-  letter-spacing: 3px; /* 원하는 값으로 조절하세요 */
-  white-space: nowrap; 
-  margin-top: 8%;
-  margin-left: -42.3%;
-}
 
-/* 마지막 RESERVED css*/
-#txtawesomeit3 {
-    color: var(--sys-color-neutral-60, #879BAB);
-    font-family: Pretendard;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 18px */
-    text-align: start;
-    margin-top: 20%;
-    margin-left: -53%;
-    letter-spacing: 1px; /* 원하는 값으로 조절하세요 */
-    white-space: nowrap;
-    margin-top: 13%;
-}
-
-/* 오른쪽 상자*/
-.tb2 {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 396px;
-    height: 120px;
-}
 
 /* aidle app css*/
 #aidleapp {
