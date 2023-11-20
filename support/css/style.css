@@ -301,21 +301,12 @@ span {
   border: 1px solid #FFFFFF;
   border-radius: 10px;
 }
-#filter option {
-    font-weight: normal;
-    display: block;
-    min-height: 1.2em;
-    padding-right: 12px;
-    white-space: nowrap;
-    color: #A5B4C0;
-}
 
 #search {
-  width:70%;
+  width:60%;
   height: 30%;
   padding-top: 12px;
   padding-bottom: 12px;
-
   border: 1px solid #FFFFFF;
   border-radius: 10px;
 }
@@ -325,8 +316,7 @@ span {
   background: none;
   border: none;
   cursor: pointer;
-
-  margin-left: 60%;
+  margin-left: 53%;
   margin-top: 12px;
 }
 
