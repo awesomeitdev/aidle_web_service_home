@@ -43,7 +43,7 @@
   }
   .header .header-inner .header-menu .header-nav-list .header-nav-item-link-text {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 500;
     position: relative;
     color: #fff;
     line-height: 24px;
@@ -113,6 +113,13 @@
   .header .header-inner .header-menu .header-nav-list .show_list {
     max-height: 350px;
   }
+
+h1 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
 #search_area {
     display: flex;
     justify-content: center;
@@ -164,7 +171,7 @@ body {
 
 #sidebar ul li {
     color: var(--sys-color-neutral-20, #2D3439); 
-    font-size: 12px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 27px */
