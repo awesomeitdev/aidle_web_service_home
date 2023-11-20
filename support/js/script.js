@@ -1,4 +1,4 @@
-ocument.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function(){
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector(".button");
