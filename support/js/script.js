@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
+ocument.addEventListener('DOMContentLoaded', function(){
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
@@ -6,7 +6,21 @@ document.addEventListener('DOMContentLoaded', function(){
         const menuItem = document.querySelector(`#${id}`);
 
         if (menuItem) {
-            menuItem.click(); // 해당 메뉴 아이템 클릭 이벤트 발생
+            // 기존에 active 클래스를 가진 아이템에서 active 클래스 제거
+            const activeItem = document.querySelector('#sidebar ul li.active');
+            if (activeItem) {
+                activeItem.classList.remove('active');
+            }
+
+            // 쿼리 파라미터에 해당하는 아이템에 active 클래스 추가
+            menuItem.classList.add('active');
+
+            // 해당 메뉴의 컨텐츠 보이기
+            const target = menuItem.getAttribute('data-target');
+            document.querySelectorAll('#content .content-item').forEach(item => {
+                item.style.display = 'none';
+            });
+            document.querySelector(`#${target}`).style.display = 'block';
         }
     }
 });
@@ -35,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector(".button");
