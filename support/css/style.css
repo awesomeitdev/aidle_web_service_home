@@ -114,12 +114,6 @@
     max-height: 350px;
   }
 
-h1 {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-}
-
 #search_area {
     display: flex;
     justify-content: center;
