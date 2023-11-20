@@ -39,6 +39,7 @@ button{border: 0;}
 .line { 
     border-top: 1px solid var(--sys-color-neutral-90, #E6EBEF);
     background: #FFF;
+    margin-top:100px;
 }
 .fl{float: left;}
 .fr{float: right;}
