@@ -532,27 +532,4 @@ document.querySelectorAll('#sidebar ul li').forEach(item => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const button = document.querySelector(".button");
-    const buttonList = document.querySelector(".button_list");
-
-    button.addEventListener("click", function () {
-        buttonList.classList.toggle("show_list");
-    });
-});
-
-window.addEventListener('scroll', function() {
-    var scrollPosition = window.scrollY;
-    var threshold = 10; // Adjust this value based on when you want the change to happen
-
-    var searchArea = document.getElementById('search_area');
-
-    if (scrollPosition > threshold) {
-        // After scrolling past the threshold, hide search area
-        searchArea.classList.add('hidden');
-    } else {
-        // Before reaching the threshold, show search area
-        searchArea.classList.remove('hidden');
-    }
-});
 
