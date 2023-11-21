@@ -191,7 +191,7 @@ body {
 #sidebar ul li.active {
     background-color: #EBEBFF;
     color: #7070FF;
-    width: 70%;
+    width: 50%;
     border-radius: 8px;
     font-weight: bold;
     padding: 12px 16px;
