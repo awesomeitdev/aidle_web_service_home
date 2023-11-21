@@ -157,8 +157,8 @@ body {
 #section2 .container > .left_content,
 #section4 .container > .left_content,
 #section6 .container > .left_content {
-  width: 50%;
-  margin-bottom: 30%;
+  
+  margin-bottom: 20%;
 }
 #section2 .container > .left_content #text1,
 #section4 .container > .left_content #text1,
@@ -171,14 +171,14 @@ body {
 #section2 .container > .left_content #text2,
 #section4 .container > .left_content #text2,
 #section6 .container > .left_content #text2 {
-  font-size: 2.5vw;
+  font-size: 2vw;
   font-weight: bold;
   text-align: left;
 }
 #section2 .container > .left_content #text3,
 #section4 .container > .left_content #text3,
 #section6 .container > .left_content #text3 {
-  font-size: 2.5vw;
+  font-size: 2vw;
   font-weight: bold;
   text-align: left;
   padding-bottom: 5%;
@@ -208,13 +208,14 @@ body {
 #section2 .container > .right_content,
 #section4 .container > .right_content,
 #section6 .container > .right_content {
-  width: 50%;
-  margin-left: 150px;
+ 
 }
 #section2 .container > .right_content img,
 #section4 .container > .right_content img,
 #section6 .container > .right_content img {
-  height: 720px;
+  width: 80%;
+  margin-top: 20%;
+  margin-left: 45%;
 }
 
 #section3 {
