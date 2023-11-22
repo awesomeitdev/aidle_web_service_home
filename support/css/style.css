@@ -645,9 +645,9 @@ align-items: center;
 
 
 
-@media (min-width: 800px) {
+@media (min-width: 1800px) {
   div::before {
-  content: "800px 이상일 때";
+  content: "1800px 이상일 때";
 }
 }
 
