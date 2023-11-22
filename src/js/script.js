@@ -214,6 +214,7 @@ window.addEventListener('scroll', function () {
     const section10 = document.getElementById('section10');
     const section12 = document.getElementById('section12');
     const section13 = document.getElementById('section13');
+    const section14 = document.getElementById('section14');
     const ani_text2 = document.querySelectorAll('.ani_text_2');
     const ani_text2_img = document.querySelector('.ani_text_2_img');
     const ani_text4 = document.querySelectorAll('.ani_text_4');
@@ -229,7 +230,10 @@ window.addEventListener('scroll', function () {
     const ani_text12 = document.querySelectorAll('.ani_text_12');
     const ani_text12_img = document.querySelector('.ani_text_12_img');
     const ani_text13 = document.querySelectorAll('.ani_text_13');
-    const ani_text13_img = document.querySelector('.ani_text_13_img');
+    const ani_text13_img = document.querySelector('.ani_text_13_img');    
+    const ani_text14 = document.querySelectorAll('.ani_text_14');
+    const ani_text14_1_img = document.querySelector('.ani_text_14_1_img');
+    const ani_text14_2_img = document.querySelector('.ani_text_14_2_img');
 
 
 
@@ -248,6 +252,7 @@ window.addEventListener('scroll', function () {
     const section10Position = section10.getBoundingClientRect().top;
     const section12Position = section12.getBoundingClientRect().top;
     const section13Position = section13.getBoundingClientRect().top;
+    const section14Position = section14.getBoundingClientRect().top;
 
     // const section2Position = section2.offsetTop;
     // const section4Position = section4.offsetTop;
@@ -475,6 +480,29 @@ if (section4Position == 0) {
         ani_text13_img.style.opacity = 0;
         ani_text13_img.style.transform = 'translateY(10%)';
     }, 300); 
+}    
+    if (section14Position == 0) {
+        // 조건에 맞으면 애니메이션s
+        ani_text14.forEach((text) => {
+            text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+        });
+       
+     setTimeout(() => {      
+         ani_text14_1_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+         ani_text14_2_img.style.animation = 'slide-down 1s forwards, fade-in 2s forwards';
+         }, 300); 
+         headerText.forEach(text => {
+            text.classList.add('background_white');
+        });
+        logo.src = './public/logo.svg'
+    } else if (section14Position !== 0) {
+        // 페이지 벗어나면 초기화
+        ani_text14.forEach((text) => {
+            text.style.animation = ''; // 애니메이션 속성을 초기화
+            text.style.opacity = 0; // 텍스트가 보이지 않게 설정
+            text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
+        });
+       
     }    
 });
 
