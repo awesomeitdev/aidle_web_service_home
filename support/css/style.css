@@ -644,29 +644,3 @@ align-items: center;
 }
 
 
-
-@media (min-width: 1800px) {
-  div::before {
-  content: "1800px 이상일 때";
-}
-}
-
-@media (max-device-width: 799px) and (min-device-width: 569px) {
-  
-  div::before {
-    content: "799px 이하 569px 이상";
-  }
-}
-
-@media (max-device-width: 468px) and (min-device-width: 381px) {
- ::before {
-    content: "468px 이하 381px 이상";
-  }
-}
-
-@media (max-device-width: 380px) {
-  
-  div::before {
-    content: "380px 이하";
-  }
-}
