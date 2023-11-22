@@ -652,31 +652,20 @@ align-items: center;
 }
 
 @media (max-width: 799px) and (min-width: 569px) {
-  div {
-    background-color: #b97a95;
-    height: 100px;
-  }
+  
   div::before {
     content: "799px 이하 569px 이상";
   }
 }
 
 @media (max-width: 468px) and (min-width: 381px) {
-  div {
-    background-color: #f6ae99;
-    height: 200px;
-  }
-  div::before {
+ ::before {
     content: "468px 이하 381px 이상";
   }
 }
 
 @media (max-width: 380px) {
-  div {
-    background-color: #f2e1c1;
-    color: #716f81;
-    height: 300px;
-  }
+  
   div::before {
     content: "380px 이하";
   }
