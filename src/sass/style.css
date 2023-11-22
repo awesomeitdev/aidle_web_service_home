@@ -1051,3 +1051,31 @@ body {
     transform: translateY(0px);
   }
 }/*# sourceMappingURL=style.css.map */
+
+//반응형 미디어쿼리
+/* 기본 커스텀 */
+body {
+    background-color: #ffffff;
+  }
+    
+  @media (min-width: 800px) { //800px 이상일 때
+  }
+  
+  @media (max-width: 799px) and (min-width: 569px) { //799px 이하 569px 이상
+    body {
+      background-color: #3414e9;
+    }
+ }
+  
+  @media (max-width: 468px) and (min-width: 381px) { //468px 이하 381px 이상
+    body {
+      background-color: #99f69c;
+    }    
+  }
+  
+  @media (max-width: 380px) { //380px 이하
+    div {
+      background-color: #e90734;
+    }
+  }
+
