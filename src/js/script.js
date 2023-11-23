@@ -342,33 +342,34 @@ if (section4Position == 0) {
     }, 300); 
 }
 
-    if (section7Position == 0) {
-        // 조건에 맞으면 애니메이션
-        ani_text7.forEach((text) => {
+if (section7Position == 0) {
+    // 조건에 맞으면 애니메이션
+    ani_text7.forEach((text) => {
+        setTimeout(() => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-        });
+        }, 300);
+    });
+ 
+      ani_text7_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+     
 
-     setTimeout(() => {  
-        ani_text7_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-       }, 300); 
-        headerText.forEach(text => {
-            text.classList.add('background_white');
-        });
-        logo.src = './public/logo.svg'
-    } else if (section7Position !== 0) {
-        // 페이지 벗어나면 초기화
-        ani_text7.forEach((text) => {
-            text.style.animation = ''; // 애니메이션 속성을 초기화
-            text.style.opacity = 0; // 텍스트가 보이지 않게 설정
-            text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
-        });
+    headerText.forEach(text => {
+        text.classList.add('background_white');
+    });
 
-     setTimeout(() => {
+    logo.src = './public/logo.svg';
+} else if (section7Position !== 0) {
+    // 페이지 벗어나면 초기화
+    ani_text7.forEach((text) => {
+        text.style.animation = ''; // 애니메이션 속성을 초기화
+        text.style.opacity = 0; // 텍스트가 보이지 않게 설정
+        text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
+    });
+ 
         ani_text7_img.style.animation = '';
         ani_text7_img.style.opacity = 0;
         ani_text7_img.style.transform = 'translateY(10%)';
-    }, 300); 
-}
+}    
 
     if (section9Position == 0) {
         // 조건에 맞으면 애니메이션
@@ -401,12 +402,14 @@ if (section4Position == 0) {
     if (section10Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text10.forEach((text) => {
-            text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+            setTimeout(() => {
+                text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+            }, 300);
         });
        
-      setTimeout(() => {    
+          
         ani_text10_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-        }, 300); 
+          
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -419,11 +422,10 @@ if (section4Position == 0) {
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
        
-     setTimeout(() => {    
+      
         ani_text10_img.style.animation = '';
         ani_text10_img.style.opacity = 0;
-        ani_text10_img.style.transform = 'translateY(10%)';
-    }, 300); 
+        ani_text10_img.style.transform = 'translateY(10%)'; 
 }
 
     if (section12Position == 0) {
@@ -457,12 +459,13 @@ if (section4Position == 0) {
      if (section13Position == 0) {
         // 조건에 맞으면 애니메이션s
         ani_text13.forEach((text) => {
-            text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+            setTimeout(() => {
+                text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+            }, 300);
         });
-       
-     setTimeout(() => {      
-         ani_text13_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-         }, 300); 
+
+         ani_text13_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards'; 
+
          headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -474,23 +477,24 @@ if (section4Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
-      
-      setTimeout(() => {    
+       
         ani_text13_img.style.animation = '';
         ani_text13_img.style.opacity = 0;
-        ani_text13_img.style.transform = 'translateY(10%)';
-    }, 300); 
+        ani_text13_img.style.transform = 'translateY(10%)'; 
 }    
     if (section14Position == 0) {
         // 조건에 맞으면 애니메이션s
         ani_text14.forEach((text) => {
-            text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+            setTimeout(() => {
+                text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+            }, 400);
         });
-       
-     setTimeout(() => {      
+             
          ani_text14_1_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-         ani_text14_2_img.style.animation = 'slide-down 1s forwards, fade-in 2s forwards';
-         }, 300); 
+         setTimeout(() => {
+            ani_text14_2_img.style.animation = 'slide-down 1s forwards, fade-in 2s forwards'; 
+        }, 200);
+
          headerText.forEach(text => {
             text.classList.add('background_white');
         });
