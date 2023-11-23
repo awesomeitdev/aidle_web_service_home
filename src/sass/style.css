@@ -6,7 +6,7 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-                          
+
 .header {
   width: 100%;
   height: 80px;
@@ -313,7 +313,7 @@ body {
 #section3 .container .text_box {
   width: 100%;
   position: relative;
-  top: 45%;
+  top: 40%;
   left: 35%;
   z-index: 3;
 }
@@ -350,7 +350,7 @@ body {
 #section5 .container .text_box {
   width: 100%;
   position: relative;
-  top: 45%;
+  top: 40%;
   left: 35%;
   z-index: 3;
 }
@@ -511,7 +511,7 @@ body {
 #section8 .container .text_box {
   width: 100%;
   position: relative;
-  top: 45%;
+  top: 40%;
   left: 35%;
   z-index: 3;
 }
@@ -636,7 +636,7 @@ body {
 #section11 .container .text_box {
   width: 100%;
   position: relative;
-  top: 45%;
+  top: 40%;
   left: 35%;
   z-index: 3;
 }
@@ -1051,6 +1051,3 @@ body {
     transform: translateY(0px);
   }
 }/*# sourceMappingURL=style.css.map */
-
-
-
