@@ -48,25 +48,69 @@ body {
   padding: 24px 12px;
 }
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link-text {
-  font-size: 20px;
-  font-weight: 800;
-  position: relative;
-  color: #fff;
-  line-height: 24px;
+    color: var(--sys-color-on-primary, #FFF);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    position: relative; /* 상대 위치 설정 */
+    display: inline-block; 
+    vertical-align: bottom;
 }
-.header .header-inner .header-menu .header-nav-list .header-nav-item-link-text:hover {
-  color: #7070FF;
-  text-decoration: underline;
+
+.header .header-inner .header-menu .header-nav-list .header-nav-item-link-text::after {
+    content: "";
+    position: absolute; /* 절대 위치 설정 */
+    bottom: -2px; /* 라인 위치 조정 */
+    left: 0; /* 왼쪽 정렬 */
+    width: 100%; /* 가로 길이 100% */
+    height: 2px; /* 선의 높이 */
+    background-color: rgb(255, 255, 255); /* 라인 색상 */
+    transform: scaleX(0); /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
+    transition: transform 0.3s ease-in-out; /* 애니메이션 효과 추가 */
 }
+
+.header .header-inner .header-menu .header-nav-list .header-nav-item-link-text:hover::after {
+    transform: scaleX(1); /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
+}
+
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white {
-  color: #2D3439;
-  font-weight: 800;
+    color: var(--sys-color-on-primary, #2D3439);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    position: relative; /* 상대 위치 설정 */
+    display: inline-block; 
+    vertical-align: bottom;
+       
 }
-.header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white:hover {
-  color: #7070FF;
-  text-decoration: underline;
+.header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white::after{
+    content: "";
+    position: absolute; /* 절대 위치 설정 */
+    bottom: -2px; /* 라인 위치 조정 */
+    left: 0; /* 왼쪽 정렬 */
+    width: 100%; /* 가로 길이 100% */
+    height: 2px; /* 선의 높이 */
+    background-color: #2D3439; /* 라인 색상 */
+    transform: scaleX(0); /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
+    transition: transform 0.3s ease-in-out; /* 애니메이션 효과 추가 */ 
 }
-.header .header-inner .header-menu .header-nav-list .button {
+.header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white:hover::after {
+    transform: scaleX(1); /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
+}
+
+.header .header-inner .appdown { 
+display: flex;
+justify-content: center; 
+
+}
+
+.header .header-inner .button {
   cursor: pointer;
   width: 160px;
   height: 51px;
@@ -77,17 +121,16 @@ body {
   align-items: center;
   justify-content: center;
 }
-.header .header-inner .header-menu .header-nav-list .button .button_text {
+.header .header-inner .button .button_text {
   font-size: 18px;
   color: white;
   font-weight: 800;
   position: relative;
 }
-.header .header-inner .header-menu .header-nav-list .button_list {
-  position: absolute;
-  top: 120%;
-  left: 0;
-  width: 100%;
+.header .header-inner .button_list { 
+  position:absolute ;
+  top: 120%; 
+  width: 10%; 
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
@@ -96,13 +139,13 @@ body {
   box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.10);
   z-index: 1;
 }
-.header .header-inner .header-menu .header-nav-list .button_list .button_list_text {
+.header .header-inner .button_list .button_list_text {
   color: #2D3439;
-  font-weight: 500;
+  font-weight: 900;
   font-size: 16px;
   padding: 10px;
 }
-.header .header-inner .header-menu .header-nav-list .button_list .button_list_btn {
+.header .header-inner .button_list .button_list_btn {
   background-color: #EBEBFF;
   display: block;
   width: 160px;
@@ -110,16 +153,111 @@ body {
   border: 1px solid #EBEBFF;
   border-radius: 12px;
 }
-.header .header-inner .header-menu .header-nav-list .button_list .button_list_btn .btn_text {
+.header .header-inner .button_list .button_list_btn .btn_text {
   color: #7070FF;
   font-weight: 700;
   font-size: 16px;
   text-align: center;
   padding: 5px;
 }
-.header .header-inner .header-menu .header-nav-list .show_list {
+.header .header-inner .show_list {
   max-height: 270px;
 }
+
+@media (max-device-width: 468px) and (min-device-width: 381px) {
+    .header {
+        width: 100%;
+        height: 80px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999; /* 수정 */
+        background-color: transparent; /* 추가 */
+      }
+      
+    .header .header-inner {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        max-width: 468px;
+        flex-direction: row; 
+    }
+    .header .header-inner .header-title {
+        order: 1;
+        visibility: visible;
+    }
+    .header .header-inner .header-menu {
+        order: 3;
+        width: 100%;
+        display: none;
+    }
+
+    .header-menu .header-nav-list {
+        flex-direction: column; 
+      }
+ 
+    .header .header-inner .appdown {
+        order: 2;
+        width: 100%;
+    }
+    .header .header-inner .hamburger-menu {
+        display: block;
+        order: 4;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('../../public/images/hamburger-icon.png');
+        background-size: contain;
+    }
+    .header .header-inner .hamburger-menu.active {
+        background-image: url('../../public/images/close-icon.png');
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -20;
+    }
+    .overlay.active {
+        display: block;
+    }
+    .header.active {
+        background-color: #FFF;
+    }
+    .navigation-bar {
+        display: none;
+        position: fixed;
+        top: 80px;
+        width: 100%;
+        height: 50%; /* 추가 */
+        transition: top 0.3s ease-in-out; /* 수정 */
+        background-color: #FFF;
+        transition: all 0.3s ease-in-out;
+        z-index: 40; /* 수정 */
+    }
+    .navigation-bar.active {
+        display: block;
+        top: 80px; /* 추가 */
+    }
+
+    #section3 .overlay {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0);
+        z-index: 1;
+        transition: background-color 0.5s ease;
+      }
+}
+
+
+
 
 .section {
   width: 100vw;

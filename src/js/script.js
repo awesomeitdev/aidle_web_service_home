@@ -2,6 +2,23 @@
 let currentSection = 1;
 let isImageChanged = false;
 let scrollCount = 0;
+let touchStart = 0;
+let touchEnd = 0;
+
+window.addEventListener('touchstart', function(event) {
+    touchStart = event.changedTouches[0].screenY;
+}, false);
+
+window.addEventListener('touchend', function(event) {
+    touchEnd = event.changedTouches[0].screenY;
+    handleTouchMove();
+}, false); 
+
+function handleTouchMove() {
+    const deltaY = touchEnd - touchStart;
+    const event = {deltaY: deltaY};
+    handleScroll(event);
+}
 
 // 윈도우 기본 휠이벤트 삭제
 window.addEventListener("wheel", function (e) {
@@ -11,8 +28,12 @@ window.addEventListener("wheel", function (e) {
 var wheelTimer = new Date().getTime()
 
 // 휠이벤트시 동작
-window.addEventListener('wheel', (event) => {
+window.addEventListener('wheel', handleScroll, false);
+
+function handleScroll(event) {
     const current = new Date().getTime()
+    const hamburgerMenu = document.querySelector('.hamburger-menu');    
+    const section1 = document.getElementById('section1');
     if(current - wheelTimer<500)
     {
         return
@@ -49,7 +70,7 @@ window.addEventListener('wheel', (event) => {
                 text.classList.add('background_white');
             });
             logo.src = './public/logo.svg'
-
+            hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon-d.png')";
         } else if (currentSection == 3 && scrollCount < 1) { //3번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
@@ -75,6 +96,7 @@ window.addEventListener('wheel', (event) => {
                 text.classList.remove('background_white');
             });
             logo.src = './public/logo_white.svg'
+            hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
             // overlay 효과주기
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
             // scrollCount2 증가 시키고 다음 코드
@@ -152,13 +174,14 @@ window.addEventListener('wheel', (event) => {
     } else if (event.deltaY < 0) { //휠 위로
         if (isImageChanged && currentSection == 1) {
             // 조건에 맞으면 배경이미지 변경
-            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')"; 
             isImageChanged = false;
             // 헤더와 로고 변경
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
             logo.src = './public/logo_white.svg'
+            hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
         } else if (currentSection > 1) {
             // 페이지 벗어날시 초기값 세팅
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
@@ -190,7 +213,7 @@ window.addEventListener('wheel', (event) => {
             scrollToSection(currentSection);
         }
     }
-})
+}
 
 // 스크롤 효과
 function scrollToSection(section) {
@@ -510,7 +533,7 @@ if (section7Position == 0) {
     }    
 });
 
-// 헤더버튼 효과
+/*/ 헤더버튼 효과
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector('.button');
     const buttonList = document.querySelector('.button_list')
@@ -519,6 +542,65 @@ document.addEventListener("DOMContentLoaded", function () {
         buttonList.classList.toggle('show_list');
     })
 })
+*/
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector('.button');
+    const buttonList = document.querySelector('.button_list');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const overlay = document.querySelector('.overlay');
+    const header = document.querySelector('.header');
+    const headerInner = document.querySelector('.header .header-inner');
+    const navigationBar = document.querySelector('.navigation-bar');
+    const headerText = document.querySelectorAll(".header-nav-item-link-text");
+    const logo = document.querySelector('.header-title img');
+    const headerMenu = document.querySelector('.header-menu');
+
+    button.addEventListener('click', function () {
+        buttonList.classList.toggle('show_list');
+    });
+
+    hamburgerMenu.addEventListener('click', function () {
+        hamburgerMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        header.classList.toggle('active');
+        navigationBar.classList.toggle('active');
+        
+        if (hamburgerMenu.classList.contains('active')) {
+            // 햄버거 버튼이 활성화되어 있을 때
+            headerInner.style.backgroundColor = '#fff';
+            hamburgerMenu.style.backgroundImage = "url('../../public/images/close-icon.png')";
+            headerMenu.style.display = 'block';
+        } else {
+            // 햄버거 버튼이 비활성화되어 있을 때
+            headerInner.style.backgroundColor = 'transparent';
+            hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
+            headerMenu.style.display = 'none';
+        }
+        // 로고 및 메뉴명 상시 변경 없음
+        logo.src = './public/logo.svg';
+        headerText.forEach(text => {
+            text.style.color = '#2D3439';
+        });
+    });
+
+    overlay.addEventListener('click', function () {
+        hamburgerMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        header.classList.remove('active');
+        navigationBar.classList.remove('active');
+        hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
+        headerInner.style.backgroundColor = 'transparent';
+        headerMenu.style.display = 'none';
+        // 로고 및 메뉴명 상시 변경 없음
+        logo.src = './public/logo.svg';
+        headerText.forEach(text => {
+            text.style.color = '#2D3439';
+        });
+    });
+});
+
+
+
 
 // 새로고침 시 페이지의 가장 위로 이동
 window.addEventListener('beforeunload', () => {
