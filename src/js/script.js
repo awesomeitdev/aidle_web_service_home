@@ -572,11 +572,13 @@ document.addEventListener("DOMContentLoaded", function () {
             headerInner.style.backgroundColor = '#fff';
             hamburgerMenu.style.backgroundImage = "url('../../public/images/close-icon.png')";
             headerMenu.style.display = 'block';
+            overlay.style.display = "block"
         } else {
             // 햄버거 버튼이 비활성화되어 있을 때
             headerInner.style.backgroundColor = 'transparent';
             hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
             headerMenu.style.display = 'none';
+            overlay.style.display = "none"
         }
         // 로고 및 메뉴명 상시 변경 없음
         logo.src = './public/logo.svg';
