@@ -76,7 +76,9 @@ function handleScroll(event) {
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
-            logo.src = './public/logo_white.svg'
+            if(!header.classList.contains('active')){
+                logo.src = './public/logo_white.svg';
+            }
             // overlay 효과주기
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
             // scrollCount 증가 시키고 다음 코드
@@ -547,7 +549,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector('.button');
     const buttonList = document.querySelector('.button_list');
     const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const overlay = document.querySelector('.overlay');
+    const overlay = document.querySelector('.header .header-inner .overlay');
     const header = document.querySelector('.header');
     const headerInner = document.querySelector('.header .header-inner');
     const navigationBar = document.querySelector('.navigation-bar');

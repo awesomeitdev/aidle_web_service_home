@@ -214,7 +214,7 @@ justify-content: center;
     .header .header-inner .hamburger-menu.active {
         background-image: url('../../public/images/close-icon.png');
     }
-    .overlay {
+    .header .header-inner .overlay {
         display: none;
         position: fixed;
         top: 0;
