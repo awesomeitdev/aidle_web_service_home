@@ -5,18 +5,18 @@ let scrollCount = 0;
 let touchStart = 0;
 let touchEnd = 0;
 
-window.addEventListener('touchstart', function(event) {
+window.addEventListener('touchstart', function (event) {
     touchStart = event.changedTouches[0].screenY;
 }, false);
 
-window.addEventListener('touchend', function(event) {
+window.addEventListener('touchend', function (event) {
     touchEnd = event.changedTouches[0].screenY;
     handleTouchMove();
-}, false); 
+}, false);
 
 function handleTouchMove() {
     const deltaY = touchEnd - touchStart;
-    const event = {deltaY: deltaY};
+    const event = { deltaY: deltaY };
     handleScroll(event);
 }
 
@@ -32,10 +32,9 @@ window.addEventListener('wheel', handleScroll, false);
 
 function handleScroll(event) {
     const current = new Date().getTime()
-    const hamburgerMenu = document.querySelector('.hamburger-menu');    
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
     const section1 = document.getElementById('section1');
-    if(current - wheelTimer<500)
-    {
+    if (current - wheelTimer < 500) {
         return
     }
 
@@ -54,7 +53,7 @@ function handleScroll(event) {
     const overlay5 = document.querySelector('#section5 .overlay');
     const section5_move_text1 = document.getElementById('section5_move_text1');
     const section5_move_text2 = document.getElementById('section5_move_text2');
-    const overlay14= document.querySelector('#section11 .overlay');
+    const overlay14 = document.querySelector('#section11 .overlay');
     const section14_move_text1 = document.getElementById('section11_move_text1');
     const section14_move_text2 = document.getElementById('section11_move_text2');
 
@@ -76,9 +75,9 @@ function handleScroll(event) {
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
-            if(!header.classList.contains('active')){
+            if (!header.classList.contains('active')) {
                 logo.src = './public/logo_white.svg';
-            }           
+            }
             // overlay 효과주기
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
             // scrollCount 증가 시키고 다음 코드
@@ -86,12 +85,12 @@ function handleScroll(event) {
 
             if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
                 section3_move_text1.style.animation = 'slide-up 1s forwards';
-                section3_move_text1.style.opacity = 1; 
+                section3_move_text1.style.opacity = 1;
                 setTimeout(() => {
                     section3_move_text2.style.animation = 'slide-up 1s forwards';
                     section3_move_text2.style.opacity = 1;
-                }, 500); 
-            } 
+                }, 500);
+            }
         } else if (currentSection == 5 && scrollCount < 1) { //5번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
@@ -107,9 +106,9 @@ function handleScroll(event) {
                 section5_move_text1.style.animation = 'slide-up 1s forwards';
                 section5_move_text1.style.opacity = 1;
                 setTimeout(() => {
-                section5_move_text2.style.animation = 'slide-up 1s forwards';
-                section5_move_text2.style.opacity = 1;
-                 }, 500); 
+                    section5_move_text2.style.animation = 'slide-up 1s forwards';
+                    section5_move_text2.style.opacity = 1;
+                }, 500);
             }
         } else if (currentSection == 8 && scrollCount < 1) { //8번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
@@ -124,13 +123,13 @@ function handleScroll(event) {
 
             if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
                 section8_move_text1.style.animation = 'slide-up 1s forwards';
-                section8_move_text1.style.opacity = 1;  
+                section8_move_text1.style.opacity = 1;
                 setTimeout(() => {
                     section8_move_text2.style.animation = 'slide-up 1s forwards';
-                section8_move_text2.style.opacity = 1;
-                 }, 500); 
+                    section8_move_text2.style.opacity = 1;
+                }, 500);
             }
-        }else if (currentSection == 11 && scrollCount < 1) { //11번째 섹션
+        } else if (currentSection == 11 && scrollCount < 1) { //11번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
                 text.classList.remove('background_white');
@@ -142,13 +141,13 @@ function handleScroll(event) {
             scrollCount++;
             if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
                 section11_move_text1.style.animation = 'slide-up 1s forwards';
-                section11_move_text1.style.opacity = 1; 
+                section11_move_text1.style.opacity = 1;
                 setTimeout(() => {
-                section11_move_text2.style.animation = 'slide-up 1s forwards';
-                section11_move_text2.style.opacity = 1;
-            }, 500); 
+                    section11_move_text2.style.animation = 'slide-up 1s forwards';
+                    section11_move_text2.style.opacity = 1;
+                }, 500);
             }
-        }else if (currentSection == 14 && scrollCount < 1) { //11번째 섹션
+        } else if (currentSection == 14 && scrollCount < 1) { //11번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
                 text.classList.remove('text');
@@ -160,13 +159,13 @@ function handleScroll(event) {
             scrollCount++;
             if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
                 section14_move_text1.style.animation = 'slide-up 1s forwards';
-                section14_move_text1.style.opacity = 1; 
+                section14_move_text1.style.opacity = 1;
                 setTimeout(() => {
-                section14_move_text2.style.animation = 'slide-up 1s forwards';
-                section14_move_text2.style.opacity = 1;
-            }, 500); 
-            } 
-        }else if (currentSection < 15) {
+                    section14_move_text2.style.animation = 'slide-up 1s forwards';
+                    section14_move_text2.style.opacity = 1;
+                }, 500);
+            }
+        } else if (currentSection < 15) {
             // 조건이 맞으면 다음페이지
             currentSection++;
             // scrollCount 초기화
@@ -176,13 +175,16 @@ function handleScroll(event) {
     } else if (event.deltaY < 0) { //휠 위로
         if (isImageChanged && currentSection == 1) {
             // 조건에 맞으면 배경이미지 변경
-            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')"; 
+            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
             isImageChanged = false;
             // 헤더와 로고 변경
+            if (!header.classList.contains('active')) {
+                logo.src = './public/logo_white.svg';
+            }
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
-            logo.src = './public/logo_white.svg'
+
             hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
         } else if (currentSection > 1) {
             // 페이지 벗어날시 초기값 세팅
@@ -210,7 +212,7 @@ function handleScroll(event) {
             section11_move_text1.style.opacity = 0;
             section11_move_text2.style.animation = '';
             section11_move_text2.style.opacity = 0;
-            
+
             currentSection--;
             scrollToSection(currentSection);
         }
@@ -255,7 +257,7 @@ window.addEventListener('scroll', function () {
     const ani_text12 = document.querySelectorAll('.ani_text_12');
     const ani_text12_img = document.querySelector('.ani_text_12_img');
     const ani_text13 = document.querySelectorAll('.ani_text_13');
-    const ani_text13_img = document.querySelector('.ani_text_13_img');    
+    const ani_text13_img = document.querySelector('.ani_text_13_img');
     const ani_text14 = document.querySelectorAll('.ani_text_14');
     const ani_text14_1_img = document.querySelector('.ani_text_14_1_img');
     const ani_text14_2_img = document.querySelector('.ani_text_14_2_img');
@@ -289,10 +291,10 @@ window.addEventListener('scroll', function () {
         });
 
         setTimeout(() => {
-        ani_text2_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';        
-       }, 300); 
-        
-            headerText.forEach(text => {
+            ani_text2_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+        }, 300);
+
+        headerText.forEach(text => {
             text.classList.add('background_white');
         });
         logo.src = './public/logo.svg'
@@ -304,51 +306,51 @@ window.addEventListener('scroll', function () {
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         })
 
-     setTimeout(() => {
-        ani_text2_img.style.animation = '';
-        ani_text2_img.style.opacity = 0;
-        ani_text2_img.style.transform = 'translateY(10%)';
+        setTimeout(() => {
+            ani_text2_img.style.animation = '';
+            ani_text2_img.style.opacity = 0;
+            ani_text2_img.style.transform = 'translateY(10%)';
         }, 300);
     }
-if (section4Position == 0) {
-    // 조건에 맞으면 애니메이션
-    ani_text4.forEach((text) => {
-        text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-    });
+    if (section4Position == 0) {
+        // 조건에 맞으면 애니메이션
+        ani_text4.forEach((text) => {
+            text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+        });
 
-    setTimeout(() => {
-        ani_text4_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-    }, 300); // 500밀리초(0.5초) 후에 이미지 애니메이션 시작
+        setTimeout(() => {
+            ani_text4_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+        }, 300); // 500밀리초(0.5초) 후에 이미지 애니메이션 시작
 
-    headerText.forEach(text => {
-        text.classList.add('background_white');
-    });
+        headerText.forEach(text => {
+            text.classList.add('background_white');
+        });
 
-    logo.src = './public/logo.svg'
-} else if (section4Position !== 0) {
-    // 페이지 벗어나면 초기화
-    ani_text4.forEach((text) => {
-        text.style.animation = ''; // 애니메이션 속성을 초기화
-        text.style.opacity = 0; // 텍스트가 보이지 않게 설정
-        text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
-    });
+        logo.src = './public/logo.svg'
+    } else if (section4Position !== 0) {
+        // 페이지 벗어나면 초기화
+        ani_text4.forEach((text) => {
+            text.style.animation = ''; // 애니메이션 속성을 초기화
+            text.style.opacity = 0; // 텍스트가 보이지 않게 설정
+            text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
+        });
 
-    setTimeout(() => {
-        ani_text4_img.style.animation = '';
-        ani_text4_img.style.opacity = 0;
-        ani_text4_img.style.transform = 'translateY(10%)';
-    }, 300); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
-}
+        setTimeout(() => {
+            ani_text4_img.style.animation = '';
+            ani_text4_img.style.opacity = 0;
+            ani_text4_img.style.transform = 'translateY(10%)';
+        }, 300); // 500밀리초(0.5초) 후에 이미지 스타일 초기화
+    }
     if (section6Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text6.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-       
-     setTimeout(() => {   
-        ani_text6_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-      }, 300); 
-         headerText.forEach(text => {
+
+        setTimeout(() => {
+            ani_text6_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+        }, 300);
+        headerText.forEach(text => {
             text.classList.add('background_white');
         });
         logo.src = './public/logo.svg'
@@ -360,51 +362,51 @@ if (section4Position == 0) {
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
 
-    setTimeout(() => {
-        ani_text6_img.style.animation = '';
-        ani_text6_img.style.opacity = 0;
-        ani_text6_img.style.transform = 'translateY(10%)';
-    }, 300); 
-}
-
-if (section7Position == 0) {
-    // 조건에 맞으면 애니메이션
-    ani_text7.forEach((text) => {
         setTimeout(() => {
-            text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+            ani_text6_img.style.animation = '';
+            ani_text6_img.style.opacity = 0;
+            ani_text6_img.style.transform = 'translateY(10%)';
         }, 300);
-    });
- 
-      ani_text7_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-     
+    }
 
-    headerText.forEach(text => {
-        text.classList.add('background_white');
-    });
+    if (section7Position == 0) {
+        // 조건에 맞으면 애니메이션
+        ani_text7.forEach((text) => {
+            setTimeout(() => {
+                text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+            }, 300);
+        });
 
-    logo.src = './public/logo.svg';
-} else if (section7Position !== 0) {
-    // 페이지 벗어나면 초기화
-    ani_text7.forEach((text) => {
-        text.style.animation = ''; // 애니메이션 속성을 초기화
-        text.style.opacity = 0; // 텍스트가 보이지 않게 설정
-        text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
-    });
- 
+        ani_text7_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+
+
+        headerText.forEach(text => {
+            text.classList.add('background_white');
+        });
+
+        logo.src = './public/logo.svg';
+    } else if (section7Position !== 0) {
+        // 페이지 벗어나면 초기화
+        ani_text7.forEach((text) => {
+            text.style.animation = ''; // 애니메이션 속성을 초기화
+            text.style.opacity = 0; // 텍스트가 보이지 않게 설정
+            text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
+        });
+
         ani_text7_img.style.animation = '';
         ani_text7_img.style.opacity = 0;
         ani_text7_img.style.transform = 'translateY(10%)';
-}    
+    }
 
     if (section9Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text9.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-       
-     setTimeout(() => {     
-        ani_text9_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-         }, 300); 
+
+        setTimeout(() => {
+            ani_text9_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+        }, 300);
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -416,13 +418,13 @@ if (section7Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
-        
-     setTimeout(() => {    
-        ani_text9_img.style.animation = '';
-        ani_text9_img.style.opacity = 0;
-        ani_text9_img.style.transform = 'translateY(10%)';
-    }, 300); 
-}
+
+        setTimeout(() => {
+            ani_text9_img.style.animation = '';
+            ani_text9_img.style.opacity = 0;
+            ani_text9_img.style.transform = 'translateY(10%)';
+        }, 300);
+    }
 
     if (section10Position == 0) {
         // 조건에 맞으면 애니메이션
@@ -431,10 +433,10 @@ if (section7Position == 0) {
                 text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
             }, 300);
         });
-       
-          
+
+
         ani_text10_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-          
+
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -446,22 +448,22 @@ if (section7Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
-       
-      
+
+
         ani_text10_img.style.animation = '';
         ani_text10_img.style.opacity = 0;
-        ani_text10_img.style.transform = 'translateY(10%)'; 
-}
+        ani_text10_img.style.transform = 'translateY(10%)';
+    }
 
     if (section12Position == 0) {
         // 조건에 맞으면 애니메이션
         ani_text12.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
         });
-     
-    setTimeout(() => {      
-        ani_text12_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-        }, 300); 
+
+        setTimeout(() => {
+            ani_text12_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+        }, 300);
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
@@ -473,15 +475,15 @@ if (section7Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
-      
-     setTimeout(() => {    
-        ani_text12_img.style.animation = '';
-        ani_text12_img.style.opacity = 0;
-        ani_text12_img.style.transform = 'translateY(10%)';
-    }, 300); 
-}
 
-     if (section13Position == 0) {
+        setTimeout(() => {
+            ani_text12_img.style.animation = '';
+            ani_text12_img.style.opacity = 0;
+            ani_text12_img.style.transform = 'translateY(10%)';
+        }, 300);
+    }
+
+    if (section13Position == 0) {
         // 조건에 맞으면 애니메이션s
         ani_text13.forEach((text) => {
             setTimeout(() => {
@@ -489,9 +491,9 @@ if (section7Position == 0) {
             }, 300);
         });
 
-         ani_text13_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards'; 
+        ani_text13_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
 
-         headerText.forEach(text => {
+        headerText.forEach(text => {
             text.classList.add('background_white');
         });
         logo.src = './public/logo.svg'
@@ -502,11 +504,11 @@ if (section7Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
-       
+
         ani_text13_img.style.animation = '';
         ani_text13_img.style.opacity = 0;
-        ani_text13_img.style.transform = 'translateY(10%)'; 
-}    
+        ani_text13_img.style.transform = 'translateY(10%)';
+    }
     if (section14Position == 0) {
         // 조건에 맞으면 애니메이션s
         ani_text14.forEach((text) => {
@@ -514,13 +516,13 @@ if (section7Position == 0) {
                 text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
             }, 400);
         });
-             
-         ani_text14_1_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
-         setTimeout(() => {
-            ani_text14_2_img.style.animation = 'slide-down 1s forwards, fade-in 2s forwards'; 
+
+        ani_text14_1_img.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
+        setTimeout(() => {
+            ani_text14_2_img.style.animation = 'slide-down 1s forwards, fade-in 2s forwards';
         }, 200);
 
-         headerText.forEach(text => {
+        headerText.forEach(text => {
             text.classList.add('background_white');
         });
         logo.src = './public/logo.svg'
@@ -531,8 +533,8 @@ if (section7Position == 0) {
             text.style.opacity = 0; // 텍스트가 보이지 않게 설정
             text.style.transform = 'translateY(10%)'; // 텍스트가 아래에 위치하게 설정
         });
-       
-    }    
+
+    }
 });
 
 /*/ 헤더버튼 효과
@@ -566,7 +568,7 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.classList.toggle('active');
         header.classList.toggle('active');
         navigationBar.classList.toggle('active');
-        
+
         if (hamburgerMenu.classList.contains('active')) {
             // 햄버거 버튼이 활성화되어 있을 때
             headerInner.style.backgroundColor = '#fff';
@@ -590,6 +592,7 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.addEventListener('click', function () {
         hamburgerMenu.classList.remove('active');
         overlay.classList.remove('active');
+        overlay.style.display = "none"
         header.classList.remove('active');
         navigationBar.classList.remove('active');
         hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
@@ -651,3 +654,20 @@ document.querySelectorAll('#sidebar ul li').forEach(item => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    function updateSectionBackground() {
+        if (window.innerWidth >= 468) {
+            console.log(window.innerWidth);
+            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
+        } else if (window.innerWidth < 468) {
+            console.log(window.innerWidth);
+            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+        }
+    }
+
+    // 페이지 로드 시 초기화
+    updateSectionBackground();
+
+    // 화면 크기가 변경될 때마다 업데이트
+    window.addEventListener("resize", updateSectionBackground);
+});
