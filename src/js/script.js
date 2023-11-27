@@ -76,7 +76,9 @@ function handleScroll(event) {
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
-            logo.src = './public/logo_white.svg'
+            if(!header.classList.contains('active')){
+                logo.src = './public/logo_white.svg';
+            }           
             // overlay 효과주기
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
             // scrollCount 증가 시키고 다음 코드
