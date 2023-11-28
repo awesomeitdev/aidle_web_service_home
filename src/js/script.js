@@ -62,7 +62,7 @@ function handleScroll(event) {
         if (currentSection == 1 && !isImageChanged) { //첫번째 섹션
             // 조건이 맞으면 backgroundImage변경
             document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
-
+  /*
             if ((window.innerWidth - 150) >= 468) {
                 console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
@@ -70,7 +70,7 @@ function handleScroll(event) {
                 console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
             }
-
+*/
             isImageChanged = true;
 
             // 헤더 텍스트와 로고 변경
@@ -184,7 +184,7 @@ function handleScroll(event) {
     } else if (event.deltaY < 0) { //휠 위로
         if (isImageChanged && currentSection == 1) {
             // 조건에 맞으면 배경이미지 변경
-            // document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+         document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
             isImageChanged = false;
             // 헤더와 로고 변경
             if (!header.classList.contains('active')) {
@@ -193,7 +193,7 @@ function handleScroll(event) {
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
-
+/*
             if ((window.innerWidth - 150) >= 468) {
                 console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
@@ -201,7 +201,7 @@ function handleScroll(event) {
                 console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
             }
-
+*/
             hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
         } else if (currentSection > 1) {
             // 페이지 벗어날시 초기값 세팅
