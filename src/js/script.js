@@ -184,7 +184,7 @@ function handleScroll(event) {
     } else if (event.deltaY < 0) { //휠 위로
         if (isImageChanged && currentSection == 1) {
             // 조건에 맞으면 배경이미지 변경
-            // document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+         document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
             isImageChanged = false;
             // 헤더와 로고 변경
             if (!header.classList.contains('active')) {
