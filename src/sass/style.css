@@ -172,6 +172,16 @@ body {
   font-size: 16px;
   text-align: center;
   padding: 5px;
+  cursor: pointer;
+}
+
+.header .header-inner .button_list .button_list_btn .btn_text a {
+  color: #7070FF;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .header .header-inner .show_list {
