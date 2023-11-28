@@ -63,13 +63,13 @@ function handleScroll(event) {
             // 조건이 맞으면 backgroundImage변경
             document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
 
-            if ((window.innerWidth - 150) >= 468) {
+           /*  if ((window.innerWidth - 150) >= 468) {
                 console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
             } else if ((window.innerWidth - 150) < 468) {
                 console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
-            }
+            } */
 
             isImageChanged = true;
 
@@ -194,13 +194,13 @@ function handleScroll(event) {
                 text.classList.remove('background_white');
             });
 
-            if ((window.innerWidth - 150) >= 468) {
+           /*  if ((window.innerWidth - 150) >= 468) {
                 console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
             } else if ((window.innerWidth - 150) < 468) {
                 console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
-            }
+            } */
 
             hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
         } else if (currentSection > 1) {
@@ -673,13 +673,13 @@ document.querySelectorAll('#sidebar ul li').forEach(item => {
 
 document.addEventListener("DOMContentLoaded", function () {
     function updateSectionBackground() {
-        if ((window.innerWidth - 150) >= 468) {
+      /*   if ((window.innerWidth - 150) >= 468) {
             console.log(window.innerWidth);
             document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
         } else if ((window.innerWidth - 150) < 468) {
             console.log(window.innerWidth);
             document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
-        }
+        } */
     }
 
     // 페이지 로드 시 초기화
