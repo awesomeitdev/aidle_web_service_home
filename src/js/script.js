@@ -62,14 +62,16 @@ function handleScroll(event) {
         if (currentSection == 1 && !isImageChanged) { //첫번째 섹션
             // 조건이 맞으면 backgroundImage변경
             document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
-
-            /*  if ((window.innerWidth - 150) >= 468) {
-                 console.log(window.innerWidth);
-                 document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
-             } else if ((window.innerWidth - 150) < 468) {
-                 console.log(window.innerWidth);
-                 document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
-             } */
+  
+            /* 해상도 비율에 따른 이미지 변경 (적용 시 위 바로 document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')"; 주석처리)
+            if ((window.innerWidth - 150) >= 468) {
+                console.log(window.innerWidth);
+                document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
+            } else if ((window.innerWidth - 150) < 468) {
+                console.log(window.innerWidth);
+                document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
+            } 
+            */
 
             isImageChanged = true;
 
@@ -92,14 +94,14 @@ function handleScroll(event) {
             // scrollCount 증가 시키고 다음 코드
             scrollCount++;
 
-
-            section3_move_text1.style.animation = 'slide-up 1s forwards';
-            section3_move_text1.style.opacity = 1;
-            setTimeout(() => {
-                section3_move_text2.style.animation = 'slide-up 1s forwards';
-                section3_move_text2.style.opacity = 1;
-            }, 500);
-
+            if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
+                section3_move_text1.style.animation = 'slide-up 1s forwards';
+                section3_move_text1.style.opacity = 1;
+                setTimeout(() => {
+                    section3_move_text2.style.animation = 'slide-up 1s forwards';
+                    section3_move_text2.style.opacity = 1;
+                }, 500);
+            }
         } else if (currentSection == 5 && scrollCount < 1) { //5번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
@@ -111,14 +113,14 @@ function handleScroll(event) {
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
             // scrollCount2 증가 시키고 다음 코드
             scrollCount++;
-
-            section5_move_text1.style.animation = 'slide-up 1s forwards';
-            section5_move_text1.style.opacity = 1;
-            setTimeout(() => {
-                section5_move_text2.style.animation = 'slide-up 1s forwards';
-                section5_move_text2.style.opacity = 1;
-            }, 500);
-
+            if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
+                section5_move_text1.style.animation = 'slide-up 1s forwards';
+                section5_move_text1.style.opacity = 1;
+                setTimeout(() => {
+                    section5_move_text2.style.animation = 'slide-up 1s forwards';
+                    section5_move_text2.style.opacity = 1;
+                }, 500);
+            }
         } else if (currentSection == 8 && scrollCount < 1) { //8번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
@@ -130,13 +132,14 @@ function handleScroll(event) {
             // scrollCount2 증가 시키고 다음 코드
             scrollCount++;
 
-            section8_move_text1.style.animation = 'slide-up 1s forwards';
-            section8_move_text1.style.opacity = 1;
-            setTimeout(() => {
-                section8_move_text2.style.animation = 'slide-up 1s forwards';
-                section8_move_text2.style.opacity = 1;
-            }, 500);
-
+            if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
+                section8_move_text1.style.animation = 'slide-up 1s forwards';
+                section8_move_text1.style.opacity = 1;
+                setTimeout(() => {
+                    section8_move_text2.style.animation = 'slide-up 1s forwards';
+                    section8_move_text2.style.opacity = 1;
+                }, 500);
+            }
         } else if (currentSection == 11 && scrollCount < 1) { //11번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
@@ -147,14 +150,14 @@ function handleScroll(event) {
             overlay11.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
             // scrollCount2 증가 시키고 다음 코드
             scrollCount++;
-            //scrollCount 1일때 text 애니메이션
-            section11_move_text1.style.animation = 'slide-up 1s forwards';
-            section11_move_text1.style.opacity = 1;
-            setTimeout(() => {
-                section11_move_text2.style.animation = 'slide-up 1s forwards';
-                section11_move_text2.style.opacity = 1;
-            }, 500);
-
+            if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
+                section11_move_text1.style.animation = 'slide-up 1s forwards';
+                section11_move_text1.style.opacity = 1;
+                setTimeout(() => {
+                    section11_move_text2.style.animation = 'slide-up 1s forwards';
+                    section11_move_text2.style.opacity = 1;
+                }, 500);
+            }
         } else if (currentSection == 14 && scrollCount < 1) { //11번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
@@ -165,14 +168,14 @@ function handleScroll(event) {
             overlay14.style.backgroundColor = 'linear-gradient(180deg, #FFF 0%, #EBEBFF 51.56%)';
             // scrollCount2 증가 시키고 다음 코드
             scrollCount++;
-
-            section14_move_text1.style.animation = 'slide-up 1s forwards';
-            section14_move_text1.style.opacity = 1;
-            setTimeout(() => {
-                section14_move_text2.style.animation = 'slide-up 1s forwards';
-                section14_move_text2.style.opacity = 1;
-            }, 500);
-
+            if (scrollCount == 1) { //scrollCount 1일때 text 애니메이션
+                section14_move_text1.style.animation = 'slide-up 1s forwards';
+                section14_move_text1.style.opacity = 1;
+                setTimeout(() => {
+                    section14_move_text2.style.animation = 'slide-up 1s forwards';
+                    section14_move_text2.style.opacity = 1;
+                }, 500);
+            }
         } else if (currentSection < 15) {
             // 조건이 맞으면 다음페이지
             currentSection++;
@@ -183,7 +186,16 @@ function handleScroll(event) {
     } else if (event.deltaY < 0) { //휠 위로
         if (isImageChanged && currentSection == 1) {
             // 조건에 맞으면 배경이미지 변경
-            // document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+            /* 해상도 비율에 따른 배경 이미지 변경 (적용 시 위 바로 document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')"; 주석처리)
+            if ((window.innerWidth - 150) >= 468) {
+                console.log(window.innerWidth);
+                document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
+            } else if ((window.innerWidth - 150) < 468) {
+                console.log(window.innerWidth);
+                document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
+            }
+            */
             isImageChanged = false;
             // 헤더와 로고 변경
             if (!header.classList.contains('active')) {
@@ -192,15 +204,7 @@ function handleScroll(event) {
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
-
-            /*  if ((window.innerWidth - 150) >= 468) {
-                 console.log(window.innerWidth);
-                 document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
-             } else if ((window.innerWidth - 150) < 468) {
-                 console.log(window.innerWidth);
-                 document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
-             } */
-
+            
             hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
         } else if (currentSection > 1) {
             // 페이지 벗어날시 초기값 세팅
@@ -296,20 +300,11 @@ window.addEventListener('scroll', function () {
     const section12Position = section12.getBoundingClientRect().top;
     const section13Position = section13.getBoundingClientRect().top;
     const section14Position = section14.getBoundingClientRect().top;
-    // console.log(section2Position);
-    const section2Position2 = section2.offsetTop;
-    const section4Position2 = section4.offsetTop;
-    const section6Position2 = section6.offsetTop;
-    const section7Position2 = section7.offsetTop;
-    const section9Position2 = section9.offsetTop;
-    const section10Position2 = section10.offsetTop;
-    const section12Position2 = section12.offsetTop;
-    const section13Position2 = section13.offsetTop;
-    const section14Position2 = section14.offsetTop;
-    console.log(section2Position,"section2Position");
-    console.log(section2Position2,"section2Position2");
 
-    if (section2Position < 250) {
+    // const section2Position = section2.offsetTop;
+    // const section4Position = section4.offsetTop;
+
+    if (section2Position == 0) {
         // 조건에 맞으면 애니메이션 효과와 헤더 변경
         ani_text2.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
@@ -678,16 +673,16 @@ document.querySelectorAll('#sidebar ul li').forEach(item => {
     });
 });
 
-
+/* 해상도 비율에 따른 배경 초기 이미지 선정 
 document.addEventListener("DOMContentLoaded", function () {
     function updateSectionBackground() {
-        /*   if ((window.innerWidth - 150) >= 468) {
-              console.log(window.innerWidth);
-              document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
-          } else if ((window.innerWidth - 150) < 468) {
-              console.log(window.innerWidth);
-              document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
-          } */
+        if ((window.innerWidth - 150) >= 468) {
+            console.log(window.innerWidth);
+            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+        } else if ((window.innerWidth - 150) < 468) {
+            console.log(window.innerWidth);
+            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
+        }
     }
 
     // 페이지 로드 시 초기화
@@ -695,4 +690,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 화면 크기가 변경될 때마다 업데이트
     window.addEventListener("resize", updateSectionBackground);
-});
+});*/
