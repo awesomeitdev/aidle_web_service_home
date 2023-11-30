@@ -102,6 +102,7 @@ function handleScroll(event) {
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
+            hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
             if (!header.classList.contains('active')) {
                 logo.src = './public/logo_white.svg';
             }
@@ -257,7 +258,7 @@ function handleScroll(event) {
 function scrollToSection(section) {
     const sectionElement = document.getElementById(`section${section}`);
     let offset = 0
-    console.log('section', section,sectionElement.offsetTop)
+    // console.log('section', section,sectionElement.offsetTop)
     if (sectionElement) {
         window.scrollTo({
             // top: document.body.scrollHeight,
@@ -310,7 +311,7 @@ window.addEventListener('scroll', function () {
 
     // 현재 스크롤 위치를 확인
     const scrollPosition = window.scrollY;
-    console.log(scrollPosition);
+    // console.log(scrollPosition);
 
     // 섹션2의 위치를 확인 2가지 방법
     const section2Position = section2.getBoundingClientRect().top;
@@ -590,71 +591,54 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 */
 document.addEventListener("DOMContentLoaded", function () {
+    // 페이지 로드 시 초기화
+    // updateSectionBackground();
+    // 화면 크기가 변경될 때마다 업데이트
+    // window.addEventListener("resize", updateSectionBackground);
+    // 새로고침 시 페이지의 가장 위로 이동
+    window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+    });
+
     const button = document.querySelector('.button');
     const buttonList = document.querySelector('.button_list');
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const overlay = document.querySelector('.header .header-inner .overlay');
-    const header = document.querySelector('.header');
-    const headerInner = document.querySelector('.header .header-inner');
-    const navigationBar = document.querySelector('.navigation-bar');
-    const headerText = document.querySelectorAll(".header-nav-item-link-text");
+    const headerInner = document.querySelector('.header-inner');
+    const header = document.querySelector('.header')
+    const hamburgerMenu = document.querySelector('.hamburger_menu')
+    const mobileMenuList = document.querySelector('.mobile-nav-list')
     const logo = document.querySelector('.header-title img');
-    const headerMenu = document.querySelector('.header-menu');
+    const hamOverlay = document.querySelector('.hamburger_overlay')
 
     button.addEventListener('click', function () {
         buttonList.classList.toggle('show_list');
     });
+    button.addEventListener('touchstart', function () {
+        buttonList.classList.toggle('show_list');
+    });
 
     hamburgerMenu.addEventListener('click', function () {
-        hamburgerMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        header.classList.toggle('active');
-        navigationBar.classList.toggle('active');
+        console.log("click");
+        logo.src = './public/logo.svg'
+        // header.classList.toggle('header_active')
+        hamburgerMenu.classList.toggle('active')
+        hamOverlay.classList.toggle('active')
+        mobileMenuList.classList.toggle('active')
+    })
+    hamburgerMenu.addEventListener('touchstart', function () {
+        console.log("click");
+        logo.src = './public/logo.svg'
+        // header.classList.toggle('header_active')
+        hamburgerMenu.classList.toggle('active')
+        hamOverlay.classList.toggle('active')
+        mobileMenuList.classList.toggle('active')
+    })
 
-        if (hamburgerMenu.classList.contains('active')) {
-            // 햄버거 버튼이 활성화되어 있을 때
-            headerInner.style.backgroundColor = '#fff';
-            hamburgerMenu.style.backgroundImage = "url('../../public/images/close-icon.png')";
-            headerMenu.style.display = 'block';
-            overlay.style.display = "block"
-        } else {
-            // 햄버거 버튼이 비활성화되어 있을 때
-            headerInner.style.backgroundColor = 'transparent';
-            hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
-            headerMenu.style.display = 'none';
-            overlay.style.display = "none"
-        }
-        // 로고 및 메뉴명 상시 변경 없음
-        logo.src = './public/logo.svg';
-        headerText.forEach(text => {
-            text.style.color = '#2D3439';
-        });
-    });
 
-    overlay.addEventListener('click', function () {
-        hamburgerMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        overlay.style.display = "none"
-        header.classList.remove('active');
-        navigationBar.classList.remove('active');
-        hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
-        headerInner.style.backgroundColor = 'transparent';
-        headerMenu.style.display = 'none';
-        // 로고 및 메뉴명 상시 변경 없음
-        logo.src = './public/logo.svg';
-        headerText.forEach(text => {
-            text.style.color = '#2D3439';
-        });
-    });
 });
 
 
 
 
-// 새로고침 시 페이지의 가장 위로 이동
-window.addEventListener('beforeunload', () => {
-    window.scrollTo(0, 0);
-});
 
 
 
@@ -696,20 +680,3 @@ document.querySelectorAll('#sidebar ul li').forEach(item => {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    function updateSectionBackground() {
-        /*   if ((window.innerWidth - 150) >= 468) {
-              console.log(window.innerWidth);
-              document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
-          } else if ((window.innerWidth - 150) < 468) {
-              console.log(window.innerWidth);
-              document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
-          } */
-    }
-
-    // 페이지 로드 시 초기화
-    updateSectionBackground();
-
-    // 화면 크기가 변경될 때마다 업데이트
-    window.addEventListener("resize", updateSectionBackground);
-});
