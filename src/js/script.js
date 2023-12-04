@@ -256,19 +256,16 @@ function handleScroll(event) {
 // 스크롤 효과
 function scrollToSection(section) {
     const sectionElement = document.getElementById(`section${section}`);
-    let offset = 0
-    // console.log('section', section,sectionElement.offsetTop)
+
     if (sectionElement) {
-        window.scrollTo({
-            // top: document.body.scrollHeight,
-            // top: document.body.scrollHeight + section15.scrollHeight,
-            top: sectionElement.offsetTop + offset,
-            behavior: 'smooth'
-        })
+        sectionElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+        });
     }
-
-
 }
+
 
 
 
@@ -322,7 +319,7 @@ window.addEventListener('scroll', function () {
     const section12Position = section12.getBoundingClientRect().top;
     const section13Position = section13.getBoundingClientRect().top;
     const section14Position = section14.getBoundingClientRect().top;
-    // console.log(section2Position);
+    console.log(section6Position);
     // const section2Position = section2.offsetTop;
     // const section4Position = section4.offsetTop;
     //console.log(section14Position, "section14Position");

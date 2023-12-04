@@ -223,6 +223,7 @@ html::-webkit-scrollbar {
   width: 100%;
   max-width: 1080px;
   height: 100%;
+  overflow: hidden;
 }
 
 #section1,
@@ -280,7 +281,6 @@ html::-webkit-scrollbar {
 #section6 .container > .left_content,
 #section9 .container > .left_content,
 #section12 .container > .left_content {
-  margin-bottom: 20%;
   gap: 32px;
 }
 
@@ -368,7 +368,6 @@ html::-webkit-scrollbar {
 #section9 .container > .right_content img,
 #section12 .container > .right_content img {
   width: 80%;
-  margin-top: 20%;
   margin-left: 45%;
 }
 
@@ -382,7 +381,6 @@ html::-webkit-scrollbar {
 #section7 .container > .right_content,
 #section10 .container > .right_content,
 #section13 .container > .right_content {
-  margin-bottom: 20%;
   margin-left: 14%;
 }
 
@@ -446,7 +444,6 @@ html::-webkit-scrollbar {
 #section10 .container > .left_content img,
 #section13 .container > .left_content img {
   width: 80%;
-  margin-top: 20%;
 }
 
 #section3 .overlay,
@@ -482,7 +479,6 @@ html::-webkit-scrollbar {
 #section5 .container .text_box,
 #section8 .container .text_box,
 #section11 .container .text_box {
-  margin: 0px 0px 0 calc((100% - 980px) * 0.5);
   position: absolute;
   top: 40%;
   left: -8px;
@@ -574,7 +570,6 @@ footer .layout .left_box .logo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 24px;
 }
 
 footer .layout .left_box .text_box {
@@ -585,7 +580,6 @@ footer .layout .left_box .text_box {
   font-weight: 400;
   line-height: 150%;
   /* 21px */
-  margin-bottom: 24px;
 }
 
 footer .layout .left_box .text_copy {
@@ -624,10 +618,6 @@ footer .layout .right_box .button_box {
 .button_box .ch_box {
   display: flex;
   align-items: center;
-}
-
-.button_box .ch_box img {
-  margin-left: 23px;
 }
 
 .button_box .text_name {
