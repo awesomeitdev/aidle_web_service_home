@@ -48,7 +48,14 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 
- 
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector(".button");
+    const buttonList = document.querySelector(".button_list");
+
+    button.addEventListener("click", function () {
+        buttonList.classList.toggle("show_list");
+    });
+});
 
 window.addEventListener('scroll', function() {
     var scrollPosition = window.scrollY;
@@ -68,63 +75,4 @@ window.addEventListener('scroll', function() {
 
 
 
-//모바일 햄버거 버튼
-document.addEventListener("DOMContentLoaded", function () {
-    const button = document.querySelector('.button');
-    const buttonList = document.querySelector('.button_list');
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const overlay = document.querySelector('.header .header-inner .overlay');
-    const header = document.querySelector('.header');
-    const headerInner = document.querySelector('.header .header-inner');
-    const navigationBar = document.querySelector('.navigation-bar');
-    const headerText = document.querySelectorAll(".header-nav-item-link-text");
-    const logo = document.querySelector('.header-title img');
-    const headerMenu = document.querySelector('.header-menu');
-
-    button.addEventListener('click', function () {
-        buttonList.classList.toggle('show_list');
-    });
-
-    hamburgerMenu.addEventListener('click', function () {
-        hamburgerMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        header.classList.toggle('active');
-        navigationBar.classList.toggle('active');
-
-        if (hamburgerMenu.classList.contains('active')) {
-            // 햄버거 버튼이 활성화되어 있을 때
-            headerInner.style.backgroundColor = '#fff';
-            hamburgerMenu.style.backgroundImage = "url('../../public/images/close-icon.png')";
-            headerMenu.style.display = 'block';
-            overlay.style.display = "block"
-        } else {
-            // 햄버거 버튼이 비활성화되어 있을 때
-            headerInner.style.backgroundColor = 'transparent';
-            hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
-            headerMenu.style.display = 'none';
-            overlay.style.display = "none"
-        }
-        // 로고 및 메뉴명 상시 변경 없음
-        logo.src = './public/logo.svg';
-        headerText.forEach(text => {
-            text.style.color = '#2D3439';
-        });
-    });
-
-    overlay.addEventListener('click', function () {
-        hamburgerMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        overlay.style.display = "none"
-        header.classList.remove('active');
-        navigationBar.classList.remove('active');
-        hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
-        headerInner.style.backgroundColor = 'transparent';
-        headerMenu.style.display = 'none';
-        // 로고 및 메뉴명 상시 변경 없음
-        logo.src = './public/logo.svg';
-        headerText.forEach(text => {
-            text.style.color = '#2D3439';
-        });
-    });
-});
 
