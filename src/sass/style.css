@@ -208,6 +208,85 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+@media (max-device-width: 468px) and (min-device-width: 381px) {
+  .header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999; /* 수정 */
+    background-color: transparent; /* 추가 */
+  }
+  .header .header-inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    max-width: 468px;
+    flex-direction: row;
+  }
+  .header .header-inner .header-title {
+    order: 1;
+    visibility: visible;
+  }
+  .header .header-inner .header-menu {
+    order: 3;
+    width: 100%;
+    display: none;
+  }
+  .header-menu .header-nav-list {
+    flex-direction: column;
+  }
+  .header .header-inner .appdown {
+    order: 2;
+    width: 100%;
+  }
+  .header .header-inner .hamburger-menu {
+    display: block;
+    order: 4;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url("../../public/images/hamburger-icon.png");
+    background-size: contain;
+  }
+  .header .header-inner .hamburger-menu.active {
+    background-image: url("../../public/images/close-icon.png");
+  }
+  .header .header-inner .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -20;
+  }
+  .overlay.active {
+    display: block;
+  }
+  .header.active {
+    background-color: #FFF;
+  }
+  .navigation-bar {
+    display: none;
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    height: 50%; /* 추가 */
+    transition: top 0.3s ease-in-out; /* 수정 */
+    background-color: #FFF;
+    transition: all 0.3s ease-in-out;
+    z-index: 40; /* 수정 */
+  }
+  .navigation-bar.active {
+    display: block;
+    top: 80px; /* 추가 */
+  }
+}
 .section {
   width: 100vw;
   height: 100vh;
@@ -492,6 +571,11 @@ html::-webkit-scrollbar {
   background: linear-gradient(180deg, #FFF 0%, #EBEBFF 51.56%);
 }
 
+#section14 .container {
+  position: absolute;
+  top: 20%;
+}
+
 #section14 .container > .text #text1 {
   color: var(--sys-color-primary, #7070FF);
   text-align: center;
@@ -553,6 +637,7 @@ footer {
 footer .layout {
   display: flex;
   align-items: flex-start;
+  gap: 287px;
 }
 
 footer .layout .left_box {
@@ -780,6 +865,7 @@ li {
   position: absolute;
   top: 80%;
   width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
