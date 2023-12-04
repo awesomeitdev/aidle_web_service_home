@@ -223,7 +223,6 @@ html::-webkit-scrollbar {
   width: 100%;
   max-width: 1080px;
   height: 100%;
-  overflow: hidden;
 }
 
 #section1,
@@ -276,11 +275,20 @@ html::-webkit-scrollbar {
   overflow: hidden;
 }
 
+#section2 .mcontainer,
+#section4 .mcontainer,
+#section6 .mcontainer,
+#section9 .mcontainer,
+#section12 .mcontainer {
+  display: none;
+}
+
 #section2 .container > .left_content,
 #section4 .container > .left_content,
 #section6 .container > .left_content,
 #section9 .container > .left_content,
 #section12 .container > .left_content {
+  margin-bottom: 20%;
   gap: 32px;
 }
 
@@ -294,8 +302,7 @@ html::-webkit-scrollbar {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%;
-  /* 30px */
+  line-height: 150%; /* 30px */
 }
 
 #section2 .container > .left_content #text2,
@@ -308,8 +315,7 @@ html::-webkit-scrollbar {
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%;
-  /* 60px */
+  line-height: 150%; /* 60px */
 }
 
 #section2 .container > .left_content #text3,
@@ -322,8 +328,7 @@ html::-webkit-scrollbar {
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%;
-  /* 60px */
+  line-height: 150%; /* 60px */
   padding-bottom: 6%;
 }
 
@@ -349,8 +354,7 @@ html::-webkit-scrollbar {
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 170%;
-  /* 40.8px */
+  line-height: 170%; /* 40.8px */
 }
 
 #section2 .container > .left_content #text4 .text-background,
@@ -368,6 +372,7 @@ html::-webkit-scrollbar {
 #section9 .container > .right_content img,
 #section12 .container > .right_content img {
   width: 80%;
+  margin-top: 20%;
   margin-left: 45%;
 }
 
@@ -381,6 +386,7 @@ html::-webkit-scrollbar {
 #section7 .container > .right_content,
 #section10 .container > .right_content,
 #section13 .container > .right_content {
+  margin-bottom: 20%;
   margin-left: 14%;
 }
 
@@ -392,8 +398,7 @@ html::-webkit-scrollbar {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%;
-  /* 30px */
+  line-height: 150%; /* 30px */
 }
 
 #section7 .container > .right_content #text2,
@@ -404,8 +409,7 @@ html::-webkit-scrollbar {
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%;
-  /* 60px */
+  line-height: 150%; /* 60px */
 }
 
 #section7 .container > .right_content #text3,
@@ -416,8 +420,7 @@ html::-webkit-scrollbar {
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%;
-  /* 60px */
+  line-height: 150%; /* 60px */
   padding-bottom: 6%;
 }
 
@@ -429,8 +432,7 @@ html::-webkit-scrollbar {
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 170%;
-  /* 40.8px */
+  line-height: 170%; /* 40.8px */
 }
 
 #section7 .container > .right_content #text4 .text-background,
@@ -444,6 +446,7 @@ html::-webkit-scrollbar {
 #section10 .container > .left_content img,
 #section13 .container > .left_content img {
   width: 80%;
+  margin-top: 20%;
 }
 
 #section3 .overlay,
@@ -479,6 +482,7 @@ html::-webkit-scrollbar {
 #section5 .container .text_box,
 #section8 .container .text_box,
 #section11 .container .text_box {
+  margin: 0px 0px 0 calc((100% - 980px) * 0.5);
   position: absolute;
   top: 40%;
   left: -8px;
@@ -489,6 +493,11 @@ html::-webkit-scrollbar {
   background: linear-gradient(180deg, #FFF 0%, #EBEBFF 51.56%);
 }
 
+#section14 .container {
+  position: absolute;
+  top: 20%;
+}
+
 #section14 .container > .text #text1 {
   color: var(--sys-color-primary, #7070FF);
   text-align: center;
@@ -496,8 +505,7 @@ html::-webkit-scrollbar {
   font-size: 32px;
   font-style: normal;
   font-weight: 800;
-  line-height: 150%;
-  /* 48px */
+  line-height: 150%; /* 48px */
 }
 
 #section14 .container > .text #text2 {
@@ -507,8 +515,7 @@ html::-webkit-scrollbar {
   font-size: 56px;
   font-style: normal;
   font-weight: 800;
-  line-height: 150%;
-  /* 84px */
+  line-height: 150%; /* 84px */
 }
 
 #section14 .container > .text #text4 {
@@ -518,8 +525,7 @@ html::-webkit-scrollbar {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%;
-  /* 30px */
+  line-height: 150%; /* 30px */
 }
 
 @keyframes slide-up {
@@ -564,12 +570,14 @@ footer .layout .right_box {
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+  padding-left: 120px;
 }
 
 footer .layout .left_box .logo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 24px;
 }
 
 footer .layout .left_box .text_box {
@@ -578,8 +586,8 @@ footer .layout .left_box .text_box {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
-  /* 21px */
+  line-height: 150%; /* 21px */
+  margin-bottom: 24px;
 }
 
 footer .layout .left_box .text_copy {
@@ -588,8 +596,7 @@ footer .layout .left_box .text_copy {
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
-  /* 18px */
+  line-height: 150%; /* 18px */
 }
 
 footer .layout .right_box .title {
@@ -599,8 +606,7 @@ footer .layout .right_box .title {
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%;
-  /* 27px */
+  line-height: 150%; /* 27px */
 }
 
 footer .layout .right_box .button_box {
@@ -618,6 +624,10 @@ footer .layout .right_box .button_box {
 .button_box .ch_box {
   display: flex;
   align-items: center;
+}
+
+.button_box .ch_box img {
+  margin-left: 23px;
 }
 
 .button_box .text_name {
@@ -677,9 +687,7 @@ footer .layout .right_box .button_box {
   width: 176px;
   height: 32px;
   margin-top: 10px;
-}
-
-
+} 
 #search_area {
   display: flex;
   justify-content: center;
@@ -751,14 +759,12 @@ li {
 }
 
 #search_area {
-  transition: opacity 0.5s ease;
-  /* Add a smooth transition effect */
+  transition: opacity 0.5s ease; /* Add a smooth transition effect */
 }
 
 .hidden {
   opacity: 0;
-  pointer-events: none;
-  /* Disable pointer events to make the element unclickable */
+  pointer-events: none; /* Disable pointer events to make the element unclickable */
 }
 
 .base-image {
@@ -771,6 +777,7 @@ li {
   position: absolute;
   top: 80%;
   width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
