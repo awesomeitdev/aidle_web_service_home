@@ -5,6 +5,12 @@ body {
   height: 100%;
   margin: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+/* IE, Edge, Chrome에서 스크롤바 숨기기 */
+html::-webkit-scrollbar {
+  display: none;
 }
 
 .header {
@@ -62,26 +68,37 @@ body {
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 27px */
-  position: relative; /* 상대 위치 설정 */
+  line-height: 150%;
+  /* 27px */
+  position: relative;
+  /* 상대 위치 설정 */
   display: inline-block;
   vertical-align: bottom;
 }
 
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link-text::after {
   content: "";
-  position: absolute; /* 절대 위치 설정 */
-  bottom: -2px; /* 라인 위치 조정 */
-  left: 0; /* 왼쪽 정렬 */
-  width: 100%; /* 가로 길이 100% */
-  height: 2px; /* 선의 높이 */
-  background-color: rgb(255, 255, 255); /* 라인 색상 */
-  transform: scaleX(0); /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
-  transition: transform 0.3s ease-in-out; /* 애니메이션 효과 추가 */
+  position: absolute;
+  /* 절대 위치 설정 */
+  bottom: -2px;
+  /* 라인 위치 조정 */
+  left: 0;
+  /* 왼쪽 정렬 */
+  width: 100%;
+  /* 가로 길이 100% */
+  height: 2px;
+  /* 선의 높이 */
+  background-color: rgb(255, 255, 255);
+  /* 라인 색상 */
+  transform: scaleX(0);
+  /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
+  transition: transform 0.3s ease-in-out;
+  /* 애니메이션 효과 추가 */
 }
 
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link-text:hover::after {
-  transform: scaleX(1); /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
+  transform: scaleX(1);
+  /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
 }
 
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white {
@@ -91,26 +108,37 @@ body {
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 27px */
-  position: relative; /* 상대 위치 설정 */
+  line-height: 150%;
+  /* 27px */
+  position: relative;
+  /* 상대 위치 설정 */
   display: inline-block;
   vertical-align: bottom;
 }
 
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white::after {
   content: "";
-  position: absolute; /* 절대 위치 설정 */
-  bottom: -2px; /* 라인 위치 조정 */
-  left: 0; /* 왼쪽 정렬 */
-  width: 100%; /* 가로 길이 100% */
-  height: 2px; /* 선의 높이 */
-  background-color: #2D3439; /* 라인 색상 */
-  transform: scaleX(0); /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
-  transition: transform 0.3s ease-in-out; /* 애니메이션 효과 추가 */
+  position: absolute;
+  /* 절대 위치 설정 */
+  bottom: -2px;
+  /* 라인 위치 조정 */
+  left: 0;
+  /* 왼쪽 정렬 */
+  width: 100%;
+  /* 가로 길이 100% */
+  height: 2px;
+  /* 선의 높이 */
+  background-color: #2D3439;
+  /* 라인 색상 */
+  transform: scaleX(0);
+  /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
+  transition: transform 0.3s ease-in-out;
+  /* 애니메이션 효과 추가 */
 }
 
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white:hover::after {
-  transform: scaleX(1); /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
+  transform: scaleX(1);
+  /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
 }
 
 .header .header-inner .appdown {
@@ -195,8 +223,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999; /* 수정 */
-    background-color: transparent; /* 추가 */
+    z-index: 9999;
+    /* 수정 */
+    background-color: transparent;
+    /* 추가 */
   }
   .header .header-inner {
     height: 100%;
@@ -256,15 +286,19 @@ body {
     position: fixed;
     top: 80px;
     width: 100%;
-    height: 50%; /* 추가 */
-    transition: top 0.3s ease-in-out; /* 수정 */
+    height: 50%;
+    /* 추가 */
+    transition: top 0.3s ease-in-out;
+    /* 수정 */
     background-color: #FFF;
     transition: all 0.3s ease-in-out;
-    z-index: 40; /* 수정 */
+    z-index: 40;
+    /* 수정 */
   }
   .navigation-bar.active {
     display: block;
-    top: 80px; /* 추가 */
+    top: 80px;
+    /* 추가 */
   }
 }
 .section {
@@ -352,7 +386,8 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 30px */
+  line-height: 150%;
+  /* 30px */
 }
 
 #section2 .container > .left_content #text2,
@@ -365,7 +400,8 @@ body {
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 60px */
+  line-height: 150%;
+  /* 60px */
 }
 
 #section2 .container > .left_content #text3,
@@ -378,7 +414,8 @@ body {
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 60px */
+  line-height: 150%;
+  /* 60px */
   padding-bottom: 6%;
 }
 
@@ -404,7 +441,8 @@ body {
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 170%; /* 40.8px */
+  line-height: 170%;
+  /* 40.8px */
 }
 
 #section2 .container > .left_content #text4 .text-background,
@@ -448,7 +486,8 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 30px */
+  line-height: 150%;
+  /* 30px */
 }
 
 #section7 .container > .right_content #text2,
@@ -459,7 +498,8 @@ body {
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 60px */
+  line-height: 150%;
+  /* 60px */
 }
 
 #section7 .container > .right_content #text3,
@@ -470,7 +510,8 @@ body {
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 60px */
+  line-height: 150%;
+  /* 60px */
   padding-bottom: 6%;
 }
 
@@ -482,7 +523,8 @@ body {
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 170%; /* 40.8px */
+  line-height: 170%;
+  /* 40.8px */
 }
 
 #section7 .container > .right_content #text4 .text-background,
@@ -555,7 +597,8 @@ body {
   font-size: 32px;
   font-style: normal;
   font-weight: 800;
-  line-height: 150%; /* 48px */
+  line-height: 150%;
+  /* 48px */
 }
 
 #section14 .container > .text #text2 {
@@ -565,7 +608,8 @@ body {
   font-size: 56px;
   font-style: normal;
   font-weight: 800;
-  line-height: 150%; /* 84px */
+  line-height: 150%;
+  /* 84px */
 }
 
 #section14 .container > .text #text4 {
@@ -575,7 +619,8 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 30px */
+  line-height: 150%;
+  /* 30px */
 }
 
 @keyframes slide-up {
@@ -636,7 +681,8 @@ footer .layout .left_box .text_box {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 21px */
+  line-height: 150%;
+  /* 21px */
   margin-bottom: 24px;
 }
 
@@ -646,7 +692,8 @@ footer .layout .left_box .text_copy {
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 18px */
+  line-height: 150%;
+  /* 18px */
 }
 
 footer .layout .right_box .title {
@@ -656,7 +703,8 @@ footer .layout .right_box .title {
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%; /* 27px */
+  line-height: 150%;
+  /* 27px */
 }
 
 footer .layout .right_box .button_box {
@@ -737,7 +785,9 @@ footer .layout .right_box .button_box {
   width: 176px;
   height: 32px;
   margin-top: 10px;
-} 
+}
+
+
 #search_area {
   display: flex;
   justify-content: center;
@@ -809,12 +859,14 @@ li {
 }
 
 #search_area {
-  transition: opacity 0.5s ease; /* Add a smooth transition effect */
+  transition: opacity 0.5s ease;
+  /* Add a smooth transition effect */
 }
 
 .hidden {
   opacity: 0;
-  pointer-events: none; /* Disable pointer events to make the element unclickable */
+  pointer-events: none;
+  /* Disable pointer events to make the element unclickable */
 }
 
 .base-image {
