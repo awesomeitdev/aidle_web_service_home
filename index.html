@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+     -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=1024"> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="robot" content="index, follow">
     <meta name="description" content="aidle. desc">
@@ -22,24 +25,24 @@
     <meta property="al:android:package" content="...">
     <meta property="al:web:url" content="...">
     <meta name="google-site-verification" content="bN1gDRHc7NlFTK_j4NYpkQIGi1xkZKdG4yGzzvyc7sE" />
-      <!-- favicon -->
-      <link rel="apple-touch-icon" sizes="57x57" href="public/favicon/apple-icon-57x57.png">
-      <link rel="apple-touch-icon" sizes="60x60" href="public/favicon/apple-icon-60x60.png">
-      <link rel="apple-touch-icon" sizes="72x72" href="public/favicon/apple-icon-72x72.png">
-      <link rel="apple-touch-icon" sizes="76x76" href="public/favicon/apple-icon-76x76.png">
-      <link rel="apple-touch-icon" sizes="114x114" href="public/favicon/apple-icon-114x114.png">
-      <link rel="apple-touch-icon" sizes="120x120" href="public/favicon/apple-icon-120x120.png">
-      <link rel="apple-touch-icon" sizes="144x144" href="public/favicon/apple-icon-144x144.png">
-      <link rel="apple-touch-icon" sizes="152x152" href="public/favicon/apple-icon-152x152.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/apple-icon-180x180.png">
-      <link rel="icon" type="image/png" sizes="192x192" href="public/favicon/android-icon-192x192.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="96x96" href="public/favicon/favicon-96x96.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
-      <link rel="manifest" href="public/favicon/manifest.json">
-      <meta name="msapplication-TileColor" content="#ffffff">
-      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-      <meta name="theme-color" content="#ffffff">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="public/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="public/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="public/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="public/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="public/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="public/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="public/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="public/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="public/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="public/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
+    <link rel="manifest" href="public/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>aidle - 보호, 위치, 올바른 스마트폰 사용습관</title>
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/sass/style.css">
@@ -48,7 +51,7 @@
 
 <body>
     <header class="header" id="header">
-        
+
         <div class="header-inner" id="header_inner">
             <div class="header-title" id="header_title">
                 <a href="https://www.aidle.net">
@@ -56,52 +59,81 @@
                     <!-- <img src="./public/logo.svg" alt="" class="header-logo-black"> -->
                 </a>
             </div>
-            <div class="hamburger-menu"></div>
-            <div class="overlay"></div>
-            <div class="navigation-bar">
+
             <div class="header-menu" id="header_menu">
                 <nav class="header-nav">
                     <ul class="header-nav-list">
-                       <li class="header-nav-item ">
+                        <li class="header-nav-item pc-nav">
                             <a href="https://www.aidle.net" class="header-nav-item-link">
                                 <span class="header-nav-item-link-text selected">서비스 소개</span>
                             </a>
                         </li>
-                        <li class="header-nav-item">
+                        <li class="header-nav-item pc-nav">
                             <a href="https://www.aidle.net/guide" class="header-nav-item-link">
                                 <span class="header-nav-item-link-text">사용 가이드</span>
                             </a>
                         </li>
-                        <li class="header-nav-item">
+                        <li class="header-nav-item pc-nav">
                             <a href="https://www.aidle.net/faq" class="header-nav-item-link">
                                 <span class="header-nav-item-link-text">자주 묻는 질문</span>
                             </a>
                         </li>
-                        <li class="header-nav-item">
+                        <li class="header-nav-item pc-nav">
                             <a href="https://pf.kakao.com/_IwxkxbG" class="header-nav-item-link">
                                 <span class="header-nav-item-link-text">고객센터</span>
                             </a>
-                        </li>                        
+                        </li>
+                        <li class="header-nav-item">
+                            <div class="button">
+                                <div class="button_text">앱 다운로드</div>
+                            </div>
+                            <div class="button_list">
+                                <div>
+                                    <p class="button_list_text">Android</p>
+                                    <div class="button_list_btn">
+                                        <p class="btn_text">보호자용</p>
+                                    </div>
+                                    <div class="button_list_btn">
+                                        <p class="btn_text">자녀용</p>
+                                    </div>
+                                    <p class="button_list_text">ios</p>
+                                    <div class="button_list_btn">
+                                        <p class="btn_text">자녀용</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-nav-item mobile-nav">
+                            <div class="hamburger_menu"></div>
+                        </li>
                     </ul>
-                </nav>                
-            </div>
-            </div>
-            <div class="appdown">
-                <div class="button">
-                    <div class="button_text">앱 다운로드</div>
-                </div>
-                <div class="button_list">
-                    <div>
-                        <p class="button_list_text">Android</p>
-                        <div class="button_list_btn"><p class="btn_text"><a href="https://play.google.com/store/apps/details?id=com.awesomeit.gemini_controller" target="_blank">보호자용</a></p></div>
-                        <div class="button_list_btn"><p class="btn_text"><a href="https://play.google.com/store/apps/details?id=com.awesomeit.geminiagent" target="_blank">자녀용</a></p></div>
-                        <p class="button_list_text">ios</p>
-                        <div class="button_list_btn"><p class="btn_text"><a href="https://apps.apple.com/kr/app/아이들(aidle) 보호자용 - 자녀폰관리, 위치공유/id6471647905">부모용</a></p></div>
-                    </div>
-                </div>
+                    <ul id="mobile-nav-list" class="mobile-nav-list">
+                        <li class="header-nav-item mobile-nav">
+                            <a href="/index.html" class="header-nav-item-link">
+                                <span class="header-nav-item-link-text selected">서비스 소개</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item mobile-nav">
+                            <a href="/guide.html" class="header-nav-item-link">
+                                <span class="header-nav-item-link-text">사용 가이드</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item mobile-nav">
+                            <a href="/faq.html" class="header-nav-item-link">
+                                <span class="header-nav-item-link-text">자주 묻는 질문</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item mobile-nav">
+                            <a href="https://pf.kakao.com/_IwxkxbG" class="header-nav-item-link">
+                                <span class="header-nav-item-link-text">고객센터</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
+    <div class="hamburger_overlay" id="hamburger_overlay"></div>
     <div class="section" id="section1">
         <div class="container"></div>
     </div>
@@ -112,7 +144,7 @@
                 <p id="text2" class="ani_text_2">귀찮은 관리는 그만.</p>
                 <p id="text3" class="ani_text_2">이제 AI가 다 해드릴게요</p>
                 <p id="text4" class="ani_text_2">AI 코치가 내 아이의 스마트폰 사용 습관을 분석하여</p>
-                <p id="text4" class="ani_text_2">스마트폰 사용 시간, 앱 사용 시간과 같은</p>    
+                <p id="text4" class="ani_text_2">스마트폰 사용 시간, 앱 사용 시간과 같은</p>
                 <p id="text4" class="ani_text_2">사용 환경을<span class="text-background">맞춤형으로 설정</span>해 줘요.</p>
             </div>
             <div class="right_content ani_text_2_img"><img src="./public/images/section2_phone.jpg" alt=""></div>
@@ -239,24 +271,24 @@
             </div>
         </div>
     </div>
-    <div class="section" id="section14">         
-            <img class="base-image" src="./public/images/vector.png">
-            <div class="circle">
-                <img class="circle-image ani_text_14_1_img" src="./public/images/circle.png">
-            </div>
-        <div class="container"> 
+    <div class="section" id="section14">
+        <img class="base-image" src="./public/images/vector.png">
+        <div class="circle">
+            <img class="circle-image ani_text_14_1_img" src="./public/images/circle.png">
+        </div>
+        <div class="container">
             <div class="text">
                 <p id="text1" class="ani_text_14">청소년 전문가가 만든</p>
                 <p id="text2" class="ani_text_14">스마트폰 AI 코칭 서비스, ‘aidle’</p>
                 <p id="text4" class="ani_text_14">aidle은 AI를 통해 우리 아이에게 맞는 스마트폰 사용 관리를 자동으로 해주는 서비스입니다.</p>
                 <p id="text4" class="ani_text_14">aidle은 아이 스스로 자신의 사용 습관을 바라보고</p>
-                <p id="text4" class="ani_text_14">부모가 아닌 AI의 도움으로 스스로 사용습관을 들일 수 있도록 하였습니다.</p>                
+                <p id="text4" class="ani_text_14">부모가 아닌 AI의 도움으로 스스로 사용습관을 들일 수 있도록 하였습니다.</p>
                 <p id="text4" class="ani_text_14">작은 관심만으로도 큰 안심을 드리기 위해 aidle은 계 속해서 나아가겠습니다.</p>
             </div>
         </div>
-            <img class="fade-image ani_text_14_2_img" src="./public/images/family.png">
-        
-    </div> 
+        <img class="fade-image ani_text_14_2_img" src="./public/images/family.png">
+
+    </div>
     <footer id="section15">
         <div class="wrapper">
             <ul id="company">
@@ -266,39 +298,51 @@
                 <li><a href="./support/policy.html?id=local">위치기반 서비스 이용약관</a></li>
                 <li><a href="mailto:sales-support@awesomeit.co.kr">B2B 제휴 문의</a></li>
             </ul>
-                <span id="icon">
-                   <a href="https://pf.kakao.com/_IwxkxbG" target="_blank"><img id="ft" src="./public/images/image_kakaochanel.png"> </a>
-                   <a href="https://blog.naver.com/aidle_ai" target="_blank"><img id="ft" src="./public/images/image_naverblog.png"></a> 
-                   <a href="https://www.facebook.com/aidle.net" target="_blank"><img id="ft" src="./public/images/image_facebook.png"></a> 
-                   <a href="https://www.instagram.com/aidle_ai" target="_blank"><img id="ft" src="./public/images/image_instagram.png"></a> 
-                </span>
+            <span id="icon">
+                <a href="https://pf.kakao.com/_IwxkxbG" target="_blank"><img id="ft"
+                        src="./public/images/image_kakaochanel.png"> </a>
+                <a href="https://blog.naver.com/aidle_ai" target="_blank"><img id="ft"
+                        src="./public/images/image_naverblog.png"></a>
+                <a href="https://www.facebook.com/aidle.net" target="_blank"><img id="ft"
+                        src="./public/images/image_facebook.png"></a>
+                <a href="https://www.instagram.com/aidle_ai" target="_blank"><img id="ft"
+                        src="./public/images/image_instagram.png"></a>
+            </span>
         </div>
-        <div class="layout">    
-        <div class="left_box">
-            <ul>
-              <li class="logo"><img src="./public/images/logo_awesomeit.png"></li>
-              <li class="text_box">
-                <p><span style="font-weight: 700;">(주)어썸잇</span> </p>
-                <p>대표:유병규</p>
-                <p><span style="margin-right: 16px">이메일 : <a href="mailto:cs.aidle@awesomeit.co.kr">cs.aidle@awesomeit.co.kr</a></span> 사업자등록번호:276-88-01002 </p>
-                <p>서울특별시 금천구 가산디지털1로 225, 1015호(가산동, 에이스가산포휴)</p>
-              </li>
-              <li class="text_copy">
-                <p>© AWESOMEIT. ALL RIGHTS RESERVED.</p>
-              </li>
-            </ul>
-        </div>
-        <div class="right_box">
-            <p class="title">아이들 앱 다운로드</p>  
-            <ul class="button_box">
-                <li class="pr_box">
-                    <p class="text_name">보호자용 <a href="https://play.google.com/store/apps/details?id=com.awesomeit.gemini_controller" target="_blank"><img src="./public/images/google_play.png"></a><a href="https://apps.apple.com/kr/app/아이들(aidle) 보호자용 - 자녀폰관리, 위치공유/id6471647905" target="_blank"><img src="./public/images/app_store.png"></a></p>                    
-                </li>
-                <li class="ch_box">
-                    <p class="text_name">자녀용 <a href="https://play.google.com/store/apps/details?id=com.awesomeit.geminiagent" target="_blank"><img src="./public/images/google_play.png"></a></p>                    
-                </li>           
-            </ul>              
-        </div>
+        <div class="layout">
+            <div class="left_box">
+                <ul>
+                    <li class="logo"><img src="./public/images/logo_awesomeit.png"></li>
+                    <li class="text_box">
+                        <p><span style="font-weight: 700;">(주)어썸잇</span> </p>
+                        <p>대표:유병규</p>
+                        <p><span style="margin-right: 16px">이메일 : <a
+                                    href="mailto:cs.aidle@awesomeit.co.kr">cs.aidle@awesomeit.co.kr</a></span>
+                            사업자등록번호:276-88-01002 </p>
+                        <p>서울특별시 금천구 가산디지털1로 225, 1015호(가산동, 에이스가산포휴)</p>
+                    </li>
+                    <li class="text_copy">
+                        <p>© AWESOMEIT. ALL RIGHTS RESERVED.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="right_box">
+                <p class="title">아이들 앱 다운로드</p>
+                <ul class="button_box">
+                    <li class="pr_box">
+                        <p class="text_name">보호자용 <a
+                                href="https://play.google.com/store/apps/details?id=com.awesomeit.gemini_controller"
+                                target="_blank"><img src="./public/images/google_play.png"></a><a
+                                href="https://apps.apple.com/kr/app/아이들(aidle) 보호자용 - 자녀폰관리, 위치공유/id6471647905"
+                                target="_blank"><img src="./public/images/app_store.png"></a></p>
+                    </li>
+                    <li class="ch_box">
+                        <p class="text_name">자녀용 <a
+                                href="https://play.google.com/store/apps/details?id=com.awesomeit.geminiagent"
+                                target="_blank"><img src="./public/images/google_play.png"></a></p>
+                    </li>
+                </ul>
+            </div>
     </footer>
 </body>
 
