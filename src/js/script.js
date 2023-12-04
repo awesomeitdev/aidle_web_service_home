@@ -319,11 +319,11 @@ window.addEventListener('scroll', function () {
     const section12Position = section12.getBoundingClientRect().top;
     const section13Position = section13.getBoundingClientRect().top;
     const section14Position = section14.getBoundingClientRect().top;
-    console.log(section6Position);
+    // console.log(section6Position);
     // const section2Position = section2.offsetTop;
     // const section4Position = section4.offsetTop;
     //console.log(section14Position, "section14Position");
-    if (section2Position == 0 || section2Position <= 30) {
+    if (section2Position == 0) {
         // 조건에 맞으면 애니메이션 효과와 헤더 변경
         ani_text2.forEach((text) => {
             text.style.animation = 'slide-up 1s forwards, fade-in 2s forwards';
