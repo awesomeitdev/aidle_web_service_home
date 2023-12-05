@@ -29,6 +29,15 @@ function handleTouchMove() {
     handleScroll(event);
 }
 
+function isMobile() {
+    console.log(window.innerWidth, "window.innerWidth");
+    if (window.innerWidth < 700) {
+        return true
+    }
+    return false
+}
+
+
 // 윈도우 기본 휠이벤트 삭제
 window.addEventListener("wheel", function (e) {
     e.preventDefault();
@@ -58,6 +67,7 @@ function handleScroll(event) {
 
     wheelTimer = current
     const headerText = document.querySelectorAll(".header-nav-item-link-text");
+    const hamburger_menu = document.querySelectorAll(".hamburger_menu");
     const logo = document.querySelector('.header-title img');
     const overlay = document.querySelector('#section3 .overlay');
     const section3_move_text1 = document.getElementById('section3_move_text1');
@@ -79,15 +89,16 @@ function handleScroll(event) {
     if (event.deltaY > 0) { //휠 아래로
         if (currentSection == 1 && !isImageChanged) { //첫번째 섹션
             // 조건이 맞으면 backgroundImage변경
-            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
+             //document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
 
-            /*  if ((window.innerWidth - 150) >= 468) {
-                 console.log(window.innerWidth);
-                 document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
-             } else if ((window.innerWidth - 150) < 468) {
-                 console.log(window.innerWidth);
-                 document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
-             } */
+             if (isMobile() == false) {
+                console.log(window.innerWidth);
+                document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
+            } else {
+                console.log(window.innerWidth);
+                document.getElementById('section1').style.backgroundImage = "url('./public/images/mobile_s1_2.png')";
+            }
+ 
 
             isImageChanged = true;
 
@@ -96,13 +107,17 @@ function handleScroll(event) {
                 text.classList.add('background_white');
             });
             logo.src = './public/logo.svg'
-            hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon-d.png')";
+            hamburger_menu.forEach(menu => {
+                menu.classList.add('hamburger_white');
+            });   
         } else if (currentSection == 3 && scrollCount < 1) { //3번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
-            /*  hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";*/
+            hamburger_menu.forEach(menu => {
+                menu.classList.remove('hamburger_white');
+            });   
             if (!header.classList.contains('active')) {
                 logo.src = './public/logo_white.svg';
             }
@@ -116,14 +131,21 @@ function handleScroll(event) {
             setTimeout(() => {
                 section3_move_text2.style.animation = 'slide-up 1s forwards';
                 section3_move_text2.style.opacity = 1;
-            }, 500);
+            }, 500);            
 
         } else if (currentSection == 5 && scrollCount < 1) { //5번째 섹션
             // 조건이 맞으면 헤더 텍스트와 로고 변경
+            hamburger_menu.forEach(menu => {
+                menu.classList.remove('hamburger_white');
+            });
+
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
+                 
+
             logo.src = './public/logo_white.svg'
+            
             // hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
             // overlay 효과주기
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
@@ -142,6 +164,9 @@ function handleScroll(event) {
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
+            hamburger_menu.forEach(menu => {
+                menu.classList.remove('hamburger_white');
+            });   
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
@@ -160,6 +185,9 @@ function handleScroll(event) {
             headerText.forEach(text => {
                 text.classList.remove('background_white');
             });
+            hamburger_menu.forEach(menu => {
+                menu.classList.remove('hamburger_white');
+            });   
             logo.src = './public/logo_white.svg'
             // overlay 효과주기
             overlay11.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
@@ -177,7 +205,7 @@ function handleScroll(event) {
             // 조건이 맞으면 헤더 텍스트와 로고 변경
             headerText.forEach(text => {
                 text.classList.remove('text');
-            });
+            });  
             logo.src = './public/logo.svg'
             // overlay 효과주기
             overlay14.style.backgroundColor = 'linear-gradient(180deg, #FFF 0%, #EBEBFF 51.56%)';
@@ -201,7 +229,14 @@ function handleScroll(event) {
     } else if (event.deltaY < 0) { //휠 위로
         if (isImageChanged && currentSection == 1) {
             // 조건에 맞으면 배경이미지 변경
-            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+
+            if (isMobile() == false) {
+                console.log(window.innerWidth);
+                document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+            } else {
+                console.log(window.innerWidth);
+                document.getElementById('section1').style.backgroundImage = "url('./public/images/mobile_s1_1.png')";
+            }
             isImageChanged = false;
             // 헤더와 로고 변경
             if (!header.classList.contains('active')) {
@@ -211,21 +246,19 @@ function handleScroll(event) {
                 text.classList.remove('background_white');
             });
 
-            /*  if ((window.innerWidth - 150) >= 468) {
-                 console.log(window.innerWidth);
-                 document.getElementById('section1').style.backgroundImage = "url('./public/images/section13_phone.png')";
-             } else if ((window.innerWidth - 150) < 468) {
-                 console.log(window.innerWidth);
-                 document.getElementById('section1').style.backgroundImage = "url('./public/images/phone_2.png')";
-             } */
+            hamburger_menu.forEach(menu => {
+                menu.classList.remove('hamburger_white');
+            });  
 
-            hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
         } else if (currentSection > 1) {
             // 페이지 벗어날시 초기값 세팅
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay8.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             overlay11.style.backgroundColor = 'raba(0, 0, 0, 0)';
+            hamburger_menu.forEach(menu => {
+                menu.classList.add('hamburger_white');
+            });  
 
             section3_move_text1.style.animation = '';
             section3_move_text1.style.opacity = 0;
@@ -304,6 +337,7 @@ window.addEventListener('scroll', function () {
 
     const headerText = document.querySelectorAll(".header-nav-item-link-text");
     const logo = document.querySelector('.header-title img');
+    const hamburger_menu = document.querySelectorAll(".hamburger_menu");
 
     // 현재 스크롤 위치를 확인
     // const scrollPosition = window.scrollY;
@@ -336,6 +370,7 @@ window.addEventListener('scroll', function () {
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
+        
         logo.src = './public/logo.svg'
     } else if (section2Position !== 0) {
         // 페이지 벗어나면 초기화
@@ -364,7 +399,9 @@ window.addEventListener('scroll', function () {
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
-
+        hamburger_menu.forEach(menu => {
+            menu.classList.add('hamburger_white');
+        });
         logo.src = './public/logo.svg'
     } else if (section4Position !== 0) {
         // 페이지 벗어나면 초기화
@@ -392,6 +429,9 @@ window.addEventListener('scroll', function () {
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
+        hamburger_menu.forEach(menu => {
+            menu.classList.add('hamburger_white');
+        }); 
         logo.src = './public/logo.svg'
     } else if (section6Position !== 0) {
         // 페이지 벗어나면 초기화
@@ -449,6 +489,9 @@ window.addEventListener('scroll', function () {
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
+        hamburger_menu.forEach(menu => {
+            menu.classList.add('hamburger_white');
+        }); 
         logo.src = './public/logo.svg'
     } else if (section9Position !== 0) {
         // 페이지 벗어나면 초기화
@@ -506,6 +549,9 @@ window.addEventListener('scroll', function () {
         headerText.forEach(text => {
             text.classList.add('background_white');
         });
+        hamburger_menu.forEach(menu => {
+            menu.classList.add('hamburger_white');
+        }); 
         logo.src = './public/logo.svg'
     } else if (section12Position !== 0) {
         // 페이지 벗어나면 초기화
@@ -676,3 +722,21 @@ document.querySelectorAll('#sidebar ul li').forEach(item => {
 });
 
 
+//해상도 비율에 따른 배경 초기 이미지 선정 
+document.addEventListener("DOMContentLoaded", function () {
+    function updateSectionBackground() {
+        if (isMobile() == false) {
+            console.log(window.innerWidth);
+            document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
+        } else {
+            console.log(window.innerWidth);
+            document.getElementById('section1').style.backgroundImage = "url('./public/images/mobile_s1_1.png')";
+        }
+    }
+
+    // 페이지 로드 시 초기화
+    updateSectionBackground();
+
+    // 화면 크기가 변경될 때마다 업데이트
+    window.addEventListener("resize", updateSectionBackground);
+});
