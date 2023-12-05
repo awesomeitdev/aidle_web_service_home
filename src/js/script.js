@@ -68,6 +68,7 @@ function handleScroll(event) {
     wheelTimer = current
     const headerText = document.querySelectorAll(".header-nav-item-link-text");
     const hamburger_menu = document.querySelectorAll(".hamburger_menu");
+    const hamburger_overlay = document.querySelector(".hamburger_overlay")
     const logo = document.querySelector('.header-title img');
     const overlay = document.querySelector('#section3 .overlay');
     const section3_move_text1 = document.getElementById('section3_move_text1');
@@ -118,7 +119,7 @@ function handleScroll(event) {
             hamburger_menu.forEach(menu => {
                 menu.classList.remove('hamburger_white');
             });   
-            if (!header.classList.contains('active')) {
+            if (!hamburger_overlay.classList.contains('active')) {
                 logo.src = './public/logo_white.svg';
             }
             // overlay 효과주기
@@ -643,9 +644,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const button = document.querySelector('.button');
-    const buttonList = document.querySelector('.button_list');
-    const headerInner = document.querySelector('.header-inner');
-    const header = document.querySelector('.header')
+    const buttonList = document.querySelector('.button_list'); 
     const hamburgerMenu = document.querySelector('.hamburger_menu')
     const mobileMenuList = document.querySelector('.mobile-nav-list')
     const logo = document.querySelector('.header-title img');
@@ -653,9 +652,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     button.addEventListener('click', function () {
         buttonList.classList.toggle('show_list');
+        hamOverlay.classList.remove('active');
+        mobileMenuList.classList.remove('active');
+        hamburgerMenu.classList.remove('active');
     });
+
     button.addEventListener('touchstart', function () {
         buttonList.classList.toggle('show_list');
+        hamOverlay.classList.remove('active');
+        mobileMenuList.classList.remove('active');
+        hamburgerMenu.classList.remove('active');        
     });
 
     hamburgerMenu.addEventListener('click', function () {
@@ -665,6 +671,8 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburgerMenu.classList.toggle('active')
         hamOverlay.classList.toggle('active')
         mobileMenuList.classList.toggle('active')
+        buttonList.classList.remove('show_list') 
+        
     })
     hamburgerMenu.addEventListener('touchstart', function () {
         console.log("click");
@@ -673,8 +681,8 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburgerMenu.classList.toggle('active')
         hamOverlay.classList.toggle('active')
         mobileMenuList.classList.toggle('active')
+        buttonList.classList.remove('show_list') 
     })
-
 
 });
 
