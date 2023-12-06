@@ -74,7 +74,7 @@ $text-white: #fff;
             background: #fff;
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
-            z-index: 20;
+            z-index: 20;            
           }
 
         }
@@ -491,26 +491,57 @@ line-height: 150%; /* 30px */
                       padding: 24px 12px;
 
                       &-text {
-                          font-size: 20px;
-                          font-weight: 800;
-                          position: relative;
-                          color: $text-white;
-                          // color: #2D3439;
-                          line-height: 24px;
+                        color:$text-white;
+                        font-feature-settings: 'clig' off, 'liga' off;
+                        font-family: Pretendard;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 150%; /* 27px */
+                        position: relative; /* 상대 위치 설정 */
+                        display: inline-block; 
+                        vertical-align: bottom;
 
-                          &:hover {
-                              color: $primary-color;
-                              text-decoration: underline;
+                          &:after {
+                            content: "";
+                            position: absolute; /* 절대 위치 설정 */
+                            bottom: -2px; /* 라인 위치 조정 */
+                            left: 0; /* 왼쪽 정렬 */
+                            width: 100%; /* 가로 길이 100% */
+                            height: 2px; /* 선의 높이 */
+                            background-color:$background-white /* 라인 색상 */
+                            transform: scaleX(0); /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
+                            transition: transform 0.3s ease-in-out; /* 애니메이션 효과 추가 */                          
                           }
-                      }
-
+                            &:hover::after {
+                              transform: scaleX(1); /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
+                          }
+                      } 
                       & .background_white {
-                          color: $text-color;
-                          font-weight: 800;
+                        color:$text-color;
+                        font-feature-settings: 'clig' off, 'liga' off;
+                        font-family: Pretendard;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 150%; /* 27px */
+                        position: relative; /* 상대 위치 설정 */
+                        display: inline-block; 
+                        vertical-align: bottom;
 
-                          &:hover {
-                              color: $primary-color;
-                              text-decoration: underline;
+                          &:after {
+                            content: "";
+                            position: absolute; /* 절대 위치 설정 */
+                            bottom: -2px; /* 라인 위치 조정 */
+                            left: 0; /* 왼쪽 정렬 */
+                            width: 100%; /* 가로 길이 100% */
+                            height: 2px; /* 선의 높이 */
+                            background-color:$text-color; /* 라인 색상 */
+                            transform: scaleX(0); /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
+                            transition: transform 0.3s ease-in-out; /* 애니메이션 효과 추가 */ 
+                          }
+                            &:hover::after {
+                              transform: scaleX(1); /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
                           }
                       }
 
@@ -546,7 +577,8 @@ line-height: 150%; /* 30px */
                   transition: max-height 0.3s ease-in-out;
                   background-color: $background-white;
                   border-radius: 16px;
-                  z-index: 21;
+                  z-index: 21;  
+                  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.10);
 
                   & .button_list_text {
                       color: #2D3439;
@@ -570,6 +602,9 @@ line-height: 150%; /* 30px */
                           text-align: center;
                           padding: 5px;
                       }
+                      & a {
+                        color:$primary-color;
+                      } 
                   }
               }
 
@@ -863,12 +898,20 @@ line-height: 170%; /* 40.8px */
 
 #section3 .container .text_box,
 #section5 .container .text_box,
-#section8 .container .text_box,
 #section11 .container .text_box {
   margin: 0px 0px 0 calc((100% - 980px) * 0.5);
   position: absolute;
   top: 40%;  
   left: 8px;
+  text-align: center;
+  z-index: 3;
+}
+
+#section8 .container .text_box {
+  margin: 0px 0px 0 calc((100% - 980px) * 0.5);
+  position: absolute;
+  top: 40%;  
+  left: 9%;
   text-align: center;
   z-index: 3;
 }
@@ -1206,6 +1249,13 @@ li {
     100% {transform: translateY(0px)} 
 }
   
+.pc_view {
+  display: contents;
+}
+
+.mobile_view {
+  display:none;
+}
 
 @media screen and (max-width:468px) {
  
@@ -1258,6 +1308,7 @@ li {
   flex-direction: column;
   align-items: center; 
   margin-top:130px;
+  height: 100vh;
 }
 
 #section2 .container,
@@ -1346,8 +1397,9 @@ color: #434E56;
 #section2 .mcontainer > .m_content img,
 #section4 .mcontainer > .m_content img,
 #section6 .mcontainer > .m_content img {
-width: 70%; 
-margin-left: 15%; 
+height: 50vh;
+width: auto;  
+margin-left: auto; 
 margin-bottom: 3%;
 margin-top: 2%;
 }
@@ -1355,10 +1407,11 @@ margin-top: 2%;
 
 #section9 .mcontainer > .m_content img,
 #section12 .mcontainer > .m_content img {
-width: 70%; 
-margin-left: 13%; 
-margin-bottom: 3%;
-margin-top: 2%;
+  height: 50vh;
+  width: auto;  
+  margin-left: auto; 
+  margin-bottom: 3%;
+  margin-top: 2%;
 }
 
 #section7 .container,
@@ -1441,10 +1494,11 @@ color: #434E56;
 #section7 .mcontainer > .ml_content img,
 #section10 .mcontainer > .ml_content img,
 #section13 .mcontainer > .ml_content img {
-width: 70%; 
-margin-left: 13%; 
-margin-bottom: 3%;
-margin-top: 2%;
+  height: 50vh;
+  width: auto;  
+  margin-left: auto; 
+  margin-bottom: 3%;
+  margin-top: 2%;
 }
 
 #section3 .overlay,
@@ -1540,6 +1594,7 @@ top: 20%;
   position: absolute;
   width: 350%; 
   bottom: 0;
+  top:85%
 }
 
 .circle-image { 
@@ -1560,4 +1615,73 @@ top: 20%;
   width: 360px;
   height: 210px;    
 } 
+
+.pc_view {
+  display: none;
 }
+
+.mobile_view {
+  display:flex;
+}
+
+.wrapper {
+display: flex;
+width: 100vw;
+height: 600px;
+padding: 24px 67px 64px 67px;
+flex-direction: column;
+align-items: center;
+}
+
+#company {
+display: flex;
+flex-direction: column;
+align-items: center;
+line-height: 0.2px;
+padding-bottom: 40px;
+}
+
+.company_name {
+padding-bottom: 10px;
+}
+
+footer .layout {
+  display: flex;
+  align-items: flex-start;
+}
+
+footer .left_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+
+footer .left_box .text_box {
+  color: var(--sys-color-neutral-60, #879BAB);
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+footer .text_copy {
+  color: var(--sys-color-neutral-60, #879BAB);
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 18px */
+  padding-top: 24px;
+}
+
+}
+
+
+
+
+

@@ -403,23 +403,56 @@ html::-webkit-scrollbar {
   padding: 24px 12px;
 }
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link-text {
-  font-size: 20px;
-  font-weight: 800;
-  position: relative;
-  color: #fff;
-  line-height: 24px;
+  color: var(--sys-color-on-primary, #FFF);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+  position: relative; /* 상대 위치 설정 */
+  display: inline-block;
+  vertical-align: bottom;
 }
-.header .header-inner .header-menu .header-nav-list .header-nav-item-link-text:hover {
-  color: #7070FF;
-  text-decoration: underline;
+.header .header-inner .header-menu .header-nav-list .header-nav-item-link-text:after {
+  content: "";
+  position: absolute; /* 절대 위치 설정 */
+  bottom: -2px; /* 라인 위치 조정 */
+  left: 0; /* 왼쪽 정렬 */
+  width: 100%; /* 가로 길이 100% */
+  height: 2px; /* 선의 높이 */
+  background-color: rgb(255, 255, 255); /* 라인 색상 */
+  transform: scaleX(0); /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
+  transition: transform 0.3s ease-in-out; /* 애니메이션 효과 추가 */
+}
+.header .header-inner .header-menu .header-nav-list .header-nav-item-link-text:hover::after {
+  transform: scaleX(1); /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
 }
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white {
-  color: #2D3439;
-  font-weight: 800;
+  color: var(--sys-color-on-primary, #2D3439);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+  position: relative; /* 상대 위치 설정 */
+  display: inline-block;
+  vertical-align: bottom;
 }
-.header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white:hover {
-  color: #7070FF;
-  text-decoration: underline;
+.header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white:after {
+  content: "";
+  position: absolute; /* 절대 위치 설정 */
+  bottom: -2px; /* 라인 위치 조정 */
+  left: 0; /* 왼쪽 정렬 */
+  width: 100%; /* 가로 길이 100% */
+  height: 2px; /* 선의 높이 */
+  background-color: #2D3439; /* 라인 색상 */
+  transform: scaleX(0); /* 초기에는 가로 길이를 0으로 설정하여 숨김 */
+  transition: transform 0.3s ease-in-out; /* 애니메이션 효과 추가 */
+}
+.header .header-inner .header-menu .header-nav-list .header-nav-item-link .background_white:hover::after {
+  transform: scaleX(1); /* hover 상태에서 가로 길이를 1로 설정하여 라인을 나타냄 */
 }
 .header .header-inner .header-menu .header-nav-list .button {
   cursor: pointer;
@@ -449,6 +482,7 @@ html::-webkit-scrollbar {
   background-color: #fff;
   border-radius: 16px;
   z-index: 21;
+  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.1);
 }
 .header .header-inner .header-menu .header-nav-list .button_list .button_list_text {
   color: #2D3439;
@@ -470,6 +504,9 @@ html::-webkit-scrollbar {
   font-size: 16px;
   text-align: center;
   padding: 5px;
+}
+.header .header-inner .header-menu .header-nav-list .button_list .button_list_btn a {
+  color: #7070FF;
 }
 .header .header-inner .header-menu .header-nav-list .show_list {
   max-height: 270px;
@@ -754,12 +791,20 @@ html::-webkit-scrollbar {
 
 #section3 .container .text_box,
 #section5 .container .text_box,
-#section8 .container .text_box,
 #section11 .container .text_box {
   margin: 0px 0px 0 calc((100% - 980px) * 0.5);
   position: absolute;
   top: 40%;
   left: 8px;
+  text-align: center;
+  z-index: 3;
+}
+
+#section8 .container .text_box {
+  margin: 0px 0px 0 calc((100% - 980px) * 0.5);
+  position: absolute;
+  top: 40%;
+  left: 9%;
   text-align: center;
   z-index: 3;
 }
@@ -1096,6 +1141,14 @@ li {
     transform: translateY(0px);
   }
 }
+.pc_view {
+  display: contents;
+}
+
+.mobile_view {
+  display: none;
+}
+
 @media screen and (max-width: 468px) {
   #section1 {
     background: url("../../public/images/mobile_s1_1.png") no-repeat;
@@ -1139,6 +1192,7 @@ li {
     flex-direction: column;
     align-items: center;
     margin-top: 130px;
+    height: 100vh;
   }
   #section2 .container,
   #section4 .container,
@@ -1218,15 +1272,17 @@ li {
   #section2 .mcontainer > .m_content img,
   #section4 .mcontainer > .m_content img,
   #section6 .mcontainer > .m_content img {
-    width: 70%;
-    margin-left: 15%;
+    height: 50vh;
+    width: auto;
+    margin-left: auto;
     margin-bottom: 3%;
     margin-top: 2%;
   }
   #section9 .mcontainer > .m_content img,
   #section12 .mcontainer > .m_content img {
-    width: 70%;
-    margin-left: 13%;
+    height: 50vh;
+    width: auto;
+    margin-left: auto;
     margin-bottom: 3%;
     margin-top: 2%;
   }
@@ -1302,8 +1358,9 @@ li {
   #section7 .mcontainer > .ml_content img,
   #section10 .mcontainer > .ml_content img,
   #section13 .mcontainer > .ml_content img {
-    width: 70%;
-    margin-left: 13%;
+    height: 50vh;
+    width: auto;
+    margin-left: auto;
     margin-bottom: 3%;
     margin-top: 2%;
   }
@@ -1388,6 +1445,7 @@ li {
     position: absolute;
     width: 350%;
     bottom: 0;
+    top: 85%;
   }
   .circle-image {
     opacity: 0;
@@ -1404,5 +1462,58 @@ li {
     left: 70%;
     width: 360px;
     height: 210px;
+  }
+  .pc_view {
+    display: none;
+  }
+  .mobile_view {
+    display: flex;
+  }
+  .wrapper {
+    display: flex;
+    width: 100vw;
+    height: 600px;
+    padding: 24px 67px 64px 67px;
+    flex-direction: column;
+    align-items: center;
+  }
+  #company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.2px;
+    padding-bottom: 40px;
+  }
+  .company_name {
+    padding-bottom: 10px;
+  }
+  footer .layout {
+    display: flex;
+    align-items: flex-start;
+  }
+  footer .left_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  footer .left_box .text_box {
+    color: var(--sys-color-neutral-60, #879BAB);
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  footer .text_copy {
+    color: var(--sys-color-neutral-60, #879BAB);
+    font-family: Pretendard;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+    padding-top: 24px;
   }
 }/*# sourceMappingURL=style.css.map */
