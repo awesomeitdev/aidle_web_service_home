@@ -19,7 +19,7 @@ html::-webkit-scrollbar {
   }
   .header .header-inner .header-menu .header-nav .header-nav-list .mobile-nav {
     display: block;
-    width: 80px;
+    width: auto;
     z-index: 20;
   }
   .header .header-inner .header-menu .header-nav .header-nav-list .mobile-nav .hamburger_menu {
@@ -396,7 +396,7 @@ html::-webkit-scrollbar {
 }
 .header .header-inner .header-menu .header-nav-list .header-nav-item {
   position: relative;
-  padding: 0 10px;
+  padding: 0 10px 0 0;
 }
 .header .header-inner .header-menu .header-nav-list .header-nav-item-link {
   display: block;
@@ -456,7 +456,7 @@ html::-webkit-scrollbar {
 }
 .header .header-inner .header-menu .header-nav-list .button {
   cursor: pointer;
-  width: 160px;
+  width: 130px;
   height: 51px;
   border: 1px solid #7070FF;
   background-color: #7070FF;
@@ -493,8 +493,8 @@ html::-webkit-scrollbar {
 .header .header-inner .header-menu .header-nav-list .button_list .button_list_btn {
   background-color: #EBEBFF;
   display: block;
-  width: 160px;
-  margin: 10px auto;
+  width: auto;
+  margin: 10px 5px;
   border: 1px solid #EBEBFF;
   border-radius: 12px;
 }
@@ -1387,27 +1387,31 @@ li {
   }
   #section3 .container .text_box,
   #section5 .container .text_box,
-  #section11 .container .text_box {
-    margin: 0px 0px 0 calc((100% - 980px) * 0.5);
+  #section11 .container .text_box { 
     position: absolute;
-    top: 40%;
-    left: 80%;
+    top: 40%;    
+    width: 100vw;
+    margin: 0 auto;
     z-index: 3;
   }
-  #section8 .container .text_box {
-    margin: 0px 0px 0 calc((100% - 980px) * 0.5);
+
+  #section8 .container .text_box { 
     position: absolute;
-    top: 40%;
-    left: 75%;
+    width: 330px;
+    margin: 0 auto;
+    top: 40%; 
     z-index: 3;
   }
+
   #section14 {
     background: linear-gradient(180deg, #FFF 0%, #EBEBFF 51.56%);
   }
+
   #section14 .container {
     position: absolute;
     top: 20%;
   }
+
   #section14 .container > .text #text1 {
     color: var(--sys-color-primary, #7070FF);
     font-family: NanumSquareRound;
@@ -1416,6 +1420,7 @@ li {
     font-weight: 800;
     line-height: 150%; /* 27px */
   }
+
   #section14 .container > .text #text2 {
     color: var(--sys-color-neutral-20, #2D3439);
     font-family: NanumSquareRound;
@@ -1425,6 +1430,7 @@ li {
     line-height: 150%; /* 33px */
     padding-bottom: 24px;
   }
+
   #section14 .container > .text #text4 {
     color: var(--sys-color-neutral-30, #434E56);
     text-align: center;
@@ -1434,6 +1440,7 @@ li {
     font-weight: 500;
     line-height: 150%; /* 24px */
   }
+  
   .base-image {
     position: absolute;
     top: 40%;
