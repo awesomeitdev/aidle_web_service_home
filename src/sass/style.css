@@ -374,16 +374,9 @@ body {
   margin: auto;
   max-width: 1080px;
 }
-.header .header-inner .header-title {
-  flex: 0;
-  margin-right: auto;
-}
 .header .header-inner .header-title a {
   display: block;
   padding: 16px 0px;
-}
-.header .header-inner .header-menu {
-  flex: 1;
 }
 .header .header-inner .header-menu .header-nav-list {
   display: flex;
@@ -522,7 +515,7 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  overflow-y: auto;
+  overflow-y: hidden;
   transition: background-image 0.5s ease;
   /* 배경 이미지 전환을 위해 추가 */
 }
