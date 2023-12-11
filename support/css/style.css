@@ -8,10 +8,7 @@ body {
   scrollbar-width: none;
 }
 
-/* IE, Edge, Chrome에서 스크롤바 숨기기 */
-html::-webkit-scrollbar {
-  display: none;
-}
+ 
 
 /* hamberger-menu 설정 */
 @media screen and (max-width: 725px) {
