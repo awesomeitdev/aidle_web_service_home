@@ -9,14 +9,9 @@ body {
   height: 100%;
   margin: 0;
   box-sizing: border-box;
-  scrollbar-width: none;
 }
 
 /* IE, Edge, Chrome에서 스크롤바 숨기기 */
-html::-webkit-scrollbar {
-  display: none;
-}
-
 @media screen and (max-width: 725px) {
   .header .header-inner .header-menu .header-nav .header-nav-list .pc-nav {
     display: none;
@@ -1393,11 +1388,17 @@ li {
   }
   #section3 .container .text_box,
   #section5 .container .text_box,
-  #section11 .container .text_box,
+  #section11 .container .text_box {
+    margin: auto;
+    position: relative;
+    top: 40%;
+    z-index: 3;
+  }
   #section8 .container .text_box {
     margin: auto;
     position: relative;
     top: 40%;
+    left: -1%;
     z-index: 3;
   }
   #section14 {
@@ -1453,12 +1454,12 @@ li {
     text-align: center;
   }
   .fade-image {
-    position: absolute;
+    position: relative;
     opacity: 0;
     animation-delay: 1s;
-    margin: 0px 0px 0px calc((100% - 980px) * 0.5);
-    top: 65%;
-    left: 80%;
+    margin: auto;
+    top: 25%;
+    left: -1%;
     width: 360px;
     height: 210px;
   }
