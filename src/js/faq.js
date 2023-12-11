@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("touchstart", function (e) {
+        e.preventDefault();
+    }, { passive: false });
+    
+    function isMobile() {
+        console.log(window.innerWidth, "window.innerWidth");
+        if (window.innerWidth < 700) {
+            return true
+        }
+        return false
+    }       
+    
     function performSearch() {
         var input, filter, ul, li, i, span, txtValue, filterType;
         input = document.getElementById('search');
@@ -46,6 +58,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (var i = 0; i < items.length; i++) {
         items[i].addEventListener('click', function() {
+            var activeItem = document.querySelector('.item.active');
+            if (activeItem) {
+                activeItem.classList.remove('active');
+            }
+
+            if (activeItem !== this) {
+                this.classList.add('active');
+            }
+        });
+    }
+
+    for (var i = 0; i < items.length; i++) {
+        items[i].addEventListener('touchstart', function() {
+            console.log(1);
             var activeItem = document.querySelector('.item.active');
             if (activeItem) {
                 activeItem.classList.remove('active');
@@ -105,6 +131,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
   
+    document.getElementById('category').addEventListener('touchstart', function(e) {
+        if (e.target.tagName === 'LI') {
+            // 이전에 활성화된 카테고리 메뉴 아이템의 활성화 상태를 해제.
+            var activeCategoryItem = document.querySelector('#category li.active');
+            if (activeCategoryItem) {
+                activeCategoryItem.classList.remove('active');
+            }
+
+            // 클릭된 카테고리 메뉴 아이템을 활성화함.
+            e.target.classList.add('active');
+
+            selectedCategory = e.target.getAttribute('data-category');
+            filterList(selectedCategory);
+        
+            // 다른 카테고리 메뉴를 선택하면 활성화된 아이템을 자동으로 닫음.
+            var activeItem = document.querySelector('.item.active');
+            if (activeItem) {
+                activeItem.classList.remove('active');
+            }
+        }
+    });
+
     // 페이지가 로드될 때 "전체" 카테고리 메뉴 아이템을 찾아서 클릭 이벤트를 발생시킴.
     var allCategoryItem = document.querySelector('#category li[data-category="전체"]');
     if (allCategoryItem) {
@@ -112,30 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
  
 });
-
-
-document.querySelectorAll('#sidebar ul li').forEach(item => {
-    item.addEventListener('click', event => {
-        document.querySelectorAll('#sidebar ul li').forEach(item => {
-            item.classList.remove('active');
-        });
-
-        event.target.classList.add('active');
-
-        const target = event.target.getAttribute('data-target');
-
-        document.querySelectorAll('#content .content-item').forEach(item => {
-            item.style.display = 'none';
-        });
-
-        document.querySelector(`#${target}`).style.display = 'block';
-
-        // URL의 쿼리 파라미터 업데이트
-        const urlParams = new URLSearchParams(window.location.search);
-        urlParams.set('id', event.target.getAttribute('id'));
-        window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
-    });
-}); 
 
 window.addEventListener('scroll', function() {
     var scrollPosition = window.scrollY;
@@ -152,63 +176,84 @@ window.addEventListener('scroll', function() {
     }
 });
 
-
-//모바일 햄버거 버튼
 document.addEventListener("DOMContentLoaded", function () {
+    // 페이지 로드 시 초기화
+    // updateSectionBackground();
+    // 화면 크기가 변경될 때마다 업데이트
+    // window.addEventListener("resize", updateSectionBackground);
+    // 새로고침 시 페이지의 가장 위로 이동
+    window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+    });
+
     const button = document.querySelector('.button');
     const buttonList = document.querySelector('.button_list');
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const overlay = document.querySelector('.header .header-inner .overlay');
-    const header = document.querySelector('.header');
-    const headerInner = document.querySelector('.header .header-inner');
-    const navigationBar = document.querySelector('.navigation-bar');
-    const headerText = document.querySelectorAll(".header-nav-item-link-text");
-    const logo = document.querySelector('.header-title img');
-    const headerMenu = document.querySelector('.header-menu');
+    const hamburgerMenu = document.querySelector('.hamburger_menu');
+    const mobileMenuList = document.querySelector('.mobile-nav-list');
+    const hamOverlay = document.querySelector('.hamburger_overlay');
+    const touchButton = document.querySelectorAll(".click_event");
+
+    document.querySelectorAll('#sidebar ul li').forEach(item => {
+        item.addEventListener('touchstart', event => {
+            document.querySelectorAll('#sidebar ul li').forEach(item => {
+                item.classList.remove('active');
+            });
+    
+            event.target.classList.add('active');
+    
+            const target = event.target.getAttribute('data-target');
+    
+            document.querySelectorAll('#content .content-item').forEach(item => {
+                if(item.getAttribute('id') === target) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    touchButton.forEach(button => {
+        button.addEventListener('touchstart', function (e) {
+            // 가장 가까운 a 태그를 찾습니다.
+            var aTag = e.target.closest('a');
+            if (aTag) {
+                // a 태그의 href 속성을 이용해 현재 브라우저에서 링크를 연다
+                window.location.href = aTag.href;
+            }
+        });
+    });
 
     button.addEventListener('click', function () {
         buttonList.classList.toggle('show_list');
+        hamOverlay.classList.remove('active');
+        mobileMenuList.classList.remove('active');
+        hamburgerMenu.classList.remove('active');
+    });
+
+    button.addEventListener('touchstart', function () {
+        buttonList.classList.toggle('show_list');
+        hamOverlay.classList.remove('active');
+        mobileMenuList.classList.remove('active');
+        hamburgerMenu.classList.remove('active');
     });
 
     hamburgerMenu.addEventListener('click', function () {
+        console.log("click");
         hamburgerMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        header.classList.toggle('active');
-        navigationBar.classList.toggle('active');
+        hamOverlay.classList.toggle('active');
+        mobileMenuList.classList.toggle('active');
+        buttonList.classList.remove('show_list');
 
-        if (hamburgerMenu.classList.contains('active')) {
-            // 햄버거 버튼이 활성화되어 있을 때
-            headerInner.style.backgroundColor = '#fff';
-            hamburgerMenu.style.backgroundImage = "url('../../public/images/close-icon.png')";
-            headerMenu.style.display = 'block';
-            overlay.style.display = "block"
-        } else {
-            // 햄버거 버튼이 비활성화되어 있을 때
-            headerInner.style.backgroundColor = 'transparent';
-            hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
-            headerMenu.style.display = 'none';
-            overlay.style.display = "none"
-        }
-        // 로고 및 메뉴명 상시 변경 없음
-        logo.src = './public/logo.svg';
-        headerText.forEach(text => {
-            text.style.color = '#2D3439';
-        });
     });
 
-    overlay.addEventListener('click', function () {
-        hamburgerMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        overlay.style.display = "none"
-        header.classList.remove('active');
-        navigationBar.classList.remove('active');
-        hamburgerMenu.style.backgroundImage = "url('../../public/images/hamburger-icon.png')";
-        headerInner.style.backgroundColor = 'transparent';
-        headerMenu.style.display = 'none';
-        // 로고 및 메뉴명 상시 변경 없음
-        logo.src = './public/logo.svg';
-        headerText.forEach(text => {
-            text.style.color = '#2D3439';
-        });
+    hamburgerMenu.addEventListener('touchstart', function () {
+        console.log("click");
+        hamburgerMenu.classList.toggle('active');
+        hamOverlay.classList.toggle('active');
+        mobileMenuList.classList.toggle('active');
+        buttonList.classList.remove('show_list');
+
     });
+
 });

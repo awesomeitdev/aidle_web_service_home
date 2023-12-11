@@ -93,10 +93,10 @@ function handleScroll(event) {
             //document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
 
             if (isMobile() == false) {
-                console.log(window.innerWidth);
+                // console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
             } else {
-                console.log(window.innerWidth);
+                // console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/mobile_s1_2.png')";
             }
 
