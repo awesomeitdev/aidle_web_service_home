@@ -369,9 +369,10 @@ body {
 .header .header-inner {
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin: auto;
+  min-width: 380px;
   max-width: 1080px;
 }
 .header .header-inner .header-title a {
