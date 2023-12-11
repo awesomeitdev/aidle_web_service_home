@@ -93,10 +93,10 @@ function handleScroll(event) {
             //document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
 
             if (isMobile() == false) {
-                // console.log(window.innerWidth);
+                console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
             } else {
-                // console.log(window.innerWidth);
+                console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/mobile_s1_2.png')";
             }
 
@@ -651,6 +651,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamOverlay = document.querySelector('.hamburger_overlay')
     const touchButton = document.querySelectorAll(".click_event");
 
+    
+
     touchButton.forEach(button => {
         button.addEventListener('touchstart', function (e) {
             // 가장 가까운 a 태그를 찾습니다.
@@ -698,6 +700,50 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 });
+
+
+
+
+
+
+
+// 페이지 로딩 시 URL의 쿼리 파라미터에 따라 메뉴 아이템 활성화 및 콘텐츠 표시
+window.onload = function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+
+    if (id) {
+        const menuItem = document.querySelector(`#${id}`);
+
+        if (menuItem) {
+            menuItem.click(); // 해당 메뉴 아이템 클릭 이벤트 발생
+        }
+    }
+}
+
+document.querySelectorAll('#sidebar ul li').forEach(item => {
+    item.addEventListener('click', event => {
+        document.querySelectorAll('#sidebar ul li').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        event.target.classList.add('active');
+
+        const target = event.target.getAttribute('data-target');
+
+        document.querySelectorAll('#content .content-item').forEach(item => {
+            item.style.display = 'none';
+        });
+
+        document.querySelector(`#${target}`).style.display = 'block';
+
+        // URL의 쿼리 파라미터 업데이트
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('id', event.target.getAttribute('id'));
+        window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+    });
+});
+
 
 //해상도 비율에 따른 배경 초기 이미지 선정 
 document.addEventListener("DOMContentLoaded", function () {
