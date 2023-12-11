@@ -11,6 +11,28 @@ document.addEventListener("DOMContentLoaded", function () {
         return false
     }       
     
+    document.addEventListener("DOMContentLoaded", function () {
+        var touchStartX = 0;
+        var touchStartY = 0;
+    
+        window.addEventListener("touchstart", function (e) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: false });
+    
+        window.addEventListener("touchmove", function (e) {
+            var touchEndX = e.touches[0].clientX;
+            var touchEndY = e.touches[0].clientY;
+            var touchXDiff = touchEndX - touchStartX;
+            var touchYDiff = touchEndY - touchStartY;
+    
+            if (Math.abs(touchXDiff) > Math.abs(touchYDiff)) {
+                // 가로 스크롤(swipe)인 경우
+                e.preventDefault();
+            }
+        }, { passive: false });
+    });
+    
     function performSearch() {
         var input, filter, ul, li, i, span, txtValue, filterType;
         input = document.getElementById('search');

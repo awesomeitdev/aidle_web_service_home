@@ -10,6 +10,28 @@ function isMobile() {
     return false
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    var touchStartX = 0;
+    var touchStartY = 0;
+
+    window.addEventListener("touchstart", function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: false });
+
+    window.addEventListener("touchmove", function (e) {
+        var touchEndX = e.touches[0].clientX;
+        var touchEndY = e.touches[0].clientY;
+        var touchXDiff = touchEndX - touchStartX;
+        var touchYDiff = touchEndY - touchStartY;
+
+        if (Math.abs(touchXDiff) > Math.abs(touchYDiff)) {
+            // 가로 스크롤(swipe)인 경우
+            e.preventDefault();
+        }
+    }, { passive: false });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
