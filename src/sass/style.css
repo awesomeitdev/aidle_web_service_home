@@ -9,10 +9,18 @@ body {
   height: 100%;
   margin: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 /* IE, Edge, Chrome에서 스크롤바 숨기기 */
+html::-webkit-scrollbar {
+  display: none;
+}
+
 @media screen and (max-width: 725px) {
+  .header .header-inner {
+    justify-content: flex-start !important;
+  }
   .header .header-inner .header-menu .header-nav .header-nav-list .pc-nav {
     display: none;
   }
