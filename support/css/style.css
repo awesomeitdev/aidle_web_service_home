@@ -976,7 +976,14 @@ footer .layout .right_box .button_box {
 
 /* 모바일 페이지 footer 영역 */
 @media screen and (max-width: 468px) {
-
+  .text_box span {
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .text span {
+    margin-bottom: 1rem;
+    display: block;
+  }
   .pc_view {
     display: none;
   }
