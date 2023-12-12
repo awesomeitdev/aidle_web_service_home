@@ -1,6 +1,8 @@
-window.addEventListener("touchstart", function (e) {
-    e.preventDefault();
-}, { passive: false });
+window.addEventListener("touchstart", function (e) { 
+    if (e.target.matches('.button') || e.target.matches('.click_event')) {
+        e.preventDefault();
+    }
+});
 
 function isMobile() {
     console.log(window.innerWidth, "window.innerWidth");
@@ -9,28 +11,6 @@ function isMobile() {
     }
     return false
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    var touchStartX = 0;
-    var touchStartY = 0;
-
-    window.addEventListener("touchstart", function (e) {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-    }, { passive: false });
-
-    window.addEventListener("touchmove", function (e) {
-        var touchEndX = e.touches[0].clientX;
-        var touchEndY = e.touches[0].clientY;
-        var touchXDiff = touchEndX - touchStartX;
-        var touchYDiff = touchEndY - touchStartY;
-
-        if (Math.abs(touchXDiff) > Math.abs(touchYDiff)) {
-            // 가로 스크롤(swipe)인 경우
-            e.preventDefault();
-        }
-    }, { passive: false });
-});
 
 document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
@@ -121,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('#sidebar ul li').forEach(item => {
         item.addEventListener('touchstart', event => {
+            event.preventDefault();
             document.querySelectorAll('#sidebar ul li').forEach(item => {
                 item.classList.remove('active');
             });
@@ -172,10 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     touchButton.forEach(button => {
         button.addEventListener('touchstart', function (e) {
-            // 가장 가까운 a 태그를 찾습니다.
             var aTag = e.target.closest('a');
             if (aTag) {
-                // a 태그의 href 속성을 이용해 현재 브라우저에서 링크를 연다
                 window.location.href = aTag.href;
             }
         });
@@ -187,24 +166,9 @@ document.addEventListener("DOMContentLoaded", function () {
         mobileMenuList.classList.remove('active');
         hamburgerMenu.classList.remove('active');
     });
-
-    button.addEventListener('touchstart', function () {
-        buttonList.classList.toggle('show_list');
-        hamOverlay.classList.remove('active');
-        mobileMenuList.classList.remove('active');
-        hamburgerMenu.classList.remove('active');
-    });
+    
 
     hamburgerMenu.addEventListener('click', function () {
-        console.log("click");
-        hamburgerMenu.classList.toggle('active');
-        hamOverlay.classList.toggle('active');
-        mobileMenuList.classList.toggle('active');
-        buttonList.classList.remove('show_list');
-
-    });
-
-    hamburgerMenu.addEventListener('touchstart', function () {
         console.log("click");
         hamburgerMenu.classList.toggle('active');
         hamOverlay.classList.toggle('active');

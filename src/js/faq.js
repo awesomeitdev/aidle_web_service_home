@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    window.addEventListener("touchstart", function (e) {
-        e.preventDefault();
-    }, { passive: false });
+    window.addEventListener("touchstart", function (e) { 
+        if (e.target.matches('.button') || e.target.matches('.click_event')) {
+            e.preventDefault();
+        }
+    });
     
     function isMobile() {
         console.log(window.innerWidth, "window.innerWidth");
@@ -10,29 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return false
     }       
-    
-    document.addEventListener("DOMContentLoaded", function () {
-        var touchStartX = 0;
-        var touchStartY = 0;
-    
-        window.addEventListener("touchstart", function (e) {
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
-        }, { passive: false });
-    
-        window.addEventListener("touchmove", function (e) {
-            var touchEndX = e.touches[0].clientX;
-            var touchEndY = e.touches[0].clientY;
-            var touchXDiff = touchEndX - touchStartX;
-            var touchYDiff = touchEndY - touchStartY;
-    
-            if (Math.abs(touchXDiff) > Math.abs(touchYDiff)) {
-                // 가로 스크롤(swipe)인 경우
-                e.preventDefault();
-            }
-        }, { passive: false });
-    });
-    
+        
     function performSearch() {
         var input, filter, ul, li, i, span, txtValue, filterType;
         input = document.getElementById('search');
@@ -91,20 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    for (var i = 0; i < items.length; i++) {
-        items[i].addEventListener('touchstart', function() {
-            console.log(1);
-            var activeItem = document.querySelector('.item.active');
-            if (activeItem) {
-                activeItem.classList.remove('active');
-            }
-
-            if (activeItem !== this) {
-                this.classList.add('active');
-            }
-        });
-    }
-
     document.getElementById('category').addEventListener('click', function(e) {
         if (e.target.tagName === 'LI') {
             selectedCategory = e.target.getAttribute('data-category');
@@ -132,28 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
     filterList('전체');
 
     document.getElementById('category').addEventListener('click', function(e) {
-        if (e.target.tagName === 'LI') {
-            // 이전에 활성화된 카테고리 메뉴 아이템의 활성화 상태를 해제.
-            var activeCategoryItem = document.querySelector('#category li.active');
-            if (activeCategoryItem) {
-                activeCategoryItem.classList.remove('active');
-            }
-
-            // 클릭된 카테고리 메뉴 아이템을 활성화함.
-            e.target.classList.add('active');
-
-            selectedCategory = e.target.getAttribute('data-category');
-            filterList(selectedCategory);
-        
-            // 다른 카테고리 메뉴를 선택하면 활성화된 아이템을 자동으로 닫음.
-            var activeItem = document.querySelector('.item.active');
-            if (activeItem) {
-                activeItem.classList.remove('active');
-            }
-        }
-    });
-  
-    document.getElementById('category').addEventListener('touchstart', function(e) {
         if (e.target.tagName === 'LI') {
             // 이전에 활성화된 카테고리 메뉴 아이템의 활성화 상태를 해제.
             var activeCategoryItem = document.querySelector('#category li.active');
@@ -253,23 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburgerMenu.classList.remove('active');
     });
 
-    button.addEventListener('touchstart', function () {
-        buttonList.classList.toggle('show_list');
-        hamOverlay.classList.remove('active');
-        mobileMenuList.classList.remove('active');
-        hamburgerMenu.classList.remove('active');
-    });
-
     hamburgerMenu.addEventListener('click', function () {
-        console.log("click");
-        hamburgerMenu.classList.toggle('active');
-        hamOverlay.classList.toggle('active');
-        mobileMenuList.classList.toggle('active');
-        buttonList.classList.remove('show_list');
-
-    });
-
-    hamburgerMenu.addEventListener('touchstart', function () {
         console.log("click");
         hamburgerMenu.classList.toggle('active');
         hamOverlay.classList.toggle('active');
