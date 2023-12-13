@@ -8,14 +8,19 @@ body {
   scrollbar-width: none;
 }
 
- 
-.fab {
-  display: flex;
-  width: 48px;
-  height: 48px;
-  right:20px;
-  align-items: flex-start;
-  flex-shrink: 0;
+#fab { 
+  position: fixed; 
+  right: 30px;
+  bottom: 30px;    
+  margin: auto; 
+  z-index: 9999; 
+}
+
+#fab button { 
+  background: url('../../public/images/fab.png') no-repeat;
+  width: 52px;
+  height: 52px;     
+  cursor: pointer;
 }
 /* hamberger-menu 설정 */
 @media screen and (max-width: 725px) {
