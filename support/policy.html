@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+     -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=1024"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="robot" content="index, follow">
+    <meta name="description" content="aidle. desc">
+    <meta name="author" content="awesomeit">
+    <meta name="keyword" content="보호, 위치, 올바른 스마트폰 사용습관">
+    <meta property="og:title" content="aidle, awesomeit의 서비스">
+    <meta property="og:url" content=".net">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="aidle">
+    <meta property="og:description" content="아이의 스마트폰 첫걸음 aidle">
+    <meta property="al:ios:url" content="...">
+    <meta property="al:ios:app_store_id" content="...">
+    <meta property="al:ios:app_name" content="aidle">
+    <meta property="al:android:url" content="...">
+    <meta property="al:android:app_name" content="aidle">
+    <meta property="al:android:package" content="...">
+    <meta property="al:web:url" content="...">
+    <meta name="google-site-verification" content="bN1gDRHc7NlFTK_j4NYpkQIGi1xkZKdG4yGzzvyc7sE" />
+    <meta name="color-scheme" content="light only"/>	
+    <meta name="supported-color-schemes" content="light"/>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="public/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="public/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="public/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="public/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="public/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="public/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="public/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="public/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="public/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="public/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
+    <link rel="manifest" href="public/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>aidle - 보호, 위치, 올바른 스마트폰 사용습관</title>
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/sass/style.css">
+    <script src="./src/js/script.js"></script>
+</head>
+
+<body>
+    <header class="header" id="header">
+
+        <div class="header-inner" id="header_inner">
+            <div class="header-title" id="header_title">
+                <a href="https://www.aidle.net">
+                    <img src="./public/logo_white.svg" alt="" class="header-logo-white">
+                    <!-- <img src="./public/logo.svg" alt="" class="header-logo-black"> -->
+                </a>
+            </div>
+
+            <div class="header-menu" id="header_menu">
+                <nav class="header-nav">
+                    <ul class="header-nav-list">
+                        <li class="header-nav-item pc-nav">
+                            <a href="https://www.aidle.net" class="header-nav-item-link">
+                                <span class="header-nav-item-link-text selected">서비스 소개</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item pc-nav">
+                            <a href="https://www.aidle.net/guide?id=install" class="header-nav-item-link">
+                                <span class="header-nav-item-link-text">사용 가이드</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item pc-nav">
+                            <a href="https://www.aidle.net/faq" class="header-nav-item-link">
+                                <span class="header-nav-item-link-text">자주 묻는 질문</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item pc-nav">
+                            <a href="https://pf.kakao.com/_IwxkxbG" class="header-nav-item-link">
+                                <span class="header-nav-item-link-text">고객센터</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item">
+                            <div class="button">
+                                <div class="button_text">앱 다운로드</div>
+                            </div>
+                            <div class="button_list">
+                                <div>
+                                    <p class="button_list_text">Android</p>
+                                    <div class="button_list_btn">
+                                        <p class="btn_text"><a
+                                                href="https://play.google.com/store/apps/details?id=com.awesomeit.gemini_controller"
+                                                target="_blank" class="click_event">보호자용</a></p>
+                                    </div>
+                                    <div class="button_list_btn">
+                                        <p class="btn_text"><a
+                                                href="https://play.google.com/store/apps/details?id=com.awesomeit.geminiagent"
+                                                target="_blank" class="click_event">자녀용</a></p>
+                                    </div>
+                                    <p class="button_list_text">ios</p>
+                                    <div class="button_list_btn">
+                                        <p class="btn_text"><a href="https://apps.apple.com/kr/app/아이들(aidle) 보호자용 - 자녀폰관리, 위치공유/id6471647905" class="click_event" target="_blank">부모용</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-nav-item mobile-nav">
+                            <div class="hamburger_menu"></div>
+                        </li>
+                    </ul>
+                    <ul id="mobile-nav-list" class="mobile-nav-list">
+                        <li class="header-nav-item mobile-nav">
+                            <a href="https://www.aidle.net" class="header-nav-item-link click_event">
+                                <span class="header-nav-item-link-text selected">서비스 소개</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item mobile-nav">
+                            <a href="https://www.aidle.net/guide?id=install" class="header-nav-item-link click_event">
+                                <span class="header-nav-item-link-text">사용 가이드</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item mobile-nav">
+                            <a href="https://www.aidle.net/faq" class="header-nav-item-link click_event">
+                                <span class="header-nav-item-link-text">자주 묻는 질문</span>
+                            </a>
+                        </li>
+                        <li class="header-nav-item mobile-nav">
+                            <a href="https://pf.kakao.com/_IwxkxbG " class="header-nav-item-link click_event">
+                                <span class="header-nav-item-link-text">고객센터</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="hamburger_overlay" id="hamburger_overlay"></div>
+    <div class="section" id="section1">
+        <div class="container"></div>
+    </div>
+    <div class="section" id="section2">
+        <div class="container">
+            <div class="left_content">
+                <p id="text1" class="ani_text_2">AI 코칭 자동 설정</p>
+                <p id="text2" class="ani_text_2">귀찮은 관리는 그만.</p>
+                <p id="text3" class="ani_text_2">이제 AI가 다 해드릴게요</p>
+                <p id="text4" class="ani_text_2">AI 코치가 내 아이의 스마트폰 사용 습관을 분석하여</p>
+                <p id="text4" class="ani_text_2">스마트폰 사용 시간, 앱 사용 시간과 같은</p>
+                <p id="text4" class="ani_text_2">사용 환경을<span class="text-background">맞춤형으로 설정</span>해 줘요.</p>
+            </div>
+            <div class="right_content ani_text_2_img"><img src="./public/images/section2_phone.jpg" alt=""></div>
+        </div>
+        <div class="mcontainer">
+            <div class="up_content">
+                <p id="text1" class="ani_text_2">AI 코칭 자동 설정</p>
+                <p id="text2" class="ani_text_2">귀찮은 관리는 그만.</p>
+                <p id="text3" class="ani_text_2">이제 AI가 다 해드릴게요</p>
+            </div>
+            
+            <div class="m_content ani_text_2_img"><img src="./public/images/section2_phone.jpg" alt=""></div>
+            <div class="down_content">
+                <p id="text4" class="ani_text_2">AI 코치가 내 아이의 스마트폰 사용 습관을 분석하여</p>
+                <p id="text4" class="ani_text_2">스마트폰 사용 시간, 앱 사용 시간과 같은</p>
+                <p id="text4" class="ani_text_2">사용 환경을<span class="text-background">맞춤형으로 설정</span>해 줘요.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="text_box">
+                <p id="section3_move_text1" class="section3_movetext1">아이가 학원에 잘 도착했는지,</p>
+                <p id="section3_move_text2" class="section3_movetext2">위험한 곳에 있지는 않은지 <span class="enter">걱정되시나요?</span></p>
+            </div>
+        </div>        
+    </div>
+    <div class="section" id="section4">
+        <div class="container">
+            <div class="left_content">
+                <p id="text1" class="ani_text_4">실시간 위치 확인</p>
+                <p id="text2" class="ani_text_4">떨어져 있어도</p>
+                <p id="text3" class="ani_text_4">안심할 수 있게</p>
+                <p id="text4" class="ani_text_4">아이의 실시간 위치를 확인하고</p>
+                <p id="text4" class="ani_text_4"><span class="text-background">안심지역을 설정</span>해 알림을 받을 수 있어요</p>
+            </div>
+            <div class="right_content ani_text_4_img"><img src="./public/images/section4_phone.png" alt=""></div>
+        </div>
+        <div class="mcontainer">
+            <div class="up_content">
+                <p id="text1" class="ani_text_4">실시간 위치 확인</p>
+                <p id="text2" class="ani_text_4">떨어져 있어도</p>
+                <p id="text3" class="ani_text_4">안심할 수 있게</p>                
+            </div>
+            <div class="m_content ani_text_4_img"><img src="./public/images/section4_phone.png" alt=""></div>
+            <div class="down_content">
+                <p id="text4" class="ani_text_4">아이의 실시간 위치를 확인하고</p>
+                <p id="text4" class="ani_text_4"><span class="text-background">안심지역을 설정</span>해 알림을 받을 수 있어요</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="text_box">
+                <p id="section5_move_text1">아이 스마트폰이 꺼져있거나<span class="enter">연락이 안돼</span></p>
+                <p id="section5_move_text2">답답할 때가 많으신가요?</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section6">
+        <div class="container">
+            <div class="left_content">
+                <p id="text1" class="ani_text_6">아이 스마트폰 상태 확인</p>
+                <p id="text2" class="ani_text_6">아이와의 연결이</p>
+                <p id="text3" class="ani_text_6">끊어지지 않도록</p>
+                <p id="text4" class="ani_text_6">네트워크 연결 상태,위치,배터리 상태 등</p>
+                <p id="text4" class="ani_text_6"><span class="text-background">아이 스마트폰의 현재 상태</span>를 한눈에 파악할 수 있어요.</p>
+            </div>
+            <div class="right_content ani_text_6_img"><img src="./public/images/section6_phone.png" alt="">
+            </div>
+        </div>
+        <div class="mcontainer">
+            <div class="up_content">
+                <p id="text1" class="ani_text_6">아이 스마트폰 상태 확인</p>
+                <p id="text2" class="ani_text_6">아이와의 연결이</p>
+                <p id="text3" class="ani_text_6">끊어지지 않도록</p>                
+            </div>
+            <div class="m_content ani_text_6_img"><img src="./public/images/section6_phone.png" alt=""></div>
+            <div class="down_content"> 
+                <p id="text4" class="ani_text_6">네트워크 연결 상태,위치,배터리 상태 등</p>
+                <p id="text4" class="ani_text_6"><span class="text-background">아이 스마트폰의 현재 상태</span>를 한눈에 파악할 수 있어요.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section7">
+        <div class="container">
+            <div class="left_content ani_text_7_img"><img src="./public/images/section7_phone.png" alt="">
+            </div>
+            <div class="right_content">
+                <p id="text1" class="ani_text_7">소리 켜기</p>
+                <p id="text2" class="ani_text_7">아이가 스마트폰을</p>
+                <p id="text3" class="ani_text_7">확인하지 않을 때</p>
+                <p id="text4" class="ani_text_7">급한 연락이 필요한데 폰을 확인하지 않을 때</p>
+                <p id="text4" class="ani_text_7"><span class="text-background">소리를 재생하여</span>아이에게 알릴 수 있어요.</p>
+            </div>
+        </div>
+        <div class="mcontainer">
+            <div class="up_content">
+                <p id="text1" class="ani_text_7">소리 켜기</p>
+                <p id="text2" class="ani_text_7">아이가 스마트폰을</p>
+                <p id="text3" class="ani_text_7">확인하지 않을 때</p>                
+            </div>
+            <div class="ml_content ani_text_7_img"><img src="./public/images/section7_phone.png" alt="">
+            </div>
+            <div class="down_content">                
+                <p id="text4" class="ani_text_7">급한 연락이 필요한데 폰을 확인하지 않을 때</p>
+                <p id="text4" class="ani_text_7"><span class="text-background">소리를 재생하여</span>아이에게 알릴 수 있어요.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section8">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="text_box">
+                <p id="section8_move_text1" >아이의 과도한 스마트폰 사용으로</p>
+                <p id="section8_move_text2">매일 혼내고 있지는 않으신가요?</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section9">
+        <div class="container">
+            <div class="left_content">
+                <p id="text1" class="ani_text_9">시간 관리</p>
+                <p id="text3" class="ani_text_9">사용시간 및 취침시간 설정</p>
+                <p id="text4" class="ani_text_9">일일 스마트폰 사용시간과 취침시간을 설정하여</p>
+                <p id="text4" class="ani_text_9"><span class="text-background">아이 스스로 올바른 스마트폰 사용 습관</span>을 키워요.</p>
+            </div>
+            <div class="right_content ani_text_9_img"><img src="./public/images/section9_phone.png" alt=""></div>
+        </div>
+        <div class="mcontainer">
+            <div class="up_content">
+                <p id="text1" class="ani_text_9">시간 관리</p>
+                <p id="text3" class="ani_text_9">사용시간 및 취침시간 설정</p>                
+            </div>
+            <div class="m_content ani_text_9_img"><img src="./public/images/section9_phone.png" alt=""></div>
+            <div class="down_content">               
+                <p id="text4" class="ani_text_9">일일 스마트폰 사용시간과 취침시간을 설정하여</p>
+                <p id="text4" class="ani_text_9"><span class="text-background">아이 스스로 올바른 스마트폰 사용 습관</span>을 키워요.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section10">
+        <div class="container">
+            <div class="left_content ani_text_10_img"><img src="./public/images/section10_phone.png" alt=""></div>
+            <div class="right_content">
+                <p id="text1" class="ani_text_10">스마트폰 사용 리포트</p>
+                <p id="text3" class="ani_text_10">건강한 스마트폰 사용 습관</p>
+                <p id="text4" class="ani_text_10"><span class="text-background">스마트폰 사용 점수</span>를 아이가 직접 확인하고</p>
+                <p id="text4" class="ani_text_10">사용량을 조절할 수 있도록 도와줘요.</p>
+            </div>
+        </div>
+        <div class="mcontainer">
+            <div class="up_content">
+                <p id="text1" class="ani_text_10">스마트폰 사용 리포트</p>
+                <p id="text3" class="ani_text_10">건강한 스마트폰 사용 습관</p>                
+            </div>
+            <div class="ml_content ani_text_10_img"><img src="./public/images/section10_phone.png" alt=""></div>
+            <div class="down_content">                
+                <p id="text4" class="ani_text_10"><span class="text-background">스마트폰 사용 점수</span>를 아이가 직접 확인하고</p>
+                <p id="text4" class="ani_text_10">사용량을 조절할 수 있도록 도와줘요.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section11">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="text_box">
+                <p id="section11_move_text1">아이가 유해한 콘텐츠를 보거나</p>
+                <p id="section11_move_text2">스마트폰 게임에 중독될까 봐<span class="enter">걱정되시나요?</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section12">
+        <div class="container">
+            <div class="left_content">
+                <p id="text1" class="ani_text_12">접근 제한</p>
+                <p id="text3" class="ani_text_12">유해한 앱은 접근하지 못하게</p>
+                <p id="text4" class="ani_text_12">특정 앱이나 카테고리에 포함된 전체 앱의</p>
+                <p id="text4" class="ani_text_12"><span class="text-background">사용시간을 제한 하거나 차단</span>할 수 있어요</p>
+            </div>
+            <div class="right_content ani_text_12_img"><img src="./public/images/section12_phone.png" alt=""></div>
+        </div>
+        <div class="mcontainer">
+            <div class="up_content">
+                <p id="text1" class="ani_text_12">접근 제한</p>
+                <p id="text3" class="ani_text_12">유해한 앱은 접근하지 못하게</p>                
+            </div>
+            <div class="m_content ani_text_12_img"><img src="./public/images/section12_phone.png" alt=""></div>
+            <div class="down_content">            
+                <p id="text4" class="ani_text_12">특정 앱이나 카테고리에 포함된 전체 앱의</p>
+                <p id="text4" class="ani_text_12"><span class="text-background">사용시간을 제한 하거나 차단</span>할 수 있어요</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section13">
+        <div class="container">
+            <div class="left_content ani_text_13_img"><img src="./public/images/section13_phone.png" alt=""></div>
+            <div class="right_content">
+                <p id="text1" class="ani_text_13">접근 리포트</p>
+                <p id="text3" class="ani_text_13">웹사이트 및 유튜브 모니터링</p>
+                <p id="text4" class="ani_text_13">아이의 웹사이트 및 유튜브 사용 기록을</p>
+                <p id="text4" class="ani_text_13">확인하여 올바르게 지도하고</p>
+                <p id="text4" class="ani_text_13"><span class="text-background">유해한 콘텐츠는 접근하지 못하게 차단</span>해요.</p>
+            </div>
+        </div>
+        <div class="mcontainer">
+            <div class="up_content">
+                <p id="text1" class="ani_text_13">접근 리포트</p>
+                <p id="text3" class="ani_text_13">웹사이트 및 유튜브 모니터링</p>                
+            </div>
+            <div class="ml_content ani_text_13_img"><img src="./public/images/section13_phone.png" alt=""></div>
+            <div class="down_content">                
+                <p id="text4" class="ani_text_13">아이의 웹사이트 및 유튜브 사용 기록을</p>
+                <p id="text4" class="ani_text_13">확인하여 올바르게 지도하고</p>
+                <p id="text4" class="ani_text_13"><span class="text-background">유해한 콘텐츠는 접근하지 못하게 차단</span>해요.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section14">
+        <img class="base-image" src="./public/images/vector.png">
+        <div class="circle">
+            <img class="circle-image ani_text_14_1_img" src="./public/images/circle.png">
+        </div>
+        <div class="container">
+            <div class="text">
+                <p id="text1" class="ani_text_14">청소년 전문가가 만든</p>
+                <p id="text2" class="ani_text_14">스마트폰 AI 코칭 서비스, ‘aidle’</p>
+                <p id="text4" class="ani_text_14">aidle은 AI를 통해 우리 아이에게 맞는 스마트폰<span class="enter">사용 관리를 자동으로 해주는 서비스입니다.</span> </p>
+                <p id="text4" class="ani_text_14">aidle은 아이 스스로 자신의 사용 습관을 바라보고</p>
+                <p id="text4" class="ani_text_14">부모가 아닌 AI의 도움으로 스스로 사용습관을<span class="enter">들일 수 있도록 하였습니다.</span> </p>
+                <p id="text4" class="ani_text_14">작은 관심만으로도 큰 안심을 드리기 위해<span class="enter">aidle은 계 속해서 나아가겠습니다.</span> </p>
+            </div>
+        </div>
+        <img class="fade-image ani_text_14_2_img" src="./public/images/family.png">
+
+    </div>
+    <footer id="section15">
+    <div class="pc_view">    
+        <div class="wrapper">
+            <ul id="company">
+                <li><a href="https://awesomeit.co.kr">회사 소개</a></li>
+                <li><a href="./support/policy.html?id=policy">개인정보 처리방침</a></li>
+                <li><a href="./support/policy.html?id=services">서비스 이용약관</a></li>
+                <li><a href="./support/policy.html?id=local">위치기반 서비스 이용약관</a></li>
+                <li><a href="mailto:sales-support@awesomeit.co.kr">B2B 제휴 문의</a></li>
+            </ul>
+            <span id="icon">
+                <a href="https://pf.kakao.com/_IwxkxbG" target="_blank"><img id="ft"
+                        src="./public/images/image_kakaochanel.png"> </a>
+                <a href="https://blog.naver.com/aidle_ai" target="_blank"><img id="ft"
+                        src="./public/images/image_naverblog.png"></a>
+                <a href="https://www.facebook.com/aidle.net" target="_blank"><img id="ft"
+                        src="./public/images/image_facebook.png"></a>
+                <a href="https://www.instagram.com/aidle_ai" target="_blank"><img id="ft"
+                        src="./public/images/image_instagram.png"></a>
+            </span>
+        </div>
+        <div class="layout">
+            <div class="left_box">
+                <ul>
+                    <li class="logo"><img src="./public/images/logo_awesomeit.png"></li>
+                    <li class="text_box">
+                        <p><span style="font-weight: 700;">(주)어썸잇</span> </p>
+                        <p>대표:유병규</p>
+                        <p><span style="margin-right: 16px">이메일 : <a
+                                    href="mailto:cs.aidle@awesomeit.co.kr">cs.aidle@awesomeit.co.kr</a></span>
+                            사업자등록번호:276-88-01002 </p>
+                        <p>서울특별시 금천구 가산디지털1로 225, 1015호(가산동, 에이스가산포휴)</p>
+                    </li>
+                    <li class="text_copy">
+                        <p>© AWESOMEIT. ALL RIGHTS RESERVED.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="right_box">
+                <p class="title">아이들 앱 다운로드</p>
+                <ul class="button_box">
+                    <li class="pr_box">
+                        <p class="text_name">보호자용 <a
+                                href="https://play.google.com/store/apps/details?id=com.awesomeit.gemini_controller"
+                                target="_blank"><img src="./public/images/google_play.png"></a><a
+                                href="https://apps.apple.com/kr/app/아이들(aidle) 보호자용 - 자녀폰관리, 위치공유/id6471647905"
+                                target="_blank"><img src="./public/images/app_store.png"></a></p>
+                    </li>
+                    <li class="ch_box">
+                        <p class="text_name">자녀용 <a
+                                href="https://play.google.com/store/apps/details?id=com.awesomeit.geminiagent"
+                                target="_blank"><img src="./public/images/google_play.png"></a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="mobile_view">       
+            <div class="wrapper">
+                <ul id="company">
+                    <li><a href="https://awesomeit.co.kr" class="click_event">회사 소개</a></li>
+                    <li><a href="./support/policy.html?id=policy" class="click_event">개인정보 처리방침</a></li>
+                    <li><a href="./support/policy.html?id=services" class="click_event">서비스 이용약관</a></li>
+                    <li><a href="./support/policy.html?id=local" class="click_event">위치기반 서비스 이용약관</a></li>
+                    <li><a href="mailto:sales-support@awesomeit.co.kr" class="click_event">B2B 제휴 문의</a></li>
+                </ul>
+                <div class="left_box">
+                    <ul>                         
+                        <li class="text_box">
+                            <p><span class="company_name">(주)어썸잇</span> </p>
+                            <p>대표:유병규<span style="margin-right: 16px">이메일 : <a
+                                        href="mailto:cs.aidle@awesomeit.co.kr">cs.aidle@awesomeit.co.kr</a></span>
+                                사업자등록번호:276-88-01002 </p>
+                            <p>서울특별시 금천구 가산디지털1로 225, 1015호</p>
+                            <p>(가산동, 에이스가산포휴)</p>
+                        </li>                       
+                    </ul>
+                </div>
+                <span id="icon">
+                    <a href="https://pf.kakao.com/_IwxkxbG" target="_blank" class="click_event"><img id="ft"
+                            src="./public/images/image_kakaochanel.png" > </a>
+                    <a href="https://blog.naver.com/aidle_ai" target="_blank" class="click_event"><img id="ft"
+                            src="./public/images/image_naverblog.png"></a>
+                    <a href="https://www.facebook.com/aidle.net" target="_blank" class="click_event"><img id="ft"
+                            src="./public/images/image_facebook.png"></a>
+                    <a href="https://www.instagram.com/aidle_ai" target="_blank" class="click_event"><img id="ft"
+                            src="./public/images/image_instagram.png"></a>
+                </span>
+
+                <span class="text_copy">
+                    <p>© AWESOMEIT. ALL RIGHTS RESERVED.</p>
+                </span>
+            </div>        
+        </div>
+    </footer> 
+</body>
+
+</html>
