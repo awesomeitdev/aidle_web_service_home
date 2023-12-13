@@ -474,7 +474,7 @@ html::-webkit-scrollbar {
   cursor: pointer;
   width: auto;
   height: 51px;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #7070FF;
   background-color: #7070FF;
   border-radius: 10px;
