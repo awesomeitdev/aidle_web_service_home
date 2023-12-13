@@ -27,8 +27,7 @@ $text-white: #fff;
 @media screen and (max-width:725px) {
   .header {
     & .header-inner {
-      justify-content :flex-start !important;      
-      min-width: 380px;
+      justify-content :flex-start !important;       
       max-width: 100vw;
       
       & .header-menu {
