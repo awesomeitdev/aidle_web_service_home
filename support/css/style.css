@@ -474,7 +474,8 @@ body {
 }
 .header .header-inner .header-menu .header-nav-list .button {
   cursor: pointer;
-  width: 160px;
+  width: auto;
+  padding: 10px;
   height: 51px;
   border: 1px solid #7070FF;
   background-color: #7070FF;
@@ -511,8 +512,8 @@ body {
 .header .header-inner .header-menu .header-nav-list .button_list .button_list_btn {
   background-color: #EBEBFF;
   display: block;
-  width: 160px;
-  margin: 10px auto;
+  width: auto;
+  margin: 10px;
   border: 1px solid #EBEBFF;
   border-radius: 12px;
 }
@@ -528,6 +529,7 @@ body {
 }
 .header .header-inner .header-menu .header-nav-list .show_list {
   max-height: 100vh;
+  width: 100%;
 }
 .header .header-inner .mobile-nav-list {
   display: none;

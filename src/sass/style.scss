@@ -571,8 +571,9 @@ line-height: 150%; /* 30px */
 
               & .button {
                   cursor: pointer;
-                  width: 160px;
+                  width: auto;
                   height: 51px;
+                  padding: 10px;
                   border: 1px solid $primary-color;
                   background-color: $primary-color;
                   border-radius: 10px;
@@ -611,8 +612,8 @@ line-height: 150%; /* 30px */
                   & .button_list_btn {
                       background-color: #EBEBFF;
                       display: block;
-                      width: 160px;
-                      margin: 10px auto;
+                      width: auto;
+                      margin: 10px;
                       border: 1px solid #EBEBFF;
                       border-radius: 12px;
 
@@ -631,6 +632,7 @@ line-height: 150%; /* 30px */
 
               & .show_list {
                   max-height: 100vh;
+                  width: 100%;
               }
           }
       }
