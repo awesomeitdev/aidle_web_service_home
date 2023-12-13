@@ -650,7 +650,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const logo = document.querySelector('.header-title img');
     const hamOverlay = document.querySelector('.hamburger_overlay')
     const touchButton = document.querySelectorAll(".click_event");
-
+    const touchfab = document.getElementById("fab");
     
 
     touchButton.forEach(button => {
@@ -698,13 +698,25 @@ document.addEventListener("DOMContentLoaded", function () {
         buttonList.classList.remove('show_list')
 
     })
+    touchfab.addEventListener('click', function () {
+        console.log("click");
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        currentSection = 1;    
+    })
+
+    touchfab.addEventListener('touchstart', function () {
+        console.log("click");
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        currentSection = 1;    
+    })
 
 });
-
-
-
-
-
 
 
 // 페이지 로딩 시 URL의 쿼리 파라미터에 따라 메뉴 아이템 활성화 및 콘텐츠 표시
@@ -763,3 +775,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // 화면 크기가 변경될 때마다 업데이트
     window.addEventListener("resize", updateSectionBackground);
 });
+
+
+
+    
+
+ 

@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileMenuList = document.querySelector('.mobile-nav-list');
     const hamOverlay = document.querySelector('.hamburger_overlay');
     const touchButton = document.querySelectorAll(".click_event");
+    const touchfab = document.getElementById("fab");
 
     document.querySelectorAll('#sidebar ul li').forEach(item => {
         item.addEventListener('touchstart', event => {
@@ -169,12 +170,20 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     hamburgerMenu.addEventListener('click', function () {
-        console.log("click");
         hamburgerMenu.classList.toggle('active');
         hamOverlay.classList.toggle('active');
         mobileMenuList.classList.toggle('active');
         buttonList.classList.remove('show_list');
 
     });
+
+    touchfab.addEventListener('click', function () {
+        console.log("click");
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        currentSection = 1;    
+    })
 
 });

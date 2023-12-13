@@ -24,11 +24,25 @@ $background-white: #fff;
 $text-color: #2D3439;
 $text-white: #fff;
 
+#fab { 
+  position: fixed; 
+  right: 30px;
+  bottom: 30px;    
+  margin: auto; 
+  z-index: 9999; 
+}
+
+#fab button { 
+  background: url('../../public/images/fab.png') no-repeat;
+  width: 52px;
+  height: 52px;     
+  cursor: pointer;
+}
+
 @media screen and (max-width:725px) {
   .header {
     & .header-inner {
-      justify-content :flex-start !important;       
-      max-width: 100vw;
+      justify-content :flex-start !important;
       
       & .header-menu {
         & .header-nav {
@@ -616,7 +630,7 @@ line-height: 150%; /* 30px */
               }
 
               & .show_list {
-                  max-height: 270px;
+                  max-height: 100vh;
               }
           }
       }

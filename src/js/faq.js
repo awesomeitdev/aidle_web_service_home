@@ -157,8 +157,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburgerMenu = document.querySelector('.hamburger_menu');
     const mobileMenuList = document.querySelector('.mobile-nav-list');
     const hamOverlay = document.querySelector('.hamburger_overlay');
-    const touchButton = document.querySelectorAll(".click_event");
-
+    const touchButton = document.querySelectorAll(".click_event");    
+    const touchfab = document.getElementById("fab");
+    
     document.querySelectorAll('#sidebar ul li').forEach(item => {
         item.addEventListener('touchstart', event => {
             document.querySelectorAll('#sidebar ul li').forEach(item => {
@@ -205,5 +206,14 @@ document.addEventListener("DOMContentLoaded", function () {
         buttonList.classList.remove('show_list');
 
     });
+
+    touchfab.addEventListener('click', function () {
+        console.log("click");
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        currentSection = 1;    
+    })
 
 });

@@ -17,10 +17,24 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+#fab {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  margin: auto;
+  z-index: 9999;
+}
+
+#fab button {
+  background: url("../../public/images/fab.png") no-repeat;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 725px) {
   .header .header-inner {
     justify-content: flex-start !important;
-    max-width: 100vw;
   }
   .header .header-inner .header-menu .header-nav .header-nav-list .pc-nav {
     display: none;
@@ -511,7 +525,7 @@ html::-webkit-scrollbar {
   color: #7070FF;
 }
 .header .header-inner .header-menu .header-nav-list .show_list {
-  max-height: 270px;
+  max-height: 100vh;
 }
 .header .header-inner .mobile-nav-list {
   display: none;
