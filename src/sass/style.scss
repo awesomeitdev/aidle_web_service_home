@@ -9,12 +9,12 @@ body {
   height: 100%;
   margin: 0;
   box-sizing: border-box;
-  //scrollbar-width: none;  
+  scrollbar-width: none;  
 }
 
 /* IE, Edge, Chrome에서 스크롤바 숨기기 */
 html::-webkit-scrollbar {
- // display: none;
+display: none;
 }
 
 $primary-color : #7070FF;
@@ -27,6 +27,10 @@ $text-white: #fff;
 @media screen and (max-width:725px) {
   .header {
     & .header-inner {
+      justify-content :flex-start !important;      
+      min-width: 380px;
+      max-width: 100vw;
+      
       & .header-menu {
         & .header-nav {
           & .header-nav-list {
