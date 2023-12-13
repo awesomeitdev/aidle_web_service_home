@@ -12,8 +12,12 @@ body {
 
 /* hamberger-menu 설정 */
 @media screen and (max-width: 725px) {
+  .header-inner {
+    justify-content :flex-start !important;       
+    max-width: 100vw;
+  }
   .header .header-inner .header-menu .header-nav .header-nav-list .pc-nav {
-    display: none;
+    display: none; 
   }
   .header .header-inner .header-menu .header-nav .header-nav-list .mobile-nav {
     display: block;
