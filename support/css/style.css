@@ -26,7 +26,6 @@ body {
 @media screen and (max-width: 725px) {
   .header .header-inner {
     justify-content :flex-start !important;
-    overflow: hidden;
   }
   
   .header .header-inner .header-menu .header-nav .header-nav-list .pc-nav {
@@ -530,8 +529,15 @@ body {
   display: none;
 }
 
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 /* pc화면 css */
 .search-area {
+  width: 100%;
+  margin: auto;
   display: block; 
   padding: 10px; 
   background-color: #8A8AFF;

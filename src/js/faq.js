@@ -147,9 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 화면 크기가 변경될 때마다 업데이트
     // window.addEventListener("resize", updateSectionBackground);
     // 새로고침 시 페이지의 가장 위로 이동
-    window.addEventListener('beforeunload', () => {
-        window.scrollTo(0, 0);
-    });
+   
 
     const button = document.querySelector('.button');
     const buttonList = document.querySelector('.button_list');
@@ -179,16 +177,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    touchButton.forEach(button => {
-        button.addEventListener('touchstart', function (e) {
-            // 가장 가까운 a 태그를 찾습니다.
-            var aTag = e.target.closest('a');
-            if (aTag) {
-                // a 태그의 href 속성을 이용해 현재 브라우저에서 링크를 연다
-                window.location.href = aTag.href;
-            }
-        });
-    });
+    // touchButton.forEach(button => {
+    //     button.addEventListener('touchstart', function (e) {
+    //         // 가장 가까운 a 태그를 찾습니다.
+    //         var aTag = e.target.closest('a');
+    //         if (aTag) {
+    //             // a 태그의 href 속성을 이용해 현재 브라우저에서 링크를 연다
+    //             window.location.href = aTag.href;
+    //         }
+    //     });
+    // });
 
     button.addEventListener('click', function () {
         buttonList.classList.toggle('show_list');
