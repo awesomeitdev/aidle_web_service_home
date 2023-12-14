@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     
     function isMobile() {
-        console.log(window.innerWidth, "window.innerWidth");
         if (window.innerWidth < 700) {
             return true
         }
@@ -199,7 +198,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     hamburgerMenu.addEventListener('click', function () {
-        console.log("click");
         hamburgerMenu.classList.toggle('active');
         hamOverlay.classList.toggle('active');
         mobileMenuList.classList.toggle('active');
@@ -208,7 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     touchfab.addEventListener('click', function () {
-        console.log("click");
         window.scrollTo({
             top: 0,
             behavior: 'smooth'

@@ -30,7 +30,6 @@ function handleTouchMove() {
 }
 
 function isMobile() {
-    console.log(window.innerWidth, "window.innerWidth");
     if (window.innerWidth < 700) {
         return true
     }
@@ -59,8 +58,6 @@ window.addEventListener('wheel', handleScroll, false);
 
 function handleScroll(event) {
     const current = new Date().getTime()
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const section1 = document.getElementById('section1');
     if (current - wheelTimer < 500) {
         return
     }
@@ -90,16 +87,12 @@ function handleScroll(event) {
     if (event.deltaY > 0) { //휠 아래로
         if (currentSection == 1 && !isImageChanged) { //첫번째 섹션
             // 조건이 맞으면 backgroundImage변경
-            //document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
 
             if (isMobile() == false) {
-                console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background2.png')";
             } else {
-                console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/mobile_s1_2.png')";
             }
-
 
             isImageChanged = true;
 
@@ -147,7 +140,6 @@ function handleScroll(event) {
 
             logo.src = './public/logo_white.svg'
 
-            // hamburgerMenu.style.backgroundImage = "url('./public/images/hamburger-icon.png')";
             // overlay 효과주기
             overlay5.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
             // scrollCount2 증가 시키고 다음 코드
@@ -232,10 +224,8 @@ function handleScroll(event) {
             // 조건에 맞으면 배경이미지 변경
 
             if (isMobile() == false) {
-                console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
             } else {
-                console.log(window.innerWidth);
                 document.getElementById('section1').style.backgroundImage = "url('./public/images/mobile_s1_1.png')";
             }
             isImageChanged = false;
@@ -291,13 +281,27 @@ function handleScroll(event) {
 function scrollToSection(section) {
     const sectionElement = document.getElementById(`section${section}`);
 
-    if (sectionElement) {
-        sectionElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-            inline: 'nearest'
-        });
+    /*  if (sectionElement) {
+         sectionElement.scrollIntoView({
+             behavior: 'smooth',
+             block: 'start',
+             inline: 'nearest'
+         });
+     } */
+    let top;
+    if (section === 15) {
+        const footerElement = document.getElementById(`section${section}`);
+        top = document.documentElement.scrollHeight - footerElement.getBoundingClientRect().height;
+    } else {
+        const sectionElement = document.getElementById(`section${section}`);
+        top = sectionElement.getBoundingClientRect().height * (section - 1);
     }
+
+    window.scrollTo({
+        left: 0,
+        top: top,
+        behavior: 'smooth'
+    })
 }
 
 
@@ -341,8 +345,6 @@ window.addEventListener('scroll', function () {
     const hamburger_menu = document.querySelectorAll(".hamburger_menu");
 
     // 현재 스크롤 위치를 확인
-    // const scrollPosition = window.scrollY;
-    // console.log(scrollPosition);
 
     // 섹션2의 위치를 확인 2가지 방법
     const section2Position = section2.getBoundingClientRect().top;
@@ -354,10 +356,6 @@ window.addEventListener('scroll', function () {
     const section12Position = section12.getBoundingClientRect().top;
     const section13Position = section13.getBoundingClientRect().top;
     const section14Position = section14.getBoundingClientRect().top;
-    // console.log(section6Position);
-    // const section2Position = section2.offsetTop;
-    // const section4Position = section4.offsetTop;
-    //console.log(section14Position, "section14Position");
     if (section2Position == 0) {
         // 조건에 맞으면 애니메이션 효과와 헤더 변경
         ani_text2.forEach((text) => {
@@ -623,22 +621,7 @@ window.addEventListener('scroll', function () {
     }
 });
 
-/*/ 헤더버튼 효과
 document.addEventListener("DOMContentLoaded", function () {
-    const button = document.querySelector('.button');
-    const buttonList = document.querySelector('.button_list')
-
-    button.addEventListener('click', function () {
-        buttonList.classList.toggle('show_list');
-    })
-})
-*/
-document.addEventListener("DOMContentLoaded", function () {
-    // 페이지 로드 시 초기화
-    // updateSectionBackground();
-    // 화면 크기가 변경될 때마다 업데이트
-    // window.addEventListener("resize", updateSectionBackground);
-    // 새로고침 시 페이지의 가장 위로 이동
     window.addEventListener('beforeunload', () => {
         window.scrollTo(0, 0);
     });
@@ -651,7 +634,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamOverlay = document.querySelector('.hamburger_overlay')
     const touchButton = document.querySelectorAll(".click_event");
     const touchfab = document.getElementById("fab");
-    
+    const headerButton = document.getElementById("header_title");
+    const headerText = document.querySelectorAll(".header-nav-item-link-text");
+
 
     touchButton.forEach(button => {
         button.addEventListener('touchstart', function (e) {
@@ -679,7 +664,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     hamburgerMenu.addEventListener('click', function () {
-        console.log("click");
         logo.src = './public/logo.svg'
         // header.classList.toggle('header_active')
         hamburgerMenu.classList.toggle('active')
@@ -689,7 +673,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
     hamburgerMenu.addEventListener('touchstart', function () {
-        console.log("click");
         logo.src = './public/logo.svg'
         // header.classList.toggle('header_active')
         hamburgerMenu.classList.toggle('active')
@@ -699,22 +682,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
     touchfab.addEventListener('click', function () {
-        console.log("click");
+        logo.src = './public/logo.svg';
+        headerText.forEach(text => {
+            text.classList.add('background_white');
+        });
+        hamburgerMenu.classList.add('hamburger_white');
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
-        currentSection = 1;    
+        currentSection = 1;
     })
 
     touchfab.addEventListener('touchstart', function () {
-        console.log("click");
+        logo.src = './public/logo.svg';
+        headerText.forEach(text => {
+            text.classList.add('background_white');
+        });
+        hamburgerMenu.classList.add('hamburger_white');
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
-        currentSection = 1;    
+        currentSection = 1;
     })
+    headerButton.addEventListener('touchstart', function () {
+        window.location.href = "https://www.aidle.net";
+    })
+
 
 });
 
@@ -761,10 +756,8 @@ document.querySelectorAll('#sidebar ul li').forEach(item => {
 document.addEventListener("DOMContentLoaded", function () {
     function updateSectionBackground() {
         if (isMobile() == false) {
-            console.log(window.innerWidth);
             document.getElementById('section1').style.backgroundImage = "url('./public/images/main_background1.png')";
         } else {
-            console.log(window.innerWidth);
             document.getElementById('section1').style.backgroundImage = "url('./public/images/mobile_s1_1.png')";
         }
     }
@@ -778,6 +771,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    
 
- 
+

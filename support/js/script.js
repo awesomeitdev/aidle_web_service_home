@@ -5,7 +5,6 @@ window.addEventListener("touchstart", function (e) {
 });
 
 function isMobile() {
-    console.log(window.innerWidth, "window.innerWidth");
     if (window.innerWidth < 700) {
         return true
     }
@@ -178,7 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     touchfab.addEventListener('click', function () {
-        console.log("click");
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
