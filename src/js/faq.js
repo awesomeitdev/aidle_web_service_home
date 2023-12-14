@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    window.addEventListener("touchstart", function (e) { 
+  /*   window.addEventListener("touchstart", function (e) { 
         if (e.target.matches('.button') || e.target.matches('.click_event')) {
             e.preventDefault();
         }
-    });
+    }); */
     
     function isMobile() {
         if (window.innerWidth < 700) {
@@ -143,7 +143,7 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener("DOMContentLoaded", function () {
     // 페이지 로드 시 초기화
-    // updateSectionBackground();
+
     // 화면 크기가 변경될 때마다 업데이트
     // window.addEventListener("resize", updateSectionBackground);
     // 새로고침 시 페이지의 가장 위로 이동

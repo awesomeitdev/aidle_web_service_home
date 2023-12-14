@@ -25,9 +25,7 @@ body {
 /* hamberger-menu 설정 */
 @media screen and (max-width: 725px) {
   .header .header-inner {
-
     justify-content :flex-start !important;
-
   }
   
   .header .header-inner .header-menu .header-nav .header-nav-list .pc-nav {
@@ -388,21 +386,16 @@ body {
 .header .header-inner {
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: auto;
+  min-width: 380px;
   max-width: 1080px;
 }
-.header .header-inner .header-title {
-  flex: 0;
-  margin-right: auto;
-}
+
 .header .header-inner .header-title a {
   display: block;
   padding: 16px 0px;
-}
-.header .header-inner .header-menu {
-  flex: 1;
 }
 .header .header-inner .header-menu .header-nav-list {
   display: flex;
@@ -485,7 +478,7 @@ body {
   justify-content: center;
 }
 .header .header-inner .header-menu .header-nav-list .button .button_text {
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
   font-weight: 800;
   position: relative;
