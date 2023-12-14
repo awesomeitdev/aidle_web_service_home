@@ -26,6 +26,7 @@ body {
 @media screen and (max-width: 725px) {
   .header .header-inner {
     justify-content :flex-start !important;
+    overflow: hidden;
   }
   
   .header .header-inner .header-menu .header-nav .header-nav-list .pc-nav {
@@ -384,13 +385,14 @@ body {
   background-color: #8A8AFF;
 }
 .header .header-inner {
+  max-width: 1080px;
+  min-width: 380px;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: auto;
-  min-width: 380px;
-  max-width: 1080px;
+  width: 100%;
 }
 
 .header .header-inner .header-title a {
