@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
  
 });
 
-window.addEventListener('scroll', function() {
+/* window.addEventListener('scroll', function() {
     var scrollPosition = window.scrollY;
     var threshold = 10; // Adjust this value based on when you want the change to happen
 
@@ -139,7 +139,7 @@ window.addEventListener('scroll', function() {
         // Before reaching the threshold, show search area
         searchArea.classList.remove('hidden');
     }
-});
+}); */
 
 document.addEventListener("DOMContentLoaded", function () {
     // 페이지 로드 시 초기화
