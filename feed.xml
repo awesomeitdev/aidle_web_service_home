@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+    <title>aidle</title>
+    <link>https://www.aidle.net/</link>
+    <description>보호, 위치, 올바른 스마트폰 사용습관을 관리해주는 awesomeit의 애플리케이션 aidle, 아이들</description>
+    <language>ko-kr</language>
+
+    <item>
+        <title>aidle Guide</title>
+        <link>https://www.aidle.net/guide?id=install</link>
+        <description>aidle 애플리케이션의 설치 방법 가이드입니다.</description>
+        <pubDate>Wed, 21 Dec 2023 03:11:23 +0000</pubDate>
+    </item>
+    <item>
+        <title>aidle FaQ</title>
+        <link>https://www.aidle.net/faq</link>
+        <description>aidle 애플리케이션의 자주묻는질문입니다.</description>
+        <pubDate>Wed, 21 Dec 2023 03:11:23 +0000</pubDate>
+    </item>
+    <item>
+        <title>aidle Policy</title>
+        <link>https://www.aidle.net/support/policy.html</link>
+        <description>aidle 애플리케이션의 약관입니다.</description>
+        <pubDate>Wed, 21 Dec 2023 03:11:23 +0000</pubDate>
+    </item>
+</channel>
+</rss>
