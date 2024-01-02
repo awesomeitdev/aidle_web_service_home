@@ -39,6 +39,10 @@ $text-white: #fff;
   cursor: pointer;
 }
 
+.d-none {
+  display: none;
+}
+
 @media screen and (max-width:725px) {
   .header {
     & .header-inner {

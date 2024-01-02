@@ -32,6 +32,10 @@ html::-webkit-scrollbar {
   cursor: pointer;
 }
 
+.d-none {
+  display: none;
+}
+
 @media screen and (max-width: 725px) {
   .header .header-inner {
     justify-content: flex-start !important;
@@ -537,6 +541,7 @@ html::-webkit-scrollbar {
   width: 100vw;
   height: 100vh;
   height: -webkit-fill-available;
+  height: -moz-available;
   height: fill-available;
   position: relative;
   display: flex;
