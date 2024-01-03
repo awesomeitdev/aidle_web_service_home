@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-    <title>aidle - 보호, 위치, 올바른 스마트폰 사용습관</title>
+    <title>스마트폰 인공지능 관리 서비스. aidle</title>
     <link>https://www.aidle.net/</link>
-    <description>보호, 위치, 올바른 스마트폰 사용습관을 관리해주는 awesomeit의 애플리케이션 aidle, 아이들</description>
+    <description>아이들(aidle)은 부모의 마음으로 가족을 위한 인공지능 스마트폰 관리 서비스를 만듭니다.</description>
     <language>ko-kr</language>
     <atom:link href="https://www.aidle.net/feed.xml" rel="self" type="application/rss+xml" />
 
