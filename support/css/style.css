@@ -1231,7 +1231,6 @@ footer .layout .right_box .button_box {
   padding: 12px 0px;
   justify-content: center;
   align-items: center;
-  align-items: flex-end;
   background-color: #fff;
 }
 
@@ -1248,7 +1247,6 @@ footer .layout .right_box .button_box {
   display: flex;
   gap: 48px;
   letter-spacing: -2px;
-  margin-top: 38px;
 }
 
 #icon {
@@ -1258,7 +1256,7 @@ footer .layout .right_box .button_box {
   fill: var(--sys-color-neutral-80, #C3CDD5);
   width: 176px;
   height: 32px;
-  margin-top: 10px;
+  margin-left: 10px;
 } 
 
 .pc_view {
