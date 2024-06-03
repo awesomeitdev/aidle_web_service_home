@@ -935,6 +935,10 @@ footer .layout .left_box .text_box {
   margin-bottom: 24px;
 }
 
+footer .layout .left_box .text_box p a {
+  color: var(--sys-color-neutral-60, #879BAB);
+}
+
 footer .layout .left_box .text_copy {
   color: var(--sys-color-neutral-60, #879BAB);
   font-family: Pretendard;
