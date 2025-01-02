@@ -6,6 +6,49 @@ let touchStart = 0;
 let touchEnd = 0;
 let statTimeStamp = 0
 
+// 페이지 로드 시 
+window.addEventListener('load', function () {
+        showPopup();
+});
+
+function showPopup() {
+    // 팝업 표시
+    document.body.classList.add('popup-active');
+    document.querySelector('.popup').style.display = 'block';
+    document.querySelector('.popup-overlay').style.display = 'block';
+
+    // 팝업과 오버레이에 직접 이벤트 리스너 추가
+    document.querySelector('.popup').addEventListener('wheel', stopPropagation, { capture: true });
+    document.querySelector('.popup').addEventListener('touchmove', stopPropagation, { capture: true });
+    document.querySelector('.popup').addEventListener('touchstart', stopPropagation, { capture: true });
+    document.querySelector('.popup-overlay').addEventListener('wheel', stopPropagation, { capture: true });
+    document.querySelector('.popup-overlay').addEventListener('touchmove', stopPropagation, { capture: true });
+    document.querySelector('.popup-overlay').addEventListener('touchstart', stopPropagation, { capture: true });
+}
+
+function stopPropagation(e) {
+    if (e.target.classList.contains('close-btn')) {
+        return true;
+    }
+    e.stopPropagation();
+    e.preventDefault();
+    return false;
+}
+
+// 팝업 닫기 함수
+function closePopup() {
+    document.body.classList.remove('popup-active');
+    document.querySelector('.popup').style.display = 'none';
+    document.querySelector('.popup-overlay').style.display = 'none';
+
+    // 이벤트 리스너 제거
+    document.querySelector('.popup').removeEventListener('wheel', stopPropagation, { capture: true });
+    document.querySelector('.popup').removeEventListener('touchmove', stopPropagation, { capture: true });
+    document.querySelector('.popup-overlay').removeEventListener('wheel', stopPropagation, { capture: true });
+    document.querySelector('.popup-overlay').removeEventListener('touchmove', stopPropagation, { capture: true });
+}
+
+// 터치이벤트 핸들링
 window.addEventListener('touchstart', function (event) {
     touchStart = event.changedTouches[0].screenY;
     // a = event.touches
@@ -768,8 +811,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // 화면 크기가 변경될 때마다 업데이트
     window.addEventListener("resize", updateSectionBackground);
 });
-
-
-
-
 
